@@ -20,6 +20,7 @@
 		B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
 		B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */; };
 		B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */; };
+		B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefix.swift; sourceTree = "<group>"; };
 		B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefixCalc.swift; sourceTree = "<group>"; };
+		B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +154,7 @@
 		B6FBCF5724F3F24D00D9D9CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B6FBCF6424F3F46D00D9D9CE /* New Group */,
+				B6FBCF6424F3F46D00D9D9CE /* Rows */,
 				B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */,
 				B6FBCF5A24F3F27700D9D9CE /* ParallelResistorCalculator.swift */,
 			);
@@ -176,11 +178,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		B6FBCF6424F3F46D00D9D9CE /* New Group */ = {
+		B6FBCF6424F3F46D00D9D9CE /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */,
 			);
-			path = "New Group";
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +319,7 @@
 				B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */,
 				B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */,
 				B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */,
+				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
@@ -493,6 +497,7 @@
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Electronics Toolbox/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +519,7 @@
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Electronics Toolbox/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				INFOPLIST_FILE = "Electronics ToolboxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				INFOPLIST_FILE = "Electronics ToolboxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

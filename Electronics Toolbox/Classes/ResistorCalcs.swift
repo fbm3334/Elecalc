@@ -8,7 +8,7 @@
 import Foundation
 
 // Struct used to store pairs of values and prefixes
-struct ComponentValue {
+struct ComponentValue: Identifiable, Hashable {
     var id = UUID() // Unique ID required to draw list
     var value: Double // Value
     var prefix: SIPrefix // Prefix
@@ -19,7 +19,7 @@ class ResistorCalcs: ObservableObject {
     var siPrefixCalc = SIPrefixCalc()
     
     // Array of ComponentValue structs to store the resistor data
-    var resistorValues: [ComponentValue] = []
+    @Published var resistorValues: [ComponentValue] = []
     
     // Function for calculating parallel resistors
     func calcParallelResistors(values: [ComponentValue]) -> ComponentValue {
@@ -39,10 +39,15 @@ class ResistorCalcs: ObservableObject {
         resistorValues = []
         // For loop between 1 and 2
         for _ in 1...2 {
-            let newComponentValue = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
-            print(newComponentValue)
-            resistorValues.append(newComponentValue)
+            addToArray()
         }
         
+    }
+    
+    // Function to add element to array
+    func addToArray() {
+        let newComponentValue = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+        print(newComponentValue)
+        resistorValues.append(newComponentValue)
     }
 }
