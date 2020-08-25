@@ -9,23 +9,28 @@ import SwiftUI
 
 struct ParallelResistorCalculator: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
-    @State private var editMode = EditMode.inactive
+
+    // State variable to show resistor add menu
+    @State var showAddResistorView = false
+    
     var body: some View {
         VStack {
             
         List {
             ForEach(resistorCalcs.resistorValues) { value in
-                Text(String(value.value))
+                ResistorRow(resistorValue: value)
             }
                 .onDelete(perform: delete)
         }
         
-            .navigationBarItems(trailing: Button(action: {
-                self.resistorCalcs.addToArray()
-                print("Add pressed")
-            }) {
-                Image(systemName: "plus.circle.fill")
-            })
+        .navigationBarItems(trailing: Button(action: {
+            self.showAddResistorView.toggle()
+        }) {
+            Image(systemName: "plus.circle.fill")
+        }.sheet(isPresented: $showAddResistorView) {
+            AddResistor(isPresented: self.$showAddResistorView).environmentObject(self.resistorCalcs)
+            }
+        )
             .navigationBarTitle(Text("Parallel Resistors"))
         }
         

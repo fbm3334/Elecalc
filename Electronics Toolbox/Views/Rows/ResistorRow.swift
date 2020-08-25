@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ResistorRow: View {
     
-    @State private var resistorValues: String = ""
+    @State private var tempResistorValue: String = ""
     
     var resistorValue: ComponentValue
     
     var body: some View {
-        Text(String(resistorValue.value))
+        HStack {
+            Text(String(resistorValue.value))
+            Text(String(resistorValue.prefix.rawValue))
+        }
     }
 }
 

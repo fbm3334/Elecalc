@@ -17,6 +17,8 @@ struct ComponentValue: Identifiable, Hashable {
 class ResistorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()
+    var valueTemp: Double = 0.0
+    var prefixTemp: SIPrefix = .none
     
     // Array of ComponentValue structs to store the resistor data
     @Published var resistorValues: [ComponentValue] = []
@@ -31,7 +33,7 @@ class ResistorCalcs: ObservableObject {
         }
         // Take the reciprocal and then normalise to get a ComponentValue
         let resistanceValueReciprocal = 1.0 / resistanceTotal
-        return siPrefixCalc.calcPrefix(value: resistanceValueReciprocal)
+        return siPrefixCalc.calcPrefix(value: resistanceValueReciprocal, prefix: .none)
     }
     
     // Function to initialise/reset the array
@@ -47,6 +49,15 @@ class ResistorCalcs: ObservableObject {
     // Function to add element to array
     func addToArray() {
         let newComponentValue = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+        print(newComponentValue)
+        resistorValues.append(newComponentValue)
+    }
+    
+    // Function to add the temporary element into the array, after running it through prefix calculation to normalise it
+    func addTempElement() {
+        print("Temp value = \(valueTemp)")
+        let normalisedTempElement = siPrefixCalc.calcPrefix(value: valueTemp, prefix: prefixTemp)
+        let newComponentValue = ComponentValue(id: UUID(), value: normalisedTempElement.value, prefix: normalisedTempElement.prefix)
         print(newComponentValue)
         resistorValues.append(newComponentValue)
     }

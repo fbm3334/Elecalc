@@ -8,7 +8,7 @@
 import Foundation
 
 // This enum is used to store SI prefixes
-enum SIPrefix: Int {
+enum SIPrefix: Int, CaseIterable {
     case femto = -15
     case pico = -12
     case nano = -9
