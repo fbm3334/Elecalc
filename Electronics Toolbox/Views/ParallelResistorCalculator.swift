@@ -22,6 +22,9 @@ struct ParallelResistorCalculator: View {
             }
                 .onDelete(perform: delete)
         }
+            
+        Text(String(resistorCalcs.parallelCalculated.value))
+        Text(String(resistorCalcs.parallelCalculated.prefix.rawValue))
         
         .navigationBarItems(trailing: Button(action: {
             self.showAddResistorView.toggle()
@@ -36,10 +39,12 @@ struct ParallelResistorCalculator: View {
         
     }
     
-    // Delete function for
+    // Delete function for removing value
     private func delete(with indexSet: IndexSet) {
         indexSet.forEach {
             resistorCalcs.resistorValues.remove(at: $0)
+            // Recalculate once the value has been removed
+            self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
         }
     }
 }

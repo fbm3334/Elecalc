@@ -47,6 +47,7 @@ struct AddResistor: View {
                     print("Add")
                     // Add resistor
                     self.resistorCalcs.addTempElement()
+                    self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
                     self.isPresented = false
                     
                 }) {

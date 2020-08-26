@@ -20,20 +20,31 @@ class ResistorCalcs: ObservableObject {
     var valueTemp: Double = 0.0
     var prefixTemp: SIPrefix = .none
     
+    // ComponentValue object to show parallel result
+    @Published var parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+    
     // Array of ComponentValue structs to store the resistor data
     @Published var resistorValues: [ComponentValue] = []
     
     // Function for calculating parallel resistors
     func calcParallelResistors(values: [ComponentValue]) -> ComponentValue {
-        var resistanceTotal: Double = 0
-        // Iterate through the array and add the resistor values to the total
-        for value in values {
-            let resistanceValue: Double = 1.0 / (value.value * pow(10.0, Double(value.prefix.rawValue)))
-            resistanceTotal += resistanceValue
+        if (values.count == 0) {
+            parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+            return parallelCalculated
+        } else {
+            var resistanceTotal: Double = 0
+            // Iterate through the array and add the resistor values to the total
+            for value in values {
+                let resistanceValue: Double = 1.0 / (value.value * pow(10.0, Double(value.prefix.rawValue)))
+                resistanceTotal += resistanceValue
+            }
+            // Take the reciprocal and then normalise to get a ComponentValue
+            let resistanceValueReciprocal = 1.0 / resistanceTotal
+            let resistanceValueWithPrefix = siPrefixCalc.calcPrefix(value: resistanceValueReciprocal, prefix: .none)
+            parallelCalculated = resistanceValueWithPrefix
+            print(resistanceValueWithPrefix.value)
+            return resistanceValueWithPrefix
         }
-        // Take the reciprocal and then normalise to get a ComponentValue
-        let resistanceValueReciprocal = 1.0 / resistanceTotal
-        return siPrefixCalc.calcPrefix(value: resistanceValueReciprocal, prefix: .none)
     }
     
     // Function to initialise/reset the array
