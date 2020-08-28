@@ -23,6 +23,9 @@ struct AddResistor: View {
         NavigationView {
             // Title
             VStack {
+                Text("Add a Resistor")
+                    .bold()
+                    .font(.largeTitle)
                 // HStack with value entry
                 HStack {
                     Text("Value")
@@ -32,12 +35,15 @@ struct AddResistor: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.trailing)
                 }
-                Text("Resistor prefix")
+                HStack {
+                    Text("Resistor prefix")
                     .multilineTextAlignment(.leading)
+                    Spacer()
+                }
                 // Picker to select the prefix
                 Picker(selection: $resistorCalcs.prefixTemp, label: Text("Prefix")) {
-                    ForEach(SIPrefix.allCases, id: \.self) {
-                        Text(String($0.rawValue))
+                    ForEach(SIResistorPrefixes.allCases, id: \.self) {
+                        Text(String($0.description))
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 
@@ -48,16 +54,17 @@ struct AddResistor: View {
                     // Add resistor
                     self.resistorCalcs.addTempElement()
                     self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
+                    self.resistorCalcs.calcSeriesResistors(values: self.resistorCalcs.resistorValues)
                     self.isPresented = false
                     
                 }) {
                     Text("Add")
                 }
-            .navigationBarTitle("Add a resistor")
             }
-            
+        
         }.padding()
-
+            // Required to display properly on iPad
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

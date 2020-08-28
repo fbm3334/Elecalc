@@ -15,15 +15,14 @@ struct ResistorRow: View {
     
     var body: some View {
         HStack {
-            Text(String(resistorValue.value))
-            Text(String(resistorValue.prefix.rawValue))
+            Text("\(resistorValue.value, specifier: "%.2f")\(resistorValue.prefix.description)")
         }
     }
 }
 
 struct ResistorRow_Previews: PreviewProvider {
     static var previews: some View {
-        ResistorRow(resistorValue: ComponentValue(id: UUID(), value: 34.0, prefix: .kilo))
+        ResistorRow(resistorValue: ComponentValue(id: UUID(), value: 34.0, prefix: .kΩ))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

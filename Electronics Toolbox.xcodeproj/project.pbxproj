@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B659C08024F958F700AFABA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C07F24F958F700AFABA8 /* AppDelegate.swift */; };
+		B659C08224F958F700AFABA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C08124F958F700AFABA8 /* ContentView.swift */; };
+		B659C08424F958FA00AFABA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B659C08324F958FA00AFABA8 /* Assets.xcassets */; };
+		B659C08724F958FA00AFABA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B659C08624F958FA00AFABA8 /* Preview Assets.xcassets */; };
+		B659C08A24F958FA00AFABA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B659C08824F958FA00AFABA8 /* Main.storyboard */; };
+		B659C09624F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C09524F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift */; };
+		B659C0A124F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0A024F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift */; };
+		B659C0AC24F9596600AFABA8 /* ResistorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */; };
+		B659C0AD24F9596600AFABA8 /* SIPrefixCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */; };
+		B659C0AE24F9596600AFABA8 /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
+		B659C0AF24F9596600AFABA8 /* ResistorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */; };
+		B659C0B024F9596600AFABA8 /* CalculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */; };
+		B659C0B124F9596600AFABA8 /* ResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */; };
+		B659C0B224F9596600AFABA8 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */; };
 		B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */; };
@@ -17,7 +31,7 @@
 		B6FBCF3F24F3F23600D9D9CE /* Electronics_ToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */; };
 		B6FBCF4A24F3F23600D9D9CE /* Electronics_ToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */; };
 		B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */; };
-		B6FBCF5B24F3F27700D9D9CE /* ParallelResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5A24F3F27700D9D9CE /* ParallelResistorCalculator.swift */; };
+		B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */; };
 		B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
 		B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */; };
 		B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */; };
@@ -25,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B659C09224F958FA00AFABA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6FBCF1C24F3F23400D9D9CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B659C07C24F958F700AFABA8;
+			remoteInfo = "Electronics Toolbox for Mac";
+		};
+		B659C09D24F958FA00AFABA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6FBCF1C24F3F23400D9D9CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B659C07C24F958F700AFABA8;
+			remoteInfo = "Electronics Toolbox for Mac";
+		};
 		B6FBCF3B24F3F23600D9D9CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6FBCF1C24F3F23400D9D9CE /* Project object */;
@@ -42,6 +70,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electronics Toolbox for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C07F24F958F700AFABA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B659C08124F958F700AFABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B659C08324F958FA00AFABA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B659C08624F958FA00AFABA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B659C08924F958FA00AFABA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B659C08B24F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B659C08C24F958FA00AFABA8 /* Electronics_Toolbox_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Electronics_Toolbox_for_Mac.entitlements; sourceTree = "<group>"; };
+		B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics Toolbox for MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C09524F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_Toolbox_for_MacTests.swift; sourceTree = "<group>"; };
+		B659C09724F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics Toolbox for MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C0A024F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_Toolbox_for_MacUITests.swift; sourceTree = "<group>"; };
+		B659C0A224F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResistor.swift; sourceTree = "<group>"; };
 		B6FBCF2424F3F23400D9D9CE /* Electronics Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electronics Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +100,7 @@
 		B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxUITests.swift; sourceTree = "<group>"; };
 		B6FBCF4B24F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationList.swift; sourceTree = "<group>"; };
-		B6FBCF5A24F3F27700D9D9CE /* ParallelResistorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelResistorCalculator.swift; sourceTree = "<group>"; };
+		B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalculator.swift; sourceTree = "<group>"; };
 		B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefix.swift; sourceTree = "<group>"; };
 		B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefixCalc.swift; sourceTree = "<group>"; };
@@ -66,6 +108,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B659C07A24F958F700AFABA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C08E24F958FA00AFABA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C09924F958FA00AFABA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2124F3F23400D9D9CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,12 +153,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B659C07E24F958F700AFABA8 /* Electronics Toolbox for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				B659C07F24F958F700AFABA8 /* AppDelegate.swift */,
+				B659C08124F958F700AFABA8 /* ContentView.swift */,
+				B659C08324F958FA00AFABA8 /* Assets.xcassets */,
+				B659C08824F958FA00AFABA8 /* Main.storyboard */,
+				B659C08B24F958FA00AFABA8 /* Info.plist */,
+				B659C08C24F958FA00AFABA8 /* Electronics_Toolbox_for_Mac.entitlements */,
+				B659C08524F958FA00AFABA8 /* Preview Content */,
+			);
+			path = "Electronics Toolbox for Mac";
+			sourceTree = "<group>";
+		};
+		B659C08524F958FA00AFABA8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B659C08624F958FA00AFABA8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B659C09424F958FA00AFABA8 /* Electronics Toolbox for MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				B659C09524F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift */,
+				B659C09724F958FA00AFABA8 /* Info.plist */,
+			);
+			path = "Electronics Toolbox for MacTests";
+			sourceTree = "<group>";
+		};
+		B659C09F24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B659C0A024F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift */,
+				B659C0A224F958FA00AFABA8 /* Info.plist */,
+			);
+			path = "Electronics Toolbox for MacUITests";
+			sourceTree = "<group>";
+		};
 		B6FBCF1B24F3F23400D9D9CE = {
 			isa = PBXGroup;
 			children = (
 				B6FBCF2624F3F23400D9D9CE /* Electronics Toolbox */,
 				B6FBCF3D24F3F23600D9D9CE /* Electronics ToolboxTests */,
 				B6FBCF4824F3F23600D9D9CE /* Electronics ToolboxUITests */,
+				B659C07E24F958F700AFABA8 /* Electronics Toolbox for Mac */,
+				B659C09424F958FA00AFABA8 /* Electronics Toolbox for MacTests */,
+				B659C09F24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */,
 				B6FBCF2524F3F23400D9D9CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +212,9 @@
 				B6FBCF2424F3F23400D9D9CE /* Electronics Toolbox.app */,
 				B6FBCF3A24F3F23600D9D9CE /* Electronics ToolboxTests.xctest */,
 				B6FBCF4524F3F23600D9D9CE /* Electronics ToolboxUITests.xctest */,
+				B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */,
+				B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */,
+				B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,7 +267,7 @@
 			children = (
 				B6FBCF6424F3F46D00D9D9CE /* Rows */,
 				B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */,
-				B6FBCF5A24F3F27700D9D9CE /* ParallelResistorCalculator.swift */,
+				B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */,
 				B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */,
 			);
 			path = Views;
@@ -192,6 +301,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for Mac" */;
+			buildPhases = (
+				B659C07924F958F700AFABA8 /* Sources */,
+				B659C07A24F958F700AFABA8 /* Frameworks */,
+				B659C07B24F958F700AFABA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Electronics Toolbox for Mac";
+			productName = "Electronics Toolbox for Mac";
+			productReference = B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B659C09024F958FA00AFABA8 /* Electronics Toolbox for MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacTests" */;
+			buildPhases = (
+				B659C08D24F958FA00AFABA8 /* Sources */,
+				B659C08E24F958FA00AFABA8 /* Frameworks */,
+				B659C08F24F958FA00AFABA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B659C09324F958FA00AFABA8 /* PBXTargetDependency */,
+			);
+			name = "Electronics Toolbox for MacTests";
+			productName = "Electronics Toolbox for MacTests";
+			productReference = B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B659C09B24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacUITests" */;
+			buildPhases = (
+				B659C09824F958FA00AFABA8 /* Sources */,
+				B659C09924F958FA00AFABA8 /* Frameworks */,
+				B659C09A24F958FA00AFABA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B659C09E24F958FA00AFABA8 /* PBXTargetDependency */,
+			);
+			name = "Electronics Toolbox for MacUITests";
+			productName = "Electronics Toolbox for MacUITests";
+			productReference = B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics Toolbox" */;
@@ -251,9 +413,20 @@
 		B6FBCF1C24F3F23400D9D9CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					B659C07C24F958F700AFABA8 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					B659C09024F958FA00AFABA8 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = B659C07C24F958F700AFABA8;
+					};
+					B659C09B24F958FA00AFABA8 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = B659C07C24F958F700AFABA8;
+					};
 					B6FBCF2324F3F23400D9D9CE = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -283,11 +456,38 @@
 				B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */,
 				B6FBCF3924F3F23600D9D9CE /* Electronics ToolboxTests */,
 				B6FBCF4424F3F23600D9D9CE /* Electronics ToolboxUITests */,
+				B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */,
+				B659C09024F958FA00AFABA8 /* Electronics Toolbox for MacTests */,
+				B659C09B24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B659C07B24F958F700AFABA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B659C08A24F958FA00AFABA8 /* Main.storyboard in Resources */,
+				B659C08724F958FA00AFABA8 /* Preview Assets.xcassets in Resources */,
+				B659C08424F958FA00AFABA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C08F24F958FA00AFABA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C09A24F958FA00AFABA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2224F3F23400D9D9CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +515,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B659C07924F958F700AFABA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B659C0B124F9596600AFABA8 /* ResistorCalculator.swift in Sources */,
+				B659C0B224F9596600AFABA8 /* AddResistor.swift in Sources */,
+				B659C08224F958F700AFABA8 /* ContentView.swift in Sources */,
+				B659C0AE24F9596600AFABA8 /* SIPrefix.swift in Sources */,
+				B659C0AC24F9596600AFABA8 /* ResistorCalcs.swift in Sources */,
+				B659C0B024F9596600AFABA8 /* CalculationList.swift in Sources */,
+				B659C0AF24F9596600AFABA8 /* ResistorRow.swift in Sources */,
+				B659C0AD24F9596600AFABA8 /* SIPrefixCalc.swift in Sources */,
+				B659C08024F958F700AFABA8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C08D24F958FA00AFABA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B659C09624F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B659C09824F958FA00AFABA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B659C0A124F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2024F3F23400D9D9CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,7 +559,7 @@
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
-				B6FBCF5B24F3F27700D9D9CE /* ParallelResistorCalculator.swift in Sources */,
+				B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */,
 				B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +583,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B659C09324F958FA00AFABA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */;
+			targetProxy = B659C09224F958FA00AFABA8 /* PBXContainerItemProxy */;
+		};
+		B659C09E24F958FA00AFABA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */;
+			targetProxy = B659C09D24F958FA00AFABA8 /* PBXContainerItemProxy */;
+		};
 		B6FBCF3C24F3F23600D9D9CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */;
@@ -364,6 +606,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B659C08824F958FA00AFABA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B659C08924F958FA00AFABA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		B6FBCF3224F3F23600D9D9CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -375,6 +625,144 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B659C0A424F958FA00AFABA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Electronics Toolbox for Mac/Electronics_Toolbox_for_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Electronics Toolbox for Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Electronics Toolbox for Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B659C0A524F958FA00AFABA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Electronics Toolbox for Mac/Electronics_Toolbox_for_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Electronics Toolbox for Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Electronics Toolbox for Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B659C0A724F958FA00AFABA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = "Electronics Toolbox for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox for Mac.app/Contents/MacOS/Electronics Toolbox for Mac";
+			};
+			name = Debug;
+		};
+		B659C0A824F958FA00AFABA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = "Electronics Toolbox for MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox for Mac.app/Contents/MacOS/Electronics Toolbox for Mac";
+			};
+			name = Release;
+		};
+		B659C0AA24F958FA00AFABA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = "Electronics Toolbox for MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Electronics Toolbox for Mac";
+			};
+			name = Debug;
+		};
+		B659C0AB24F958FA00AFABA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = "Electronics Toolbox for MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-Toolbox-for-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Electronics Toolbox for Mac";
+			};
+			name = Release;
+		};
 		B6FBCF4C24F3F23600D9D9CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -624,6 +1012,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B659C0A424F958FA00AFABA8 /* Debug */,
+				B659C0A524F958FA00AFABA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B659C0A724F958FA00AFABA8 /* Debug */,
+				B659C0A824F958FA00AFABA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B659C0AA24F958FA00AFABA8 /* Debug */,
+				B659C0AB24F958FA00AFABA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Electronics Toolbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -11,8 +11,8 @@ struct CalculationList: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Resistors")) {
-                    NavigationLink(String("Parallel Resistors"), destination: ParallelResistorCalculator())
+                Section(header: Text("Component Calculations")) {
+                    NavigationLink(String("Resistors"), destination: ResistorCalculator())
                 }
             }
             .listStyle(GroupedListStyle())

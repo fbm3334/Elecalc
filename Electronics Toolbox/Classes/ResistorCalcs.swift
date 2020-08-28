@@ -11,17 +11,20 @@ import Foundation
 struct ComponentValue: Identifiable, Hashable {
     var id = UUID() // Unique ID required to draw list
     var value: Double // Value
-    var prefix: SIPrefix // Prefix
+    var prefix: SIResistorPrefixes // Prefix
 }
 
 class ResistorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()
     var valueTemp: Double = 0.0
-    var prefixTemp: SIPrefix = .none
+    var prefixTemp: SIResistorPrefixes = .Ω
     
     // ComponentValue object to show parallel result
-    @Published var parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+    @Published var parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .Ω)
+    
+    // ComponentValue object to show series result
+    @Published var seriesCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .Ω)
     
     // Array of ComponentValue structs to store the resistor data
     @Published var resistorValues: [ComponentValue] = []
@@ -29,7 +32,7 @@ class ResistorCalcs: ObservableObject {
     // Function for calculating parallel resistors
     func calcParallelResistors(values: [ComponentValue]) -> ComponentValue {
         if (values.count == 0) {
-            parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+            parallelCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .Ω)
             return parallelCalculated
         } else {
             var resistanceTotal: Double = 0
@@ -40,8 +43,28 @@ class ResistorCalcs: ObservableObject {
             }
             // Take the reciprocal and then normalise to get a ComponentValue
             let resistanceValueReciprocal = 1.0 / resistanceTotal
-            let resistanceValueWithPrefix = siPrefixCalc.calcPrefix(value: resistanceValueReciprocal, prefix: .none)
+            let resistanceValueWithPrefix = siPrefixCalc.calcPrefix(value: resistanceValueReciprocal, prefix: .Ω)
             parallelCalculated = resistanceValueWithPrefix
+            print(resistanceValueWithPrefix.value)
+            return resistanceValueWithPrefix
+        }
+    }
+    
+    // Function for calculating series resistors
+    func calcSeriesResistors(values: [ComponentValue]) -> ComponentValue {
+        if (values.count == 0) {
+            seriesCalculated = ComponentValue(id: UUID(), value: 0.0, prefix: .Ω)
+            return seriesCalculated
+        } else {
+            var resistanceTotal: Double = 0
+            // Iterate through the array and add the resistor values to the total
+            for value in values {
+                let resistanceValue: Double = value.value * pow(10.0, Double(value.prefix.rawValue))
+                resistanceTotal += resistanceValue
+            }
+            // Calculate the value
+            let resistanceValueWithPrefix = siPrefixCalc.calcPrefix(value: resistanceTotal, prefix: .Ω)
+            seriesCalculated = resistanceValueWithPrefix
             print(resistanceValueWithPrefix.value)
             return resistanceValueWithPrefix
         }
@@ -59,7 +82,7 @@ class ResistorCalcs: ObservableObject {
     
     // Function to add element to array
     func addToArray() {
-        let newComponentValue = ComponentValue(id: UUID(), value: 0.0, prefix: .none)
+        let newComponentValue = ComponentValue(id: UUID(), value: 0.0, prefix: .Ω)
         print(newComponentValue)
         resistorValues.append(newComponentValue)
     }
