@@ -13,6 +13,7 @@ struct CalculationList: View {
             List {
                 Section(header: Text("Component Calculations")) {
                     NavigationLink(String("Resistors"), destination: ResistorCalculator())
+                    NavigationLink(String("Capacitors"), destination: CapacitorCalculator())
                 }
             }
             .listStyle(GroupedListStyle())

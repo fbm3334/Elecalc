@@ -11,7 +11,7 @@ struct ResistorRow: View {
     
     @State private var tempResistorValue: String = ""
     
-    var resistorValue: ComponentValue
+    var resistorValue: ResistorValue
     
     var body: some View {
         HStack {
@@ -22,7 +22,7 @@ struct ResistorRow: View {
 
 struct ResistorRow_Previews: PreviewProvider {
     static var previews: some View {
-        ResistorRow(resistorValue: ComponentValue(id: UUID(), value: 34.0, prefix: .kΩ))
+        ResistorRow(resistorValue: ResistorValue(id: UUID(), value: 34.0, prefix: .kΩ))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
