@@ -14,6 +14,7 @@ struct CalculationList: View {
                 Section(header: Text("Component Calculations")) {
                     NavigationLink(String("Resistors"), destination: ResistorCalculator())
                     NavigationLink(String("Capacitors"), destination: CapacitorCalculator())
+                    NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                 }
             }
             .listStyle(GroupedListStyle())
