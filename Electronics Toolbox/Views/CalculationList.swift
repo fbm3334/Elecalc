@@ -12,13 +12,15 @@ struct CalculationList: View {
         NavigationView {
             List {
                 Section(header: Text("Component Calculations")) {
-                    NavigationLink(String("Resistors"), destination: ResistorCalculator())
-                    NavigationLink(String("Capacitors"), destination: CapacitorCalculator())
+                    NavigationLink(String("Parallel and Series Resistors"), destination: ResistorCalculator())
+                    NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorCalculator())
                     NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                 }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Electronics Toolbox")
+            
+            WelcomeView()
         }
     }
 }

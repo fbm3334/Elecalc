@@ -44,7 +44,7 @@ class CapacitorCalcs: ObservableObject {
             // Take the reciprocal and then normalise to get a ResistorValue
             let capacitanceValueReciprocal = 1.0 / capacitanceTotal
             let capacitanceValueWithPrefix = siPrefixCalc.calcCapacitorPrefix(value: capacitanceValueReciprocal, prefix: .F)
-            parallelCalculated = capacitanceValueWithPrefix
+            seriesCalculated = capacitanceValueWithPrefix
             print(capacitanceValueWithPrefix.value)
             return capacitanceValueWithPrefix
         }
@@ -64,7 +64,7 @@ class CapacitorCalcs: ObservableObject {
             }
             // Calculate the value
             let capacitanceValueWithPrefix = siPrefixCalc.calcCapacitorPrefix(value: capacitanceTotal, prefix: .F)
-            seriesCalculated = capacitanceValueWithPrefix
+            parallelCalculated = capacitanceValueWithPrefix
             print(capacitanceValueWithPrefix.value)
             return capacitanceValueWithPrefix
         }
