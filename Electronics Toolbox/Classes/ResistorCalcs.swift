@@ -40,6 +40,8 @@ class ResistorCalcs: ObservableObject {
     
     // ResistorValue for calculated resistor from colour code
     @Published var colourCodeResistor = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+    @Published var ccResistorLowerTolerance = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+    @Published var ccResistorUpperTolerance = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
     
     // Function for calculating parallel resistors
     func calcParallelResistors(values: [ResistorValue]) -> ResistorValue {
@@ -125,6 +127,9 @@ class ResistorCalcs: ObservableObject {
         // Calculate the prefix to get the resistor value
         if bandValue != 0 {
             colourCodeResistor = siPrefixCalc.calcResistorPrefix(value: bandValue, prefix: .Ω)
+            // Calculate the upper and lower tolerance
+            ccResistorUpperTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 + tolerance.rawValue), prefix: .Ω)
+            ccResistorLowerTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .Ω)
         }
     }
 }

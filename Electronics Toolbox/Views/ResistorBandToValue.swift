@@ -105,7 +105,18 @@ struct ResistorBandToValue: View {
                     Spacer()
                     Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.2f")\(resistorCalcs.colourCodeResistor.prefix.description)")
                 }
-                
+                HStack {
+                    Text("Lower tolerance:")
+                        .bold()
+                    Spacer()
+                    Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.2f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)")
+                }
+                HStack {
+                    Text("Upper tolerance:")
+                        .bold()
+                    Spacer()
+                    Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.2f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)")
+                }
             }
             .navigationBarTitle("Resistor Colour Code to Value")
 
