@@ -87,7 +87,14 @@ struct ResistorBandToValue: View {
                     }
                     
                 }
+            
                 
+            // Button to calculate
+                Button(action: {
+                    self.resistorCalcs.calcResistorValuefromColourCode()
+                }) {
+                    Text("Calculate value")
+                }
                 
             }
             // Section for calculating the resistor value

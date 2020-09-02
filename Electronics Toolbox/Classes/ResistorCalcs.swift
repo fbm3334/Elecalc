@@ -109,5 +109,22 @@ class ResistorCalcs: ObservableObject {
     }
     
     // Function to calculate resistor value from the colour code
-    
+    func calcResistorValuefromColourCode() {
+        var bandValue: Double = 0
+        // If it is a 4 band resistor, then multiply the first band by 10 and add the second
+        if (numberOfBands == .four) {
+            bandValue = Double((bandDigit1.rawValue * 10) + bandDigit2.rawValue)
+        } else {
+        // If it is a 5 band resistor, then (100 x first band + 10 x second band + third band)
+            bandValue = Double((bandDigit1.rawValue * 100) + (bandDigit2.rawValue * 10) + bandDigit3.rawValue)
+        }
+        
+        // Multiply the resistor value by the multiplier
+        bandValue *= pow(10.0, Double(multiplier.rawValue))
+        
+        // Calculate the prefix to get the resistor value
+        if bandValue != 0 {
+            colourCodeResistor = siPrefixCalc.calcResistorPrefix(value: bandValue, prefix: .Ω)
+        }
+    }
 }
