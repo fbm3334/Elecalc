@@ -53,8 +53,8 @@ struct AddCapacitor: View {
                     print("Add")
                     // Add capacitor
                     self.capacitorCalcs.addTempElement()
-                    self.capacitorCalcs.calcParallelCapacitors(values: self.capacitorCalcs.capacitorValues)
-                    self.capacitorCalcs.calcSeriesCapacitors(values: self.capacitorCalcs.capacitorValues)
+                    _ = self.capacitorCalcs.calcParallelCapacitors(values: self.capacitorCalcs.capacitorValues)
+                    _ = self.capacitorCalcs.calcSeriesCapacitors(values: self.capacitorCalcs.capacitorValues)
                     self.isPresented = false
                     
                 }) {

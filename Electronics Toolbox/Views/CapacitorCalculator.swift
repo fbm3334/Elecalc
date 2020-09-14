@@ -65,8 +65,8 @@ struct CapacitorCalculator: View {
         indexSet.forEach {
             capacitorCalcs.capacitorValues.remove(at: $0)
             // Recalculate once the value has been removed
-            self.capacitorCalcs.calcParallelCapacitors(values: self.capacitorCalcs.capacitorValues)
-            self.capacitorCalcs.calcSeriesCapacitors(values: self.capacitorCalcs.capacitorValues)
+            _ = self.capacitorCalcs.calcParallelCapacitors(values: self.capacitorCalcs.capacitorValues)
+            _ = self.capacitorCalcs.calcSeriesCapacitors(values: self.capacitorCalcs.capacitorValues)
         }
     }
 }

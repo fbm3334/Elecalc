@@ -16,6 +16,10 @@ struct CalculationList: View {
                     NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorCalculator())
                     NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                 }
+                
+                Section(header: Text("Thermal Calculations")) {
+                    NavigationLink(String("Heatsink Calculator"), destination: ThermalResistanceCalculator())
+                }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Electronics Toolbox")

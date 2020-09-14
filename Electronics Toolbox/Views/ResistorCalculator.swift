@@ -65,8 +65,8 @@ struct ResistorCalculator: View {
         indexSet.forEach {
             resistorCalcs.resistorValues.remove(at: $0)
             // Recalculate once the value has been removed
-            self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
-            self.resistorCalcs.calcSeriesResistors(values: self.resistorCalcs.resistorValues)
+            _ = self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
+            _ = self.resistorCalcs.calcSeriesResistors(values: self.resistorCalcs.resistorValues)
         }
     }
 }

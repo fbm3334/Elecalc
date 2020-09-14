@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var resistorCalcs = ResistorCalcs()
     var capacitorCalcs = CapacitorCalcs()
+    var thermalCalcs = ThermalCalcs()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = ContentView()
             .environmentObject(resistorCalcs)
             .environmentObject(capacitorCalcs)
+            .environmentObject(thermalCalcs)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
