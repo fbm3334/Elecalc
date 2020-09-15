@@ -16,7 +16,7 @@ struct CapacitorCalculator: View {
     var body: some View {
 
             
-            List {
+            Form {
                 Section(header: Text("Capacitors")) {
                     ForEach(capacitorCalcs.capacitorValues) { value in
                         CapacitorRow(capacitorValue: value)
@@ -51,10 +51,10 @@ struct CapacitorCalculator: View {
                             .multilineTextAlignment(.trailing)
                     }
                 }
-                .navigationBarTitle(Text("Capacitors"))
+               
                 .listStyle(GroupedListStyle())
             }
-
+            .navigationBarTitle(Text("Parallel and Series Capacitors"))
             
         
         

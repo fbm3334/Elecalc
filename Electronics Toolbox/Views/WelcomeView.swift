@@ -11,7 +11,7 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Welcome to Electronics Toolbox!")
+            Text("Welcome to Elecalc!")
                 .bold()
                 .font(.largeTitle)
                 .foregroundColor(.secondary)

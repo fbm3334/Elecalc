@@ -118,9 +118,10 @@ struct ResistorBandToValue: View {
                     Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.2f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)")
                 }
             }
-            .navigationBarTitle("Resistor Colour Code to Value")
-
+            
+            
         }
+        .navigationBarTitle("Resistor Colour Code to Value")
     }
 }
 

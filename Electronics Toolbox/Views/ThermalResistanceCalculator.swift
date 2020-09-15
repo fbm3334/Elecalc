@@ -121,11 +121,9 @@ struct ThermalResistanceCalculator: View {
             
             }
             
-        .navigationBarTitle(String("Heatsink Calculator"))
+        
         }
-        
-        
-        
+        .navigationBarTitle(String("Heatsink Calculator"))
     }
 }
 

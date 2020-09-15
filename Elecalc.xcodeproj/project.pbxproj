@@ -79,7 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electronics Toolbox for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elecalc for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659C07F24F958F700AFABA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659C08124F958F700AFABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B659C08324F958FA00AFABA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,10 +87,10 @@
 		B659C08924F958FA00AFABA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B659C08B24F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B659C08C24F958FA00AFABA8 /* Electronics_Toolbox_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Electronics_Toolbox_for_Mac.entitlements; sourceTree = "<group>"; };
-		B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics Toolbox for MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C09124F958FA00AFABA8 /* Elecalc for MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Elecalc for MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659C09524F958FA00AFABA8 /* Electronics_Toolbox_for_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_Toolbox_for_MacTests.swift; sourceTree = "<group>"; };
 		B659C09724F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics Toolbox for MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B659C09C24F958FA00AFABA8 /* Elecalc for MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Elecalc for MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659C0A024F958FA00AFABA8 /* Electronics_Toolbox_for_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_Toolbox_for_MacUITests.swift; sourceTree = "<group>"; };
 		B659C0A224F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B659C0B324F95C7000AFABA8 /* CapacitorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorCalcs.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
 		B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalResistanceCalculator.swift; sourceTree = "<group>"; };
-		B6FBCF2424F3F23400D9D9CE /* Electronics Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electronics Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FBCF2424F3F23400D9D9CE /* Elecalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elecalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6FBCF2B24F3F23400D9D9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 		B6FBCF3024F3F23600D9D9CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6FBCF3324F3F23600D9D9CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6FBCF3524F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6FBCF3A24F3F23600D9D9CE /* Electronics ToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics ToolboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElecalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxTests.swift; sourceTree = "<group>"; };
 		B6FBCF4024F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6FBCF4524F3F23600D9D9CE /* Electronics ToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Electronics ToolboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FBCF4524F3F23600D9D9CE /* ElecalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElecalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxUITests.swift; sourceTree = "<group>"; };
 		B6FBCF4B24F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationList.swift; sourceTree = "<group>"; };
@@ -227,12 +227,12 @@
 		B6FBCF2524F3F23400D9D9CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B6FBCF2424F3F23400D9D9CE /* Electronics Toolbox.app */,
-				B6FBCF3A24F3F23600D9D9CE /* Electronics ToolboxTests.xctest */,
-				B6FBCF4524F3F23600D9D9CE /* Electronics ToolboxUITests.xctest */,
-				B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */,
-				B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */,
-				B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */,
+				B6FBCF2424F3F23400D9D9CE /* Elecalc.app */,
+				B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */,
+				B6FBCF4524F3F23600D9D9CE /* ElecalcUITests.xctest */,
+				B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */,
+				B659C09124F958FA00AFABA8 /* Elecalc for MacTests.xctest */,
+				B659C09C24F958FA00AFABA8 /* Elecalc for MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,9 +328,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */ = {
+		B659C07C24F958F700AFABA8 /* Elecalc for Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for Mac" */;
+			buildConfigurationList = B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for Mac" */;
 			buildPhases = (
 				B659C07924F958F700AFABA8 /* Sources */,
 				B659C07A24F958F700AFABA8 /* Frameworks */,
@@ -340,14 +340,14 @@
 			);
 			dependencies = (
 			);
-			name = "Electronics Toolbox for Mac";
+			name = "Elecalc for Mac";
 			productName = "Electronics Toolbox for Mac";
-			productReference = B659C07D24F958F700AFABA8 /* Electronics Toolbox for Mac.app */;
+			productReference = B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B659C09024F958FA00AFABA8 /* Electronics Toolbox for MacTests */ = {
+		B659C09024F958FA00AFABA8 /* Elecalc for MacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacTests" */;
+			buildConfigurationList = B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for MacTests" */;
 			buildPhases = (
 				B659C08D24F958FA00AFABA8 /* Sources */,
 				B659C08E24F958FA00AFABA8 /* Frameworks */,
@@ -358,14 +358,14 @@
 			dependencies = (
 				B659C09324F958FA00AFABA8 /* PBXTargetDependency */,
 			);
-			name = "Electronics Toolbox for MacTests";
+			name = "Elecalc for MacTests";
 			productName = "Electronics Toolbox for MacTests";
-			productReference = B659C09124F958FA00AFABA8 /* Electronics Toolbox for MacTests.xctest */;
+			productReference = B659C09124F958FA00AFABA8 /* Elecalc for MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B659C09B24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */ = {
+		B659C09B24F958FA00AFABA8 /* Elecalc for MacUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacUITests" */;
+			buildConfigurationList = B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for MacUITests" */;
 			buildPhases = (
 				B659C09824F958FA00AFABA8 /* Sources */,
 				B659C09924F958FA00AFABA8 /* Frameworks */,
@@ -376,14 +376,14 @@
 			dependencies = (
 				B659C09E24F958FA00AFABA8 /* PBXTargetDependency */,
 			);
-			name = "Electronics Toolbox for MacUITests";
+			name = "Elecalc for MacUITests";
 			productName = "Electronics Toolbox for MacUITests";
-			productReference = B659C09C24F958FA00AFABA8 /* Electronics Toolbox for MacUITests.xctest */;
+			productReference = B659C09C24F958FA00AFABA8 /* Elecalc for MacUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */ = {
+		B6FBCF2324F3F23400D9D9CE /* Elecalc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics Toolbox" */;
+			buildConfigurationList = B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Elecalc" */;
 			buildPhases = (
 				B6FBCF2024F3F23400D9D9CE /* Sources */,
 				B6FBCF2124F3F23400D9D9CE /* Frameworks */,
@@ -393,14 +393,14 @@
 			);
 			dependencies = (
 			);
-			name = "Electronics Toolbox";
+			name = Elecalc;
 			productName = "Electronics Toolbox";
-			productReference = B6FBCF2424F3F23400D9D9CE /* Electronics Toolbox.app */;
+			productReference = B6FBCF2424F3F23400D9D9CE /* Elecalc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B6FBCF3924F3F23600D9D9CE /* Electronics ToolboxTests */ = {
+		B6FBCF3924F3F23600D9D9CE /* ElecalcTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics ToolboxTests" */;
+			buildConfigurationList = B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcTests" */;
 			buildPhases = (
 				B6FBCF3624F3F23600D9D9CE /* Sources */,
 				B6FBCF3724F3F23600D9D9CE /* Frameworks */,
@@ -411,14 +411,14 @@
 			dependencies = (
 				B6FBCF3C24F3F23600D9D9CE /* PBXTargetDependency */,
 			);
-			name = "Electronics ToolboxTests";
+			name = ElecalcTests;
 			productName = "Electronics ToolboxTests";
-			productReference = B6FBCF3A24F3F23600D9D9CE /* Electronics ToolboxTests.xctest */;
+			productReference = B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B6FBCF4424F3F23600D9D9CE /* Electronics ToolboxUITests */ = {
+		B6FBCF4424F3F23600D9D9CE /* ElecalcUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6FBCF5424F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics ToolboxUITests" */;
+			buildConfigurationList = B6FBCF5424F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcUITests" */;
 			buildPhases = (
 				B6FBCF4124F3F23600D9D9CE /* Sources */,
 				B6FBCF4224F3F23600D9D9CE /* Frameworks */,
@@ -429,9 +429,9 @@
 			dependencies = (
 				B6FBCF4724F3F23600D9D9CE /* PBXTargetDependency */,
 			);
-			name = "Electronics ToolboxUITests";
+			name = ElecalcUITests;
 			productName = "Electronics ToolboxUITests";
-			productReference = B6FBCF4524F3F23600D9D9CE /* Electronics ToolboxUITests.xctest */;
+			productReference = B6FBCF4524F3F23600D9D9CE /* ElecalcUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -467,7 +467,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Electronics Toolbox" */;
+			buildConfigurationList = B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Elecalc" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -480,12 +480,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */,
-				B6FBCF3924F3F23600D9D9CE /* Electronics ToolboxTests */,
-				B6FBCF4424F3F23600D9D9CE /* Electronics ToolboxUITests */,
-				B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */,
-				B659C09024F958FA00AFABA8 /* Electronics Toolbox for MacTests */,
-				B659C09B24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */,
+				B6FBCF2324F3F23400D9D9CE /* Elecalc */,
+				B6FBCF3924F3F23600D9D9CE /* ElecalcTests */,
+				B6FBCF4424F3F23600D9D9CE /* ElecalcUITests */,
+				B659C07C24F958F700AFABA8 /* Elecalc for Mac */,
+				B659C09024F958FA00AFABA8 /* Elecalc for MacTests */,
+				B659C09B24F958FA00AFABA8 /* Elecalc for MacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -621,22 +621,22 @@
 /* Begin PBXTargetDependency section */
 		B659C09324F958FA00AFABA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */;
+			target = B659C07C24F958F700AFABA8 /* Elecalc for Mac */;
 			targetProxy = B659C09224F958FA00AFABA8 /* PBXContainerItemProxy */;
 		};
 		B659C09E24F958FA00AFABA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B659C07C24F958F700AFABA8 /* Electronics Toolbox for Mac */;
+			target = B659C07C24F958F700AFABA8 /* Elecalc for Mac */;
 			targetProxy = B659C09D24F958FA00AFABA8 /* PBXContainerItemProxy */;
 		};
 		B6FBCF3C24F3F23600D9D9CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */;
+			target = B6FBCF2324F3F23400D9D9CE /* Elecalc */;
 			targetProxy = B6FBCF3B24F3F23600D9D9CE /* PBXContainerItemProxy */;
 		};
 		B6FBCF4724F3F23600D9D9CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B6FBCF2324F3F23400D9D9CE /* Electronics Toolbox */;
+			target = B6FBCF2324F3F23400D9D9CE /* Elecalc */;
 			targetProxy = B6FBCF4624F3F23600D9D9CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -728,7 +728,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox for Mac.app/Contents/MacOS/Electronics Toolbox for Mac";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc for Mac.app/Contents/MacOS/Elecalc for Mac";
 			};
 			name = Debug;
 		};
@@ -751,7 +751,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox for Mac.app/Contents/MacOS/Electronics Toolbox for Mac";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc for Mac.app/Contents/MacOS/Elecalc for Mac";
 			};
 			name = Release;
 		};
@@ -977,7 +977,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox.app/Electronics Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
 			};
 			name = Debug;
 		};
@@ -999,7 +999,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electronics Toolbox.app/Electronics Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
 			};
 			name = Release;
 		};
@@ -1048,7 +1048,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for Mac" */ = {
+		B659C0A324F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B659C0A424F958FA00AFABA8 /* Debug */,
@@ -1057,7 +1057,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacTests" */ = {
+		B659C0A624F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for MacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B659C0A724F958FA00AFABA8 /* Debug */,
@@ -1066,7 +1066,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Electronics Toolbox for MacUITests" */ = {
+		B659C0A924F958FA00AFABA8 /* Build configuration list for PBXNativeTarget "Elecalc for MacUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B659C0AA24F958FA00AFABA8 /* Debug */,
@@ -1075,7 +1075,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Electronics Toolbox" */ = {
+		B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Elecalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6FBCF4C24F3F23600D9D9CE /* Debug */,
@@ -1084,7 +1084,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics Toolbox" */ = {
+		B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Elecalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6FBCF4F24F3F23600D9D9CE /* Debug */,
@@ -1093,7 +1093,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics ToolboxTests" */ = {
+		B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6FBCF5224F3F23600D9D9CE /* Debug */,
@@ -1102,7 +1102,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6FBCF5424F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Electronics ToolboxUITests" */ = {
+		B6FBCF5424F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6FBCF5524F3F23600D9D9CE /* Debug */,

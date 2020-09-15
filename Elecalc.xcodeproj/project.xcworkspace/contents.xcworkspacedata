@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/finn/Documents/iOS/ET v2/Electronics Toolbox/Elecalc.xcodeproj">
    </FileRef>
 </Workspace>

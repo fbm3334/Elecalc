@@ -22,7 +22,7 @@ struct CalculationList: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("Electronics Toolbox")
+            .navigationBarTitle("Elecalc")
             
             WelcomeView()
         }

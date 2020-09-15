@@ -16,7 +16,7 @@ struct ResistorCalculator: View {
     var body: some View {
 
             
-            List {
+            Form {
                 Section(header: Text("Resistors")) {
                     ForEach(resistorCalcs.resistorValues) { value in
                         ResistorRow(resistorValue: value)
@@ -51,10 +51,10 @@ struct ResistorCalculator: View {
                             .multilineTextAlignment(.trailing)
                     }
                 }
-                .navigationBarTitle(Text("Resistors"))
+                
                 .listStyle(GroupedListStyle())
             }
-
+            .navigationBarTitle(Text("Parallel and Series Resistors"))
             
         
         
