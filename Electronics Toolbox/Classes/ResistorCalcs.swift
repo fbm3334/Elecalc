@@ -17,6 +17,7 @@ struct ResistorValue: Identifiable, Hashable {
 class ResistorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()
+    var valueTempString: String = "0"
     var valueTemp: Double = 0.0
     var prefixTemp: SIResistorPrefixes = .Ω
     

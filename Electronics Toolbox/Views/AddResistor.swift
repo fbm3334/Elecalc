@@ -12,13 +12,6 @@ struct AddResistor: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     @Binding var isPresented: Bool
     
-    // Configure the number formatter
-    var doubleFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 5
-        return formatter
-    }()
-    
     var body: some View {
         NavigationView {
             // Title
@@ -30,9 +23,9 @@ struct AddResistor: View {
                 HStack {
                     Text("Value")
                     Spacer()
-                    TextField(String("Text"), value: $resistorCalcs.valueTemp, formatter: doubleFormatter)
+                    TextField("Value", text: $resistorCalcs.valueTempString)
                         .keyboardType(.numbersAndPunctuation)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
@@ -51,6 +44,24 @@ struct AddResistor: View {
                 // Button to confirm and add the resistor
                 Button(action: {
                     print("Add")
+                    
+                    // Reload the view to commit the text change
+                    // https://stackoverflow.com/questions/61268306/swiftui-enter-value-in-textfield-then-button-click-need-change-text-not-workin
+                    
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    
+                    // If the entered value is zero, then return nothing to stop the app from crashing
+                    if (Double(self.resistorCalcs.valueTempString)! <= 0) { return }
+                    
+                    if let val = Double(self.resistorCalcs.valueTempString) {
+                        self.resistorCalcs.valueTemp = val
+                        print(self.resistorCalcs.valueTemp)
+                        // If val = 0, then display an alert and return
+                        
+                    } else {
+                        print("Value invalid")
+                    }
+                    
                     // Add resistor
                     self.resistorCalcs.addTempElement()
                     _ = self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)

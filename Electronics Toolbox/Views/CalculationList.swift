@@ -20,6 +20,10 @@ struct CalculationList: View {
                 Section(header: Text("Thermal Calculations")) {
                     NavigationLink(String("Heatsink Calculator"), destination: ThermalResistanceCalculator())
                 }
+                
+                Section(header: Text("Information")) {
+                    NavigationLink(String("About this app"), destination: AboutView())
+                }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Elecalc")

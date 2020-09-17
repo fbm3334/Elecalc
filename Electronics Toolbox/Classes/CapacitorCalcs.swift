@@ -18,6 +18,7 @@ class CapacitorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()
     var valueTemp: Double = 0.0
+    var valueTempString: String = "0"
     var prefixTemp: SICapacitorPrefixes = .F
     
     // CapacitorValue object to show parallel result
