@@ -13,18 +13,23 @@ class ThermalCalcs: ObservableObject {
     
     // Ambient temperature
     var ambientTemperature: Double = 0.0
+    var ambientTemperatureString: String = "0"
     
     // Maximum allowable temperature
     var maxAllowableTemperature: Double = 0.0
+    var maxAllowableTemperatureString: String = "0"
     
     // Power dissipated by device
     var powerDissipated: Double = 0.0
+    var powerDissipatedString: String = "0"
     
     // Junction to case thermal resistance
     var thermalResistanceJuncToCase: Double = 0.0
+    var thermalResistanceJuncToCaseString: String = "0"
     
     // Junction to ambient thermal resistance
     var thermalResistanceJuncToAmb: Double = 0.0
+    var thermalResistanceJuncToAmbString: String = "0"
     
     // Heatsink thermal resistance
     @Published var heatsinkThermalResistance: Double = 0.0

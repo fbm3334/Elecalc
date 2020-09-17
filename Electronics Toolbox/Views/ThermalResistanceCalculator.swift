@@ -27,14 +27,14 @@ struct ThermalResistanceCalculator: View {
                 HStack {
                     Text("Ambient (ºC)")
                     Spacer()
-                    TextField(String("Temperature"), value: $thermalCalcs.ambientTemperature, formatter: doubleFormatter)
+                    TextField("Temperature", text: $thermalCalcs.ambientTemperatureString)
                         .keyboardType(.numbersAndPunctuation)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Max temperature (ºC)")
                     Spacer()
-                    TextField(String("Temperature"), value: $thermalCalcs.maxAllowableTemperature, formatter: doubleFormatter)
+                    TextField("Temperature", text: $thermalCalcs.maxAllowableTemperatureString)
                         .keyboardType(.numbersAndPunctuation)
                         .multilineTextAlignment(.trailing)
                 }
@@ -45,7 +45,7 @@ struct ThermalResistanceCalculator: View {
                 HStack {
                     Text("Device power dissipated (W)")
                     Spacer()
-                    TextField(String("Power"), value: $thermalCalcs.powerDissipated, formatter: doubleFormatter)
+                    TextField("Power", text: $thermalCalcs.powerDissipatedString)
                         .keyboardType(.numbersAndPunctuation)
                         .multilineTextAlignment(.trailing)
                 }
@@ -56,14 +56,14 @@ struct ThermalResistanceCalculator: View {
                 HStack {
                     Text("Junction to case (ºC/W)")
                     Spacer()
-                    TextField(String("Power"), value: $thermalCalcs.thermalResistanceJuncToCase, formatter: doubleFormatter)
+                    TextField("Thermal resistance", text: $thermalCalcs.thermalResistanceJuncToCaseString)
                         .keyboardType(.numbersAndPunctuation)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Junction to ambient (ºC/W)")
                     Spacer()
-                    TextField(String("Power"), value: $thermalCalcs.thermalResistanceJuncToAmb, formatter: doubleFormatter)
+                    TextField("Thermal resistance", text: $thermalCalcs.thermalResistanceJuncToAmbString)
                         .keyboardType(.numbersAndPunctuation)
                         .multilineTextAlignment(.trailing)
                 }
@@ -73,6 +73,13 @@ struct ThermalResistanceCalculator: View {
             Section() {
                 HStack {
                     Button(action: {
+                        // Firstly, convert the strings to doubles
+                        self.thermalCalcs.ambientTemperature = Double(self.thermalCalcs.ambientTemperatureString) ?? 0.0
+                        self.thermalCalcs.maxAllowableTemperature = Double(self.thermalCalcs.maxAllowableTemperatureString) ?? 0.0
+                        self.thermalCalcs.powerDissipated = Double(self.thermalCalcs.powerDissipatedString) ?? 0.0
+                        self.thermalCalcs.thermalResistanceJuncToCase = Double(self.thermalCalcs.thermalResistanceJuncToCaseString) ?? 0.0
+                        self.thermalCalcs.thermalResistanceJuncToAmb = Double(self.thermalCalcs.thermalResistanceJuncToAmbString) ?? 0.0
+                        
                         self.thermalCalcs.calcHeatsinkRequirement()
                     }) {
                         Text("Calculate")
