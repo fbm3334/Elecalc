@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD102513AB960011769A /* DecibeltoNumericGain.swift */; };
+		B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD1E2513AC950011769A /* DecibelGains.swift */; };
+		B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD262513AF4F0011769A /* GainCalcs.swift */; };
 		B659C08024F958F700AFABA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C07F24F958F700AFABA8 /* AppDelegate.swift */; };
 		B659C08224F958F700AFABA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C08124F958F700AFABA8 /* ContentView.swift */; };
 		B659C08424F958FA00AFABA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B659C08324F958FA00AFABA8 /* Assets.xcassets */; };
@@ -81,6 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B642CD102513AB960011769A /* DecibeltoNumericGain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibeltoNumericGain.swift; sourceTree = "<group>"; };
+		B642CD1E2513AC950011769A /* DecibelGains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelGains.swift; sourceTree = "<group>"; };
+		B642CD262513AF4F0011769A /* GainCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainCalcs.swift; sourceTree = "<group>"; };
 		B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elecalc for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659C07F24F958F700AFABA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659C08124F958F700AFABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -306,6 +312,7 @@
 				B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */,
 				B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */,
 				B6922E0B25120D6B00B096FA /* AboutView.swift */,
+				B642CD102513AB960011769A /* DecibeltoNumericGain.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 			children = (
 				B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */,
 				B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */,
+				B642CD1E2513AC950011769A /* DecibelGains.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 				B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */,
 				B659C0B324F95C7000AFABA8 /* CapacitorCalcs.swift */,
 				B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */,
+				B642CD262513AF4F0011769A /* GainCalcs.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -594,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */,
+				B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */,
 				B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */,
 				B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */,
 				B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */,
@@ -607,8 +617,10 @@
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
 				B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */,
+				B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */,
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
+				B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */,
 				B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
 				B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */,
@@ -1026,7 +1038,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				INFOPLIST_FILE = "Electronics ToolboxUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1047,7 +1059,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				INFOPLIST_FILE = "Electronics ToolboxUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

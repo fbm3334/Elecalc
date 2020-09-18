@@ -21,6 +21,10 @@ struct CalculationList: View {
                     NavigationLink(String("Heatsink Calculator"), destination: ThermalResistanceCalculator())
                 }
                 
+                Section(header: Text("Gains")) {
+                    NavigationLink(String("dB to Numeric Gain"), destination: DecibeltoNumericGain())
+                }
+                
                 Section(header: Text("Information")) {
                     NavigationLink(String("About this app"), destination: AboutView())
                 }
