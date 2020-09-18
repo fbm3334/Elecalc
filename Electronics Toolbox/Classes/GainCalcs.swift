@@ -14,4 +14,9 @@ class GainCalcs: ObservableObject {
         let gainPower = dBGain / Double(gainType.rawValue)
         return pow(10.0, gainPower)
     }
+    
+    // Function to convert numeric to decibel gain
+    func numericToDecibelGain(numericGain: Double, gainType: DecibelGains) -> Double {
+        return (Double(gainType.rawValue) * log10(numericGain))
+    }
 }

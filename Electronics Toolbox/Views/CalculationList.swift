@@ -23,6 +23,7 @@ struct CalculationList: View {
                 
                 Section(header: Text("Gains")) {
                     NavigationLink(String("dB to Numeric Gain"), destination: DecibeltoNumericGain())
+                    NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
                 }
                 
                 Section(header: Text("Information")) {
