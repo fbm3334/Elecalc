@@ -418,6 +418,7 @@
 			buildPhases = (
 				B6FBCF2024F3F23400D9D9CE /* Sources */,
 				B6FBCF2124F3F23400D9D9CE /* Frameworks */,
+				B6604A9B2516487900CE9A95 /* Build Increment Script */,
 				B6FBCF2224F3F23400D9D9CE /* Resources */,
 			);
 			buildRules = (
@@ -572,6 +573,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6604A9B2516487900CE9A95 /* Build Increment Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Increment Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Method from https://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B659C07924F958F700AFABA8 /* Sources */ = {
@@ -963,7 +985,7 @@
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Electronics Toolbox/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -985,7 +1007,7 @@
 				DEVELOPMENT_TEAM = ALN5QX67P8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Electronics Toolbox/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

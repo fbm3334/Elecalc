@@ -7,7 +7,19 @@
 
 import SwiftUI
 
+extension UIApplication {
+    static var appVersion: String? {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    }
+    static var appBuild: String? {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+    }
+}
+
 struct AboutView: View {
+    
+    
+    
     var body: some View {
         Form {
             Section(header: Text("About")) {
@@ -22,7 +34,8 @@ struct AboutView: View {
                         Text("Elecalc")
                             .font(.title)
                             .fontWeight(.bold)
-                        Text("Version 0")
+                        Text(UIApplication.appVersion!)
+                        Text("Build \(UIApplication.appBuild!)")
                         Text("© 2020 Finn Beckitt-Marshall")
                             .font(.caption)
                     }
