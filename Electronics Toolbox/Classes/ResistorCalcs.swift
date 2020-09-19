@@ -133,4 +133,14 @@ class ResistorCalcs: ObservableObject {
             ccResistorLowerTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .Ω)
         }
     }
+    
+    // Function to calculate an LED current limiting resistor
+    func calcLEDResistor(supplyVoltage: Double, ledVoltage: Double, ledCurrent: Double) -> ResistorValue {
+        let resistorValue: Double = (supplyVoltage - ledVoltage) / ledCurrent
+        // Calculate the resistor value with the prefix
+        let resistorValueWithPrefix = siPrefixCalc.calcResistorPrefix(value: resistorValue, prefix: .Ω)
+        // Return this value
+        print(resistorValueWithPrefix)
+        return resistorValueWithPrefix
+    }
 }

@@ -11,6 +11,7 @@
 		B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD1E2513AC950011769A /* DecibelGains.swift */; };
 		B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD262513AF4F0011769A /* GainCalcs.swift */; };
 		B642CD352514BA250011769A /* NumerictoDecibelGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD342514BA250011769A /* NumerictoDecibelGain.swift */; };
+		B642CD3D2514CF630011769A /* LEDResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD3C2514CF630011769A /* LEDResistorCalculator.swift */; };
 		B659C08024F958F700AFABA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C07F24F958F700AFABA8 /* AppDelegate.swift */; };
 		B659C08224F958F700AFABA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C08124F958F700AFABA8 /* ContentView.swift */; };
 		B659C08424F958FA00AFABA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B659C08324F958FA00AFABA8 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		B642CD1E2513AC950011769A /* DecibelGains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelGains.swift; sourceTree = "<group>"; };
 		B642CD262513AF4F0011769A /* GainCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainCalcs.swift; sourceTree = "<group>"; };
 		B642CD342514BA250011769A /* NumerictoDecibelGain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerictoDecibelGain.swift; sourceTree = "<group>"; };
+		B642CD3C2514CF630011769A /* LEDResistorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDResistorCalculator.swift; sourceTree = "<group>"; };
 		B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elecalc for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659C07F24F958F700AFABA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659C08124F958F700AFABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				B6922E0B25120D6B00B096FA /* AboutView.swift */,
 				B642CD102513AB960011769A /* DecibeltoNumericGain.swift */,
 				B642CD342514BA250011769A /* NumerictoDecibelGain.swift */,
+				B642CD3C2514CF630011769A /* LEDResistorCalculator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */,
 				B642CD352514BA250011769A /* NumerictoDecibelGain.swift in Sources */,
 				B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */,
+				B642CD3D2514CF630011769A /* LEDResistorCalculator.swift in Sources */,
 				B659C0B824FD128500AFABA8 /* CapacitorCalculator.swift in Sources */,
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
