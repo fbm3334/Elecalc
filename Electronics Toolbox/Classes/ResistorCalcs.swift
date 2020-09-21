@@ -33,11 +33,11 @@ class ResistorCalcs: ObservableObject {
     // Number of bands in resistor
     @Published var numberOfBands: NumberOfResistorBands = .four
     // Band variables
-    var bandDigit1: ResistorColourCode = .black
-    var bandDigit2: ResistorColourCode = .black
-    var bandDigit3: ResistorColourCode = .black
-    var multiplier: ResistorMultiplier = .black
-    var tolerance: ResistorTolerance = .silver
+    @Published var bandDigit1: ResistorColourCode = .black
+    @Published var bandDigit2: ResistorColourCode = .black
+    @Published var bandDigit3: ResistorColourCode = .black
+    @Published var multiplier: ResistorMultiplier = .black
+    @Published var tolerance: ResistorTolerance = .silver
     
     // ResistorValue for calculated resistor from colour code
     @Published var colourCodeResistor = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
