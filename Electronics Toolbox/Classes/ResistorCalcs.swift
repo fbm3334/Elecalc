@@ -143,4 +143,13 @@ class ResistorCalcs: ObservableObject {
         print(resistorValueWithPrefix)
         return resistorValueWithPrefix
     }
+    
+    // Function to calculate the potential divider voltage across R2 (bottom resistor of a network)
+    func calcPotentialDividerVoltage(supplyVoltage: Double, r1: ResistorValue, r2: ResistorValue) -> Double {
+        // Get rid of the prefixes for R1 and R2
+        let r1NoPrefix = r1.value * pow(10.0, Double(r1.prefix.rawValue))
+        let r2NoPrefix = r2.value * pow(10.0, Double(r2.prefix.rawValue))
+        let voltageOut = (supplyVoltage * r2NoPrefix) / (r1NoPrefix + r2NoPrefix)
+        return voltageOut
+    }
 }
