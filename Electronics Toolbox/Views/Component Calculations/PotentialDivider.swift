@@ -11,6 +11,9 @@ struct PotentialDivider: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     
+    // Environment variable to detect whether dark or light mode is being used
+    @Environment(\.colorScheme) var colourScheme
+    
     // Variables for view
     @State var supplyVoltage: Double = 0.0
     @State var supplyVoltageString: String = "0"
@@ -38,7 +41,7 @@ struct PotentialDivider: View {
             }
             
             // Second section - Resistor 1
-            Section(header: Text("Resistor 1")) {
+            Section(header: Text("Resistor 1 (R1)")) {
                 HStack {
                     Text("Resistance value:")
                     Spacer()
@@ -61,7 +64,7 @@ struct PotentialDivider: View {
             }
             
             // Third section - Resistor 2
-            Section(header: Text("Resistor 2")) {
+            Section(header: Text("Resistor 2 (R2)")) {
                 HStack {
                     Text("Resistance value:")
                     Spacer()
@@ -111,6 +114,20 @@ struct PotentialDivider: View {
                     Spacer()
                     Text("\(outputVoltage, specifier: "%.2f")V")
                         .multilineTextAlignment(.trailing)
+                }
+            }
+            
+            // Explanation section
+            Section(header: Text("About this calculation")) {
+                Text("This calculator calculates the output voltage of a potential divider network, with R2 being the resistor where the output voltage is dropped.")
+                
+                // Place the image into a HStack with spacers to centre it properly
+                HStack {
+                    Spacer()
+                    Image("PotentialDivider")
+                        .resizable()
+                        .frame(width: 300, height: 210, alignment: .center)
+                    Spacer()
                 }
             }
         }
