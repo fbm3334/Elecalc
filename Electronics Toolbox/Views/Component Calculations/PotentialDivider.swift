@@ -129,6 +129,15 @@ struct PotentialDivider: View {
                         .frame(width: 300, height: 210, alignment: .center)
                     Spacer()
                 }
+                
+                VStack {
+                    Text("The equation used is:")
+                    HStack {
+                        Spacer()
+                        Image("PotentialDividerEqn")
+                        Spacer()
+                    }
+                }
             }
         }
         .navigationBarTitle(Text("Potential Divider Calculator"))
