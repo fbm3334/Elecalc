@@ -48,14 +48,25 @@ struct AboutView: View {
                         Text("GitHub")
                     })
                 } else {
-                    // Links were only introduced in iOS 14, so the workaround is to use a copyable TextField.
-                    VStack {
-                        TextField("Placeholder", text: .constant("https://github.com/fbm3334/Elecalc"))
-                        Text("Copy and paste this link into a web browser to view the GitHub repository.")
-                            .font(.caption)
-                            .multilineTextAlignment(.center)
+                    // Links were only introduced in iOS 14, so the workaround is to use UIKit links.
+                    Button("GitHub") {
+                        UIApplication.shared.open(URL(string: "https://github.com/fbm3334/Elecalc")!)
                     }
-                    .multilineTextAlignment(.leading)
+                    
+                }
+            }
+            
+            Section(header: Text("Suggestions")) {
+                Text("If you have any suggestions, please feel free to email me. Please be as descriptive as possible, as this will help me understand the feature you are requesting!")
+                if #available(iOS 14.0, *) {
+                    Link(destination: URL(string: "mailto:apps@jafico.co.uk?subject=[Feature%20request]%20")!, label: {
+                        Text("Email me!")
+                    })
+                } else {
+                    // Links were only introduced in iOS 14, so the workaround is to use UIKit links.
+                    Button("Email me!") {
+                        UIApplication.shared.open(URL(string: "mailto:apps@jafico.co.uk?subject=[Feature%20request]%20")!)
+                    }
                     
                 }
             }
