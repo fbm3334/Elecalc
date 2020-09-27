@@ -7,13 +7,6 @@
 
 import Foundation
 
-// Struct used to store pairs of values and prefixes
-struct ResistorValue: Identifiable, Hashable {
-    var id = UUID() // Unique ID required to draw list
-    var value: Double // Value
-    var prefix: SIResistorPrefixes // Prefix
-}
-
 class ResistorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()

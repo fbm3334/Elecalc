@@ -33,6 +33,7 @@
 		B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */; };
 		B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */; };
 		B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */; };
+		B66D00E42520BAE10039516C /* SIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D00E32520BAE10039516C /* SIStructs.swift */; };
 		B6922E0C25120D6B00B096FA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6922E0B25120D6B00B096FA /* AboutView.swift */; };
 		B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
@@ -113,6 +114,7 @@
 		B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorColourCode.swift; sourceTree = "<group>"; };
 		B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorBandToValue.swift; sourceTree = "<group>"; };
 		B6604A8725163BFB00CE9A95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B66D00E32520BAE10039516C /* SIStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIStructs.swift; sourceTree = "<group>"; };
 		B6922E0B25120D6B00B096FA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResistor.swift; sourceTree = "<group>"; };
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 			path = "Electronics Toolbox for MacUITests";
 			sourceTree = "<group>";
 		};
+		B66D00E22520BACC0039516C /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				B66D00E32520BAE10039516C /* SIStructs.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		B6FBCF1B24F3F23400D9D9CE = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		B6FBCF2624F3F23400D9D9CE /* Electronics Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				B66D00E22520BACC0039516C /* Structs */,
 				B6FBCF5F24F3F2AA00D9D9CE /* Classes */,
 				B6FBCF5C24F3F28500D9D9CE /* Enums */,
 				B6FBCF5724F3F24D00D9D9CE /* Views */,
@@ -667,6 +678,7 @@
 				B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */,
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
+				B66D00E42520BAE10039516C /* SIStructs.swift in Sources */,
 				B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */,
 				B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,

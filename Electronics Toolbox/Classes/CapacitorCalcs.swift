@@ -7,13 +7,6 @@
 
 import Foundation
 
-// Capacitor values struct
-struct CapacitorValue: Identifiable, Hashable {
-    var id = UUID() // Unique ID required to draw list
-    var value: Double // Value
-    var prefix: SICapacitorPrefixes // Prefix
-}
-
 class CapacitorCalcs: ObservableObject {
     
     var siPrefixCalc = SIPrefixCalc()
