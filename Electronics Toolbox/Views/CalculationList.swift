@@ -11,6 +11,10 @@ struct CalculationList: View {
     var body: some View {
         NavigationView {
             List {
+                Section(header: Text("Unit Calculations")) {
+                    NavigationLink(String("Ohm's Law Calculator"), destination: OhmsLaw())
+                }
+                
                 Section(header: Text("Component Calculations")) {
                     NavigationLink(String("Parallel and Series Resistors"), destination: ResistorCalculator())
                     NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorCalculator())
@@ -23,13 +27,14 @@ struct CalculationList: View {
                     NavigationLink(String("Heatsink Calculator"), destination: ThermalResistanceCalculator())
                 }
                 
-                Section(header: Text("Gains")) {
+                Section(header: Text("Gain Calculations")) {
                     NavigationLink(String("dB to Numeric Gain"), destination: DecibeltoNumericGain())
                     NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
                 }
                 
                 Section(header: Text("Information")) {
                     NavigationLink(String("About this app"), destination: AboutView())
+                    NavigationLink(String("What's new"), destination: WhatsNewView())
                 }
             }
             .listStyle(GroupedListStyle())

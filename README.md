@@ -21,7 +21,7 @@ Some features I am looking to add include:
 - [] Potential divider calculator
 - [] Equations (to explain calculations)
 
-I am open to feature requeswts - if anyone has any, please add them to the "Issues" tab, prefixing with [Feature Request].
+I am open to feature requests - if anyone has any, please add them to the "Issues" tab, prefixing with [Feature Request].
 
 ## Licensing
 This project is licensed under the MIT License - please see LICENSE.md for more information.
