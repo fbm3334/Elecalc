@@ -1,2 +1,2 @@
 - Added a new 'What's New' view to the app
-- Added an Ohm's law calculator d
+- Added an Ohm's law calculator
