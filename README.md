@@ -16,11 +16,6 @@ Elecalc is designed to be an electronic engineering calculator for iOS/iPadOS (p
 The project should build and install like any iOS Xcode project - see [the Apple developer documentation](https://developer.apple.com/documentation/xcode/running_your_app_in_the_simulator_or_on_a_device) for details.
 
 ## Future additions
-Some features I am looking to add include:
-- [] Simple conduction and switching loss calculator (e.g. for calculating power dissipation in a switching device)
-- [] Potential divider calculator
-- [] Equations (to explain calculations)
-
 I am open to feature requests - if anyone has any, please add them to the "Issues" tab, prefixing with [Feature Request].
 
 ## Licensing
