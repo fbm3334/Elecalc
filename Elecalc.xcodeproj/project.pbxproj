@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,12 @@
 		B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */; };
 		B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */; };
 		B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */; };
+		B66D00E42520BAE10039516C /* SIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D00E32520BAE10039516C /* SIStructs.swift */; };
+		B66D00EC2520BDF60039516C /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D00EB2520BDF60039516C /* WhatsNewView.swift */; };
+		B66D00F52520BF810039516C /* MDText in Frameworks */ = {isa = PBXBuildFile; productRef = B66D00F42520BF810039516C /* MDText */; };
+		B66D01032520C1790039516C /* WhatsNew.md in Resources */ = {isa = PBXBuildFile; fileRef = B66D00FC2520C0870039516C /* WhatsNew.md */; };
+		B66D010B2520DC780039516C /* UnitCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D010A2520DC780039516C /* UnitCalcs.swift */; };
+		B66D01142520DE850039516C /* OhmsLaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D01132520DE850039516C /* OhmsLaw.swift */; };
 		B6922E0C25120D6B00B096FA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6922E0B25120D6B00B096FA /* AboutView.swift */; };
 		B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
@@ -113,6 +119,11 @@
 		B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorColourCode.swift; sourceTree = "<group>"; };
 		B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorBandToValue.swift; sourceTree = "<group>"; };
 		B6604A8725163BFB00CE9A95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B66D00E32520BAE10039516C /* SIStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIStructs.swift; sourceTree = "<group>"; };
+		B66D00EB2520BDF60039516C /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
+		B66D00FC2520C0870039516C /* WhatsNew.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = WhatsNew.md; sourceTree = "<group>"; };
+		B66D010A2520DC780039516C /* UnitCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCalcs.swift; sourceTree = "<group>"; };
+		B66D01132520DE850039516C /* OhmsLaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmsLaw.swift; sourceTree = "<group>"; };
 		B6922E0B25120D6B00B096FA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResistor.swift; sourceTree = "<group>"; };
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -166,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66D00F52520BF810039516C /* MDText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +270,26 @@
 			path = "Electronics Toolbox for MacUITests";
 			sourceTree = "<group>";
 		};
+		B66D00E22520BACC0039516C /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				B66D00E32520BAE10039516C /* SIStructs.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		B66D01122520DE660039516C /* Unit Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				B66D01132520DE850039516C /* OhmsLaw.swift */,
+			);
+			path = "Unit Calculations";
+			sourceTree = "<group>";
+		};
 		B6FBCF1B24F3F23400D9D9CE = {
 			isa = PBXGroup;
 			children = (
+				B66D00FC2520C0870039516C /* WhatsNew.md */,
 				B6604A8725163BFB00CE9A95 /* README.md */,
 				B6FBCF2624F3F23400D9D9CE /* Electronics Toolbox */,
 				B6FBCF3D24F3F23600D9D9CE /* Electronics ToolboxTests */,
@@ -288,6 +317,7 @@
 		B6FBCF2624F3F23400D9D9CE /* Electronics Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				B66D00E22520BACC0039516C /* Structs */,
 				B6FBCF5F24F3F2AA00D9D9CE /* Classes */,
 				B6FBCF5C24F3F28500D9D9CE /* Enums */,
 				B6FBCF5724F3F24D00D9D9CE /* Views */,
@@ -331,12 +361,14 @@
 		B6FBCF5724F3F24D00D9D9CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B66D01122520DE660039516C /* Unit Calculations */,
 				B61AAF442516967A00370C35 /* Gain Calculations */,
 				B61AAF432516966A00370C35 /* Thermal Calculations */,
 				B61AAF3C2516963B00370C35 /* Component Calculations */,
 				B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */,
 				B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */,
 				B6922E0B25120D6B00B096FA /* AboutView.swift */,
+				B66D00EB2520BDF60039516C /* WhatsNewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +391,7 @@
 				B659C0B324F95C7000AFABA8 /* CapacitorCalcs.swift */,
 				B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */,
 				B642CD262513AF4F0011769A /* GainCalcs.swift */,
+				B66D010A2520DC780039516C /* UnitCalcs.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -442,6 +475,9 @@
 			dependencies = (
 			);
 			name = Elecalc;
+			packageProductDependencies = (
+				B66D00F42520BF810039516C /* MDText */,
+			);
 			productName = "Electronics Toolbox";
 			productReference = B6FBCF2424F3F23400D9D9CE /* Elecalc.app */;
 			productType = "com.apple.product-type.application";
@@ -524,6 +560,9 @@
 				Base,
 			);
 			mainGroup = B6FBCF1B24F3F23400D9D9CE;
+			packageReferences = (
+				B66D00F32520BF810039516C /* XCRemoteSwiftPackageReference "MDText" */,
+			);
 			productRefGroup = B6FBCF2524F3F23400D9D9CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -570,6 +609,7 @@
 				B6FBCF3424F3F23600D9D9CE /* LaunchScreen.storyboard in Resources */,
 				B6FBCF3124F3F23600D9D9CE /* Preview Assets.xcassets in Resources */,
 				B6FBCF2E24F3F23600D9D9CE /* Assets.xcassets in Resources */,
+				B66D01032520C1790039516C /* WhatsNew.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66D010B2520DC780039516C /* UnitCalcs.swift in Sources */,
 				B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */,
 				B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */,
 				B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */,
@@ -657,6 +698,7 @@
 				B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */,
 				B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */,
 				B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */,
+				B66D01142520DE850039516C /* OhmsLaw.swift in Sources */,
 				B642CD352514BA250011769A /* NumerictoDecibelGain.swift in Sources */,
 				B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */,
 				B642CD3D2514CF630011769A /* LEDResistorCalculator.swift in Sources */,
@@ -664,9 +706,11 @@
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
 				B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */,
+				B66D00EC2520BDF60039516C /* WhatsNewView.swift in Sources */,
 				B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */,
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
+				B66D00E42520BAE10039516C /* SIStructs.swift in Sources */,
 				B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */,
 				B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
@@ -1006,7 +1050,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Elecalc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1029,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Elecalc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1190,6 +1234,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B66D00F32520BF810039516C /* XCRemoteSwiftPackageReference "MDText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lambdo-Labs/MDText";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B66D00F42520BF810039516C /* MDText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B66D00F32520BF810039516C /* XCRemoteSwiftPackageReference "MDText" */;
+			productName = MDText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6FBCF1C24F3F23400D9D9CE /* Project object */;
 }

@@ -46,3 +46,87 @@ enum SICapacitorPrefixes: Int, CustomStringConvertible, CaseIterable {
         }
     }
 }
+
+enum SIInductorPrefixes: Int, CustomStringConvertible, CaseIterable {
+    case pH = -12
+    case nH = -9
+    case µH = -6
+    case mH = -3
+    case H = 0
+    
+    var description: String {
+        switch self {
+        case .pH: return "pH"
+        case .nH: return "nH"
+        case .µH: return "µH"
+        case .mH: return "mH"
+        case .H: return "H"
+        }
+    }
+}
+
+enum SITimePrefixes: Int, CustomStringConvertible, CaseIterable {
+    case µs = -6
+    case ms = -3
+    case s = 0
+    
+    var description: String {
+        switch self {
+        case .µs: return "µs"
+        case .ms: return "ms"
+        case .s: return "s"
+        }
+    }
+}
+
+enum SIVoltagePrefixes: Int, CustomStringConvertible, CaseIterable {
+    case nV = -9
+    case µV = -6
+    case mV = -3
+    case V = 0
+    case kV = 3
+    
+    var description: String {
+        switch self {
+        case .nV: return "nV"
+        case .µV: return "µV"
+        case .mV: return "mV"
+        case .V: return "V"
+        case .kV: return "kV"
+        }
+    }
+}
+
+enum SICurrentPrefixes: Int, CustomStringConvertible, CaseIterable {
+    case nA = -9
+    case µA = -6
+    case mA = -3
+    case A = 0
+    case kA = 3
+    
+    var description: String {
+        switch self {
+        case .nA: return "nA"
+        case .µA: return "µA"
+        case .mA: return "mA"
+        case .A: return "A"
+        case .kA: return "kA"
+        }
+    }
+}
+
+enum SIFrequencyPrefixes: Int, CustomStringConvertible, CaseIterable {
+    case Hz = 0
+    case kHz = 3
+    case MHz = 6
+    case GHz = 9
+    
+    var description: String {
+        switch self {
+        case .Hz: return "Hz"
+        case .kHz: return "kHz"
+        case .MHz: return "MHz"
+        case .GHz: return "GHz"
+        }
+    }
+}
