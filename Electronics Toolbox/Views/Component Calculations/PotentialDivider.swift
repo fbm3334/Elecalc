@@ -88,21 +88,34 @@ struct PotentialDivider: View {
             
             // Calculate button section
             Section() {
-                Button(action: {
-                    // Convert the strings to doubles
-                    supplyVoltage = Double(supplyVoltageString) ?? 0.0
-                    resistor1.value = Double(resistor1String) ?? -1.0
-                    resistor2.value = Double(resistor2String) ?? -1.0
-                    
-                    // Validate the values
-                    if (supplyVoltage <= 0.0) { supplyVoltageZeroOrLess = true }
-                    else if (resistor1.value < 0 || resistor2.value < 0) { resistorLessThanZero = true }
-                    else {
-                        outputVoltage = resistorCalcs.calcPotentialDividerVoltage(supplyVoltage: supplyVoltage, r1: resistor1, r2: resistor2)
+                HStack {
+                    Button(action: {
+                        // Convert the strings to doubles
+                        supplyVoltage = Double(supplyVoltageString) ?? 0.0
+                        resistor1.value = Double(resistor1String) ?? -1.0
+                        resistor2.value = Double(resistor2String) ?? -1.0
+                        
+                        // Validate the values
+                        if (supplyVoltage <= 0.0) {
+                            supplyVoltageZeroOrLess = true
+                            errorHaptics()
+                        } else if (resistor1.value < 0 || resistor2.value < 0) {
+                            resistorLessThanZero = true
+                            errorHaptics()
+                        } else {
+                            successHaptics()
+                            outputVoltage = resistorCalcs.calcPotentialDividerVoltage(supplyVoltage: supplyVoltage, r1: resistor1, r2: resistor2)
+                        }
+                        
+                    }) {
+                        Text("Calculate")
                     }
-                    
-                }) {
-                    Text("Calculate")
+                    Spacer().alert(isPresented: $supplyVoltageZeroOrLess) {
+                        Alert(title: Text("Supply voltage is zero or less"), message: Text("Please check your value."), dismissButton: .default(Text("OK")))
+                    }
+                    Spacer().alert(isPresented: $resistorLessThanZero) {
+                        Alert(title: Text("One or both of your resistor values are zero or less"), message: Text("Please check your values."), dismissButton: .default(Text("OK")))
+                    }
                 }
             }
             

@@ -18,7 +18,7 @@ class SIPrefixCalc {
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
         // Run the CalcPrefixValue function
-        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIResistorPrefixes.MΩ.rawValue, minValue: SIResistorPrefixes.MΩ.rawValue)
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIResistorPrefixes.MΩ.rawValue, minValue: SIResistorPrefixes.µΩ.rawValue)
         
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
         let calculatedPrefix = SIResistorPrefixes(rawValue: calculatedPrefixValue)

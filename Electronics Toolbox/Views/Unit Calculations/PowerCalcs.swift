@@ -123,6 +123,8 @@ struct PowerCalcs: View {
                         if (inputResistance.value == 0 || inputCurrent.value == 0) { valueZero = true }
                     }
                     if (valueZero == false) {
+                        // Play the success haptic
+                        successHaptics()
                     // Vary the action based on which unknown quantity
                         switch (knownQuantities) {
                         case .voltageCurrent:
@@ -132,6 +134,9 @@ struct PowerCalcs: View {
                         case .voltageResistance:
                             outputPower = unitCalcs.calcPowerVoltageResistance(voltage: inputVoltage, resistance: inputResistance)
                         }
+                    } else {
+                        // Play the error haptic
+                        errorHaptics()
                     }
                 }) {
                     Text("Calculate")

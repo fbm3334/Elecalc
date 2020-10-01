@@ -67,12 +67,19 @@ struct LEDResistorCalculator: View {
                         ledCurrent = Double(ledCurrentString) ?? 0.0
                         
                         // Validate the values before passing into function
-                        if (supplyVoltage <= 0) { supplyVoltageZero = true }
-                        else if (ledVoltage >= supplyVoltage) { ledVoltageGreaterThanSupply = true }
-                        else if (ledCurrent <= 0) { ledCurrentZero = true }
-                        else {
+                        if (supplyVoltage <= 0) {
+                            supplyVoltageZero = true
+                            errorHaptics()
+                        } else if (ledVoltage >= supplyVoltage) {
+                            ledVoltageGreaterThanSupply = true
+                            errorHaptics()
+                        } else if (ledCurrent <= 0) {
+                            ledCurrentZero = true
+                            errorHaptics()
+                        } else {
                             // Run function
                             resistorValue = resistorCalcs.calcLEDResistor(supplyVoltage: supplyVoltage, ledVoltage: ledVoltage, ledCurrent: ledCurrent / 1000)
+                            successHaptics()
                         }
                     }) {
                         Text("Calculate")

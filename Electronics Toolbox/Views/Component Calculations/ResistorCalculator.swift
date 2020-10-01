@@ -23,6 +23,7 @@ struct ResistorCalculator: View {
                     }
                         .onDelete(perform: delete)
                     Button(action: {
+                        selectionHaptics() // Play the selection haptic
                         self.showAddResistorView.toggle()
                     }) {
                         HStack {

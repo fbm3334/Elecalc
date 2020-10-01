@@ -91,6 +91,8 @@ struct ResistorBandToValue: View {
                 
             // Button to calculate
                 Button(action: {
+                    // Play success haptic
+                    successHaptics()
                     self.resistorCalcs.calcResistorValuefromColourCode()
                 }) {
                     Text("Calculate value")

@@ -41,6 +41,8 @@ struct NumerictoDecibelGain: View {
             // Section for calculate button
             Section() {
                 Button(action: {
+                    // Play the success haptic
+                    successHaptics()
                     // Convert the dB gain string into a double
                     numericGain = Double(numericGainString) ?? 0.0
                     dBGain = gainCalcs.numericToDecibelGain(numericGain: numericGain, gainType: gainType)

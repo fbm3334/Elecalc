@@ -23,6 +23,7 @@ struct CapacitorCalculator: View {
                     }
                         .onDelete(perform: delete)
                     Button(action: {
+                        selectionHaptics() // Play the selection haptic
                         self.showAddCapacitorView.toggle()
                     }) {
                         HStack {

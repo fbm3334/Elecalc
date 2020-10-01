@@ -30,3 +30,8 @@ func errorHaptics() {
     let generator = UINotificationFeedbackGenerator()
     generator.notificationOccurred(.error)
 }
+
+func selectionHaptics() {
+    let generator = UISelectionFeedbackGenerator()
+    generator.selectionChanged()
+}

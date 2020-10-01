@@ -121,6 +121,7 @@ class ResistorCalcs: ObservableObject {
         // Calculate the prefix to get the resistor value
         if bandValue != 0 {
             colourCodeResistor = siPrefixCalc.calcResistorPrefix(value: bandValue, prefix: .Ω)
+            print(colourCodeResistor)
             // Calculate the upper and lower tolerance
             ccResistorUpperTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 + tolerance.rawValue), prefix: .Ω)
             ccResistorLowerTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .Ω)

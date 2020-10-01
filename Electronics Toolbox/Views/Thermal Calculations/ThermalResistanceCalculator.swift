@@ -81,6 +81,13 @@ struct ThermalResistanceCalculator: View {
                         self.thermalCalcs.thermalResistanceJuncToAmb = Double(self.thermalCalcs.thermalResistanceJuncToAmbString) ?? 0.0
                         
                         self.thermalCalcs.calcHeatsinkRequirement()
+                        
+                        // If all conditions are met, play the success haptic
+                        if (thermalCalcs.ambientHigherThanMax == false && thermalCalcs.negativePowerDissipated == false && thermalCalcs.negativePowerDissipated == false && thermalCalcs.negativeHeatsinkThermalResistance == false) {
+                            successHaptics()
+                        } else {
+                            errorHaptics()
+                        }
                     }) {
                         Text("Calculate")
                     }
