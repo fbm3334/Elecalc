@@ -17,18 +17,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIResistorPrefixes.MΩ.rawValue, minValue: SIResistorPrefixes.MΩ.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SIResistorPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SIResistorPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -49,18 +42,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SICapacitorPrefixes.F.rawValue, minValue: SICapacitorPrefixes.pF.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SICapacitorPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SICapacitorPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -81,18 +67,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIInductorPrefixes.H.rawValue, minValue: SIInductorPrefixes.pH.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SIInductorPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SIInductorPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -113,18 +92,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SITimePrefixes.s.rawValue, minValue: SITimePrefixes.µs.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SITimePrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SITimePrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -145,18 +117,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIVoltagePrefixes.kV.rawValue, minValue: SIVoltagePrefixes.nV.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SIVoltagePrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SIVoltagePrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -177,18 +142,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SICurrentPrefixes.kA.rawValue, minValue: SICurrentPrefixes.nA.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SICurrentPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SICurrentPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -209,18 +167,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIFrequencyPrefixes.GHz.rawValue, minValue: SIFrequencyPrefixes.Hz.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SIFrequencyPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SIFrequencyPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -241,18 +192,11 @@ class SIPrefixCalc {
         // Calculate 10 ^ initial prefix
         let prefixPower: Double = pow(10.0, Double(prefix.rawValue))
         print("Prefix power = \(prefixPower), Value = \(value)")
-        // Calculate the base 10 logarithm of the value multiplied by the power of 10
-        let valueLog = log10(value * prefixPower)
-        print(valueLog)
-        // Decide on which rounding function to use
-        var roundedLog: Int = 0
-        if (valueLog < 0) {
-            roundedLog = roundDownNegative(logValue: valueLog)
-        } else {
-            roundedLog = roundDownPositive(logValue: valueLog)
-        }
+        // Run the CalcPrefixValue function
+        let calculatedPrefixValue = calcPrefixValue(prefixPower: prefixPower, value: value, maxValue: SIPowerPrefixes.MW.rawValue, minValue: SIPowerPrefixes.µW.rawValue)
+        
         // Calculate the multiple of 3 of the logarithm (as SI prefixes are in multiples of 3)
-        let calculatedPrefix = SIPowerPrefixes(rawValue: roundedLog)
+        let calculatedPrefix = SIPowerPrefixes(rawValue: calculatedPrefixValue)
         // Print the value for debug purposes
         print(calculatedPrefix!.rawValue)
         // Calculate the new power of ten (this is used to shift the decimal point)
@@ -263,6 +207,27 @@ class SIPrefixCalc {
         print(calcValue.value)
         calcValue.prefix = calculatedPrefix!
         return calcValue
+    }
+    
+    // Function to calculate the correct prefix - it will also add a floor to the value so that the min/max enum values are not exceeded
+    func calcPrefixValue(prefixPower: Double, value: Double, maxValue: Int, minValue: Int) -> Int {
+        // Calculate the base 10 logarithm of the value multiplied by the power of 10
+        let valueLog = log10(value * prefixPower)
+        print(valueLog)
+        // Decide on which rounding function to use
+        var roundedLog: Int = 0
+        if (valueLog < 0) {
+            roundedLog = roundDownNegative(logValue: valueLog)
+        } else {
+            roundedLog = roundDownPositive(logValue: valueLog)
+        }
+        // Normalise the values so they cannot exceed or go lower than the limits
+        if (roundedLog < minValue) {
+            roundedLog = minValue
+        } else if (roundedLog > maxValue) {
+            roundedLog = maxValue
+        }
+        return roundedLog
     }
     
     // Function for rounding negative numbers down to the next lowest power of 10 (SI)
