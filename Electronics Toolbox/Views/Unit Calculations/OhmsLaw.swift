@@ -108,10 +108,20 @@ struct OhmsLaw: View {
                     inputCurrent.value = (Double(inputCurrentString) ?? 0.0).magnitude
                     inputResistance.value = (Double(inputResistanceString) ?? 0.0).magnitude
                     // Check whether values are zero
-                    if (inputVoltage.value == 0.0 || inputCurrent.value == 0.0 || inputResistance.value == 0.0) {
-                        valueZero = true
+                    switch (unknownQuantity) {
+                    case .voltage:
+                        if (inputCurrent.value == 0.0 || inputResistance.value == 0.0) { valueZero = true }
+                    case .current:
+                        if (inputVoltage.value == 0.0 || inputResistance.value == 0.0) { valueZero = true }
+                    case .resistance:
+                        if (inputVoltage.value == 0.0 || inputCurrent.value == 0.0) { valueZero = true }
+                    }
+                    // Play the error haptics if the values are zero
+                    if (valueZero == true) {
+                        errorHaptics()
                     } else {
                     // Vary the action based on which unknown quantity
+                        
                         switch (unknownQuantity) {
                         case .voltage:
                             outputVoltage = unitCalcs.calcVoltage(current: inputCurrent, resistance: inputResistance)
@@ -120,6 +130,8 @@ struct OhmsLaw: View {
                         case .resistance:
                             outputResistance = unitCalcs.calcResistance(voltage: inputVoltage, current: inputCurrent)
                         }
+                        // Play the success haptic
+                        successHaptics()
                     }
                 }) {
                     Text("Calculate")
