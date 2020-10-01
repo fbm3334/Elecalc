@@ -13,6 +13,7 @@ struct CalculationList: View {
             List {
                 Section(header: Text("Unit Calculations")) {
                     NavigationLink(String("Ohm's Law Calculator"), destination: OhmsLaw())
+                    NavigationLink(String("Power Calculator"), destination: PowerCalcs())
                 }
                 
                 Section(header: Text("Component Calculations")) {

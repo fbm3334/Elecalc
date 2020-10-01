@@ -44,6 +44,7 @@
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
 		B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */; };
 		B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */; };
+		B6E4FF242522397700295CC0 /* PowerCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4FF232522397700295CC0 /* PowerCalcs.swift */; };
 		B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */; };
 		B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */; };
 		B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2B24F3F23400D9D9CE /* ContentView.swift */; };
@@ -129,6 +130,7 @@
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
 		B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalResistanceCalculator.swift; sourceTree = "<group>"; };
+		B6E4FF232522397700295CC0 /* PowerCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF2424F3F23400D9D9CE /* Elecalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elecalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				B66D01132520DE850039516C /* OhmsLaw.swift */,
+				B6E4FF232522397700295CC0 /* PowerCalcs.swift */,
 			);
 			path = "Unit Calculations";
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66D010B2520DC780039516C /* UnitCalcs.swift in Sources */,
+				B6E4FF242522397700295CC0 /* PowerCalcs.swift in Sources */,
 				B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */,
 				B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */,
 				B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */,

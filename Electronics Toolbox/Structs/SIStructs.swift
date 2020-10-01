@@ -58,3 +58,10 @@ struct FrequencyValue: Identifiable, Hashable {
     var prefix: SIFrequencyPrefixes // Prefix
 }
 
+// Power values struct
+struct PowerValue: Identifiable, Hashable {
+    var id = UUID()
+    var value: Double
+    var prefix: SIPowerPrefixes
+}
+
