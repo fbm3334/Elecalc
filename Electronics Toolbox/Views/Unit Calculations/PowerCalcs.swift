@@ -152,29 +152,16 @@ struct PowerCalcs: View {
             
             // Explanation section
             Section(header: Text("Explanation")) {
-                Text("This calculator uses Ohm's Law to calculate the voltage, current or resistance.")
+                Text("This calculator uses the simple power equations below to calculate the power consumption.")
                 HStack {
                     Spacer()
-                    VStack {
-                        Text("V = IR")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                        Text("I = V ÷ R")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                        Text("R = V ÷ I")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                    }.multilineTextAlignment(.center)
+                    Image("PowerEqns")
                     Spacer()
                 }
                 
             }
             
-        }.navigationBarTitle(String("Ohm's Law Calculator"))
+        }.navigationBarTitle(String("Power Calculator"))
     }
 }
 

@@ -1,2 +1,2 @@
-- Added a new 'What's New' view to the app
-- Added an Ohm's law calculator
+- Fixed a bug where extremely large/small values would crash the app
+- Added a simple power calculator
