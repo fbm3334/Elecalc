@@ -114,7 +114,7 @@ struct PotentialDivider: View {
                         Alert(title: Text("Supply voltage is zero or less"), message: Text("Please check your value."), dismissButton: .default(Text("OK")))
                     }
                     Spacer().alert(isPresented: $resistorLessThanZero) {
-                        Alert(title: Text("One or both of your resistor values are zero or less"), message: Text("Please check your values."), dismissButton: .default(Text("OK")))
+                        Alert(title: Text("One or both of your resistor values are less than zero."), message: Text("Please check your values."), dismissButton: .default(Text("OK")))
                     }
                 }
             }

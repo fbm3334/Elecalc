@@ -22,16 +22,25 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 func successHaptics() {
-    let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(.success)
+    // Check if haptic feedback has been disabled - if true, then play the haptic
+    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
 }
 
 func errorHaptics() {
-    let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(.error)
+    // Check if haptic feedback has been disabled - if true, then play the haptic
+    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
 }
 
 func selectionHaptics() {
-    let generator = UISelectionFeedbackGenerator()
-    generator.selectionChanged()
+    // Check if haptic feedback has been disabled - if true, then play the haptic
+    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
+    }
 }

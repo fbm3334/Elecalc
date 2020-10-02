@@ -33,6 +33,10 @@ struct CalculationList: View {
                     NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
                 }
                 
+                Section(header: Text("Settings")) {
+                    NavigationLink(String("Settings"), destination: SettingsView())
+                }
+                
                 Section(header: Text("Information")) {
                     NavigationLink(String("About this app"), destination: AboutView())
                     NavigationLink(String("What's new"), destination: WhatsNewView())

@@ -41,6 +41,7 @@
 		B66D01142520DE850039516C /* OhmsLaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D01132520DE850039516C /* OhmsLaw.swift */; };
 		B6922E0C25120D6B00B096FA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6922E0B25120D6B00B096FA /* AboutView.swift */; };
 		B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
+		B6D58294252646020065FE83 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D58293252646020065FE83 /* SettingsView.swift */; };
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
 		B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */; };
 		B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */; };
@@ -127,6 +128,7 @@
 		B66D01132520DE850039516C /* OhmsLaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmsLaw.swift; sourceTree = "<group>"; };
 		B6922E0B25120D6B00B096FA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResistor.swift; sourceTree = "<group>"; };
+		B6D58293252646020065FE83 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
 		B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalResistanceCalculator.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */,
 				B6922E0B25120D6B00B096FA /* AboutView.swift */,
 				B66D00EB2520BDF60039516C /* WhatsNewView.swift */,
+				B6D58293252646020065FE83 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */,
 				B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */,
 				B66D00E42520BAE10039516C /* SIStructs.swift in Sources */,
+				B6D58294252646020065FE83 /* SettingsView.swift in Sources */,
 				B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */,
 				B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,

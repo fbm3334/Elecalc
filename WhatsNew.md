@@ -1,2 +1,3 @@
 - Fixed a bug where extremely large/small values would crash the app
 - Added a simple power calculator
+- Added haptic feedback within the app
