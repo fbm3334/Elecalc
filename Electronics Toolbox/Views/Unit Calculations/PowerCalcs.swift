@@ -24,6 +24,7 @@ enum PowerCalcsKnownQuantities: Int, CustomStringConvertible, CaseIterable {
 
 struct PowerCalcs: View {
     @EnvironmentObject var unitCalcs: UnitCalcs
+    @EnvironmentObject var settings: Settings
     
     @State var knownQuantities: PowerCalcsKnownQuantities = .voltageCurrent
     @State var inputVoltage = VoltageValue(value: 0.0, prefix: .V)
@@ -124,7 +125,7 @@ struct PowerCalcs: View {
                     }
                     if (valueZero == false) {
                         // Play the success haptic
-                        successHaptics()
+                        if (settings.hapticsOn == true) { successHaptics() }
                     // Vary the action based on which unknown quantity
                         switch (knownQuantities) {
                         case .voltageCurrent:
@@ -136,7 +137,7 @@ struct PowerCalcs: View {
                         }
                     } else {
                         // Play the error haptic
-                        errorHaptics()
+                        if (settings.hapticsOn == true) { errorHaptics() }
                     }
                 }) {
                     Text("Calculate")
@@ -151,7 +152,7 @@ struct PowerCalcs: View {
                     Text("Power:")
                         .bold()
                     Spacer()
-                    Text("\(outputPower.value, specifier: "%.2f")\(outputPower.prefix.description)")
+                    Text("\(outputPower.value, specifier: "%.\(settings.decimalPlaces)f")\(outputPower.prefix.description)")
                 }
             }
             

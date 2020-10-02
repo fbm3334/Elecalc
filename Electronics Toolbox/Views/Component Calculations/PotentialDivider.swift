@@ -10,6 +10,7 @@ import SwiftUI
 struct PotentialDivider: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
+    @EnvironmentObject var settings: Settings
     
     // Environment variable to detect whether dark or light mode is being used
     @Environment(\.colorScheme) var colourScheme
@@ -98,12 +99,12 @@ struct PotentialDivider: View {
                         // Validate the values
                         if (supplyVoltage <= 0.0) {
                             supplyVoltageZeroOrLess = true
-                            errorHaptics()
+                            if (settings.hapticsOn == true) { errorHaptics() }
                         } else if (resistor1.value < 0 || resistor2.value < 0) {
                             resistorLessThanZero = true
-                            errorHaptics()
+                            if (settings.hapticsOn == true) { errorHaptics() }
                         } else {
-                            successHaptics()
+                            if (settings.hapticsOn == true) { successHaptics() }
                             outputVoltage = resistorCalcs.calcPotentialDividerVoltage(supplyVoltage: supplyVoltage, r1: resistor1, r2: resistor2)
                         }
                         
@@ -125,7 +126,7 @@ struct PotentialDivider: View {
                     Text("Output voltage:")
                         .bold()
                     Spacer()
-                    Text("\(outputVoltage, specifier: "%.2f")V")
+                    Text("\(outputVoltage, specifier: "%.\(settings.decimalPlaces)f")V")
                         .multilineTextAlignment(.trailing)
                 }
             }

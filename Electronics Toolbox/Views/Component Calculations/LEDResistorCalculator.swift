@@ -10,6 +10,7 @@ import SwiftUI
 struct LEDResistorCalculator: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
+    @EnvironmentObject var settings: Settings
     
     // Variables for view
     @State var supplyVoltage: Double = 0.0
@@ -69,17 +70,17 @@ struct LEDResistorCalculator: View {
                         // Validate the values before passing into function
                         if (supplyVoltage <= 0) {
                             supplyVoltageZero = true
-                            errorHaptics()
+                            if (settings.hapticsOn == true) { errorHaptics() }
                         } else if (ledVoltage >= supplyVoltage) {
                             ledVoltageGreaterThanSupply = true
-                            errorHaptics()
+                            if (settings.hapticsOn == true) { errorHaptics() }
                         } else if (ledCurrent <= 0) {
                             ledCurrentZero = true
-                            errorHaptics()
+                            if (settings.hapticsOn == true) { errorHaptics() }
                         } else {
                             // Run function
                             resistorValue = resistorCalcs.calcLEDResistor(supplyVoltage: supplyVoltage, ledVoltage: ledVoltage, ledCurrent: ledCurrent / 1000)
-                            successHaptics()
+                            if (settings.hapticsOn == true) { successHaptics() }
                         }
                     }) {
                         Text("Calculate")
@@ -105,7 +106,7 @@ struct LEDResistorCalculator: View {
                     Text("Minimum resistance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorValue.value, specifier: "%.2f")\(resistorValue.prefix.description)")
+                    Text("\(resistorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorValue.prefix.description)")
                 }
                 
             }

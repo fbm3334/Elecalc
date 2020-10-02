@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     var body: some View {
         CalculationList()
     }
@@ -22,25 +21,16 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 func successHaptics() {
-    // Check if haptic feedback has been disabled - if true, then play the haptic
-    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
 }
 
 func errorHaptics() {
-    // Check if haptic feedback has been disabled - if true, then play the haptic
-    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
-    }
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.error)
 }
 
 func selectionHaptics() {
-    // Check if haptic feedback has been disabled - if true, then play the haptic
-    if (UserDefaults.standard.bool(forKey: "HapticsOn") == true) {
-        let generator = UISelectionFeedbackGenerator()
-        generator.selectionChanged()
-    }
+    let generator = UISelectionFeedbackGenerator()
+    generator.selectionChanged()
 }

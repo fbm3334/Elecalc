@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DecibeltoNumericGain: View {
     
+    @EnvironmentObject var settings: Settings
     @EnvironmentObject var gainCalcs: GainCalcs
     @State var gainType: DecibelGains = .amplitude
     @State var dBGain: Double = 0.0
@@ -40,7 +41,7 @@ struct DecibeltoNumericGain: View {
             Section() {
                 Button(action: {
                     // Play the success haptic
-                    successHaptics()
+                    if (settings.hapticsOn == true) { successHaptics() }
                     // Convert the dB gain string into a double
                     dBGain = Double(dBGainString) ?? 0.0
                     numericGain = gainCalcs.decibelToNumericGain(dBGain: dBGain, gainType: gainType)
@@ -55,7 +56,7 @@ struct DecibeltoNumericGain: View {
                     Text("Numeric gain:")
                         .bold()
                     Spacer()
-                    Text("\(numericGain, specifier: "%.2f")")
+                    Text("\(numericGain, specifier: "%.\(settings.decimalPlaces)f")")
                 }
             }
         }

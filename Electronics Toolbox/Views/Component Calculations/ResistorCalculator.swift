@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResistorCalculator: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
-
+    @EnvironmentObject var settings: Settings
     // State variable to show resistor add menu
     @State var showAddResistorView = false
     
@@ -41,14 +41,14 @@ struct ResistorCalculator: View {
                         Text("Parallel:")
                             .bold()
                         Spacer()
-                        Text("\(resistorCalcs.parallelCalculated.value, specifier: "%.2f")\(resistorCalcs.parallelCalculated.prefix.description)")
+                        Text("\(resistorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.parallelCalculated.prefix.description)")
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Series:")
                         .bold()
                         Spacer()
-                        Text("\(resistorCalcs.seriesCalculated.value, specifier: "%.2f")\(resistorCalcs.seriesCalculated.prefix.description)")
+                        Text("\(resistorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.seriesCalculated.prefix.description)")
                             .multilineTextAlignment(.trailing)
                     }
                 }

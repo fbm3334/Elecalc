@@ -60,6 +60,7 @@
 		B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */; };
 		B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */; };
 		B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */; };
+		B6FC7A912527868B0014630B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FC7A902527868B0014630B /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefixCalc.swift; sourceTree = "<group>"; };
 		B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorRow.swift; sourceTree = "<group>"; };
+		B6FC7A902527868B0014630B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +400,7 @@
 				B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */,
 				B642CD262513AF4F0011769A /* GainCalcs.swift */,
 				B66D010A2520DC780039516C /* UnitCalcs.swift */,
+				B6FC7A902527868B0014630B /* Settings.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */,
 				B6922E0C25120D6B00B096FA /* AboutView.swift in Sources */,
 				B659C0B624FD11B400AFABA8 /* CapacitorRow.swift in Sources */,
+				B6FC7A912527868B0014630B /* Settings.swift in Sources */,
 				B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */,
 				B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */,
 				B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */,
