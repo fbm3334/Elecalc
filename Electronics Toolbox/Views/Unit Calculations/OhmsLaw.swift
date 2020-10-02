@@ -175,20 +175,7 @@ struct OhmsLaw: View {
                 Text("This calculator uses Ohm's Law to calculate the voltage, current or resistance.")
                 HStack {
                     Spacer()
-                    VStack {
-                        Text("V = IR")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                        Text("I = V ÷ R")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                        Text("R = V ÷ I")
-                            .font(.system(size: 20, design: .serif))
-                            .italic()
-                            .multilineTextAlignment(.center)
-                    }.multilineTextAlignment(.center)
+                    Image("OhmsEqns")
                     Spacer()
                 }
                 
