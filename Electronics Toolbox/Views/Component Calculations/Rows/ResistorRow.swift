@@ -12,10 +12,11 @@ struct ResistorRow: View {
     @State private var tempResistorValue: String = ""
     
     var resistorValue: ResistorValue
+    @EnvironmentObject var settings: Settings
     
     var body: some View {
         HStack {
-            Text("\(resistorValue.value, specifier: "%.2f")\(resistorValue.prefix.description)")
+            Text("\(resistorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorValue.prefix.description)")
         }
     }
 }

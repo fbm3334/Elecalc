@@ -1,5 +1,5 @@
 //
-//  OhmsLaw.swift
+//  PowerCalcs.swift
 //  Elecalc
 //
 //  Created by Finn Beckitt-Marshall on 27/09/2020.
@@ -7,51 +7,50 @@
 
 import SwiftUI
 
-enum OhmsLawUnknown: Int, CustomStringConvertible, CaseIterable {
-    case voltage, current, resistance
+enum PowerCalcsKnownQuantities: Int, CustomStringConvertible, CaseIterable {
+    case voltageCurrent, voltageResistance, currentResistance
     
     var description: String {
         switch self {
-        case .voltage: return "Voltage"
-        case .current: return "Current"
-        case .resistance: return "Resistance"
+        case .voltageCurrent:
+            return "Voltage and current"
+        case .voltageResistance:
+            return "Voltage and resistance"
+        case .currentResistance:
+            return "Current and resistance"
         }
     }
 }
 
-struct OhmsLaw: View {
+struct PowerCalcs: View {
     @EnvironmentObject var unitCalcs: UnitCalcs
     @EnvironmentObject var settings: Settings
     
-    @State var unknownQuantity: OhmsLawUnknown = .voltage
+    @State var knownQuantities: PowerCalcsKnownQuantities = .voltageCurrent
     @State var inputVoltage = VoltageValue(value: 0.0, prefix: .V)
     @State var inputVoltageString = "0.0"
     @State var inputCurrent = CurrentValue(value: 0.0, prefix: .A)
     @State var inputCurrentString = "0.0"
     @State var inputResistance = ResistorValue(value: 0.0, prefix: .Ω)
     @State var inputResistanceString = "0.0"
-    @State var outputVoltage = VoltageValue(value: 0.0, prefix: .V)
-    @State var outputCurrent = CurrentValue(value: 0.0, prefix: .A)
-    @State var outputResistance = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var outputPower = PowerValue(value: 0.0, prefix: .W)
     @State var valueZero = false
-    
-    // Number of decimal places
-    @State var decimalPlaces = UserDefaults.standard.integer(forKey: "DecimalPlaces")
     
     var body: some View {
         Form {
-            Section(header: Text("Unknown quantity")) {
-                Picker(selection: $unknownQuantity, label: Text("Unknown quantity")) {
-                    ForEach(OhmsLawUnknown.allCases, id: \.self) {
+            Section(header: Text("Known quantities")) {
+                Picker(selection: $knownQuantities, label: Text("Known quantities")) {
+                    ForEach(PowerCalcsKnownQuantities.allCases, id: \.self) {
                         Text(String($0.description))
                     }
-                }.pickerStyle(SegmentedPickerStyle())
+                }.pickerStyle(WheelPickerStyle())
+                .frame(height: 70)
             }
             
             Section(header: Text("Input values")) {
                 // Pick the correct input values to show based on the view
-                // If calculating current or resistance, show the voltage
-                if (unknownQuantity == .current || unknownQuantity == .resistance) {
+                // Show voltage if required
+                if (knownQuantities == .voltageCurrent || knownQuantities == .voltageResistance) {
                     VStack {
                         HStack {
                             Text("Voltage:")
@@ -68,8 +67,8 @@ struct OhmsLaw: View {
                     }
                 }
                 
-                // If calculating voltage or resistance, show the current
-                if (unknownQuantity == .voltage || unknownQuantity == .resistance) {
+                // Show current if required
+                if (knownQuantities == .voltageCurrent || knownQuantities == .currentResistance) {
                     VStack {
                         HStack {
                             Text("Current:")
@@ -86,8 +85,8 @@ struct OhmsLaw: View {
                     }
                 }
                 
-                // If calculating voltage or current, show the resistance
-                if (unknownQuantity == .current || unknownQuantity == .voltage) {
+                // Show resistance if required
+                if (knownQuantities == .voltageResistance || knownQuantities == .currentResistance) {
                     VStack {
                         HStack {
                             Text("Resistance:")
@@ -107,35 +106,38 @@ struct OhmsLaw: View {
             
             Section() {
                 Button(action: {
+                    // Print the strings
+                    print("\(inputVoltageString)|\(inputCurrentString)|\(inputResistanceString)")
                     // Convert the values
                     inputVoltage.value = (Double(inputVoltageString) ?? 0.0).magnitude
                     inputCurrent.value = (Double(inputCurrentString) ?? 0.0).magnitude
                     inputResistance.value = (Double(inputResistanceString) ?? 0.0).magnitude
-                    // Check whether values are zero
-                    switch (unknownQuantity) {
-                    case .voltage:
-                        if (inputCurrent.value == 0.0 || inputResistance.value == 0.0) { valueZero = true }
-                    case .current:
-                        if (inputVoltage.value == 0.0 || inputResistance.value == 0.0) { valueZero = true }
-                    case .resistance:
-                        if (inputVoltage.value == 0.0 || inputCurrent.value == 0.0) { valueZero = true }
+                    
+                    print("\(inputVoltage.value)|\(inputCurrent.value)|\(inputResistance.value)")
+                    // Check whether values are zero by using a switch..case statement
+                    switch (knownQuantities) {
+                    case .voltageCurrent:
+                        if (inputVoltage.value == 0 || inputCurrent.value == 0) { valueZero = true }
+                    case .voltageResistance:
+                        if (inputVoltage.value == 0 || inputResistance.value == 0) { valueZero = true }
+                    case .currentResistance:
+                        if (inputResistance.value == 0 || inputCurrent.value == 0) { valueZero = true }
                     }
-                    // Play the error haptics if the values are zero
-                    if (valueZero == true) {
-                        if (settings.hapticsOn == true) { errorHaptics() }
-                    } else {
-                    // Vary the action based on which unknown quantity
-                        
-                        switch (unknownQuantity) {
-                        case .voltage:
-                            outputVoltage = unitCalcs.calcVoltage(current: inputCurrent, resistance: inputResistance)
-                        case .current:
-                            outputCurrent = unitCalcs.calcCurrent(voltage: inputVoltage, resistance: inputResistance)
-                        case .resistance:
-                            outputResistance = unitCalcs.calcResistance(voltage: inputVoltage, current: inputCurrent)
-                        }
+                    if (valueZero == false) {
                         // Play the success haptic
                         if (settings.hapticsOn == true) { successHaptics() }
+                    // Vary the action based on which unknown quantity
+                        switch (knownQuantities) {
+                        case .voltageCurrent:
+                            outputPower = unitCalcs.calcPowerCurrentVoltage(voltage: inputVoltage, current: inputCurrent)
+                        case .currentResistance:
+                            outputPower = unitCalcs.calcPowerCurrentResistance(current: inputCurrent, resistance: inputResistance)
+                        case .voltageResistance:
+                            outputPower = unitCalcs.calcPowerVoltageResistance(voltage: inputVoltage, resistance: inputResistance)
+                        }
+                    } else {
+                        // Play the error haptic
+                        if (settings.hapticsOn == true) { errorHaptics() }
                     }
                 }) {
                     Text("Calculate")
@@ -146,47 +148,32 @@ struct OhmsLaw: View {
             
             // Results section
             Section(header: Text("Results")) {
-                if (unknownQuantity == .voltage) {
-                    HStack {
-                        Text("Voltage:")
-                            .bold()
-                        Spacer()
-                        Text("\(outputVoltage.value, specifier: "%.\(settings.decimalPlaces)f")\(outputVoltage.prefix.description)")
-                    }
-                } else if (unknownQuantity == .current) {
-                    HStack {
-                        Text("Current:")
-                            .bold()
-                        Spacer()
-                        Text("\(outputCurrent.value, specifier: "%.\(settings.decimalPlaces)f")\(outputCurrent.prefix.description)")
-                    }
-                } else {
-                    HStack {
-                        Text("Resistance:")
-                            .bold()
-                        Spacer()
-                        Text("\(outputResistance.value, specifier: "%.\(settings.decimalPlaces)f")\(outputResistance.prefix.description)")
-                    }
+                HStack {
+                    Text("Power:")
+                        .bold()
+                    Spacer()
+                    Text("\(outputPower.value, specifier: "%.\(settings.decimalPlaces)f")\(outputPower.prefix.description)")
                 }
             }
             
             // Explanation section
             Section(header: Text("Explanation")) {
-                Text("This calculator uses Ohm's Law to calculate the voltage, current or resistance.")
+                Text("This calculator uses the simple power equations below to calculate the power consumption.")
                 HStack {
                     Spacer()
-                    Image("OhmsEqns")
+                    Image("PowerEqns")
                     Spacer()
                 }
                 
             }
             
-        }.navigationBarTitle(String("Ohm's Law Calculator"))
+        }.navigationBarTitle(String("Power Calculator"))
     }
 }
 
-struct OhmsLaw_Previews: PreviewProvider {
+struct PowerCalcs_Previews: PreviewProvider {
     static var previews: some View {
-        OhmsLaw()
+        PowerCalcs()
     }
 }
+

@@ -17,6 +17,7 @@ struct ThermalResistanceCalculator: View {
     }()
     
     @EnvironmentObject var thermalCalcs: ThermalCalcs
+    @EnvironmentObject var settings: Settings
     
     @ViewBuilder
     var body: some View {
@@ -81,6 +82,13 @@ struct ThermalResistanceCalculator: View {
                         self.thermalCalcs.thermalResistanceJuncToAmb = Double(self.thermalCalcs.thermalResistanceJuncToAmbString) ?? 0.0
                         
                         self.thermalCalcs.calcHeatsinkRequirement()
+                        
+                        // If all conditions are met, play the success haptic
+                        if (thermalCalcs.ambientHigherThanMax == false && thermalCalcs.negativePowerDissipated == false && thermalCalcs.negativePowerDissipated == false && thermalCalcs.negativeHeatsinkThermalResistance == false) {
+                            if (settings.hapticsOn == true) { successHaptics() }
+                        } else {
+                            if (settings.hapticsOn == true) { errorHaptics() }
+                        }
                     }) {
                         Text("Calculate")
                     }
@@ -122,7 +130,7 @@ struct ThermalResistanceCalculator: View {
                     HStack {
                         Text("Max heatsink thermal resistance:")
                         Spacer()
-                        Text("\(thermalCalcs.heatsinkThermalResistance, specifier: "%.2f")ºC/W")
+                        Text("\(thermalCalcs.heatsinkThermalResistance, specifier: "%.\(settings.decimalPlaces)f")ºC/W")
                     }
                 }
             

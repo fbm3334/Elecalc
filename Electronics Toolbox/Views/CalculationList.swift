@@ -13,6 +13,7 @@ struct CalculationList: View {
             List {
                 Section(header: Text("Unit Calculations")) {
                     NavigationLink(String("Ohm's Law Calculator"), destination: OhmsLaw())
+                    NavigationLink(String("Power Calculator"), destination: PowerCalcs())
                 }
                 
                 Section(header: Text("Component Calculations")) {
@@ -30,6 +31,10 @@ struct CalculationList: View {
                 Section(header: Text("Gain Calculations")) {
                     NavigationLink(String("dB to Numeric Gain"), destination: DecibeltoNumericGain())
                     NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
+                }
+                
+                Section(header: Text("Settings")) {
+                    NavigationLink(String("Settings"), destination: SettingsView())
                 }
                 
                 Section(header: Text("Information")) {

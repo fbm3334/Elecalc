@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CapacitorCalculator: View {
     @EnvironmentObject var capacitorCalcs: CapacitorCalcs
-
+    @EnvironmentObject var settings: Settings
     // State variable to show capacitor add menu
     @State var showAddCapacitorView = false
     
@@ -23,6 +23,7 @@ struct CapacitorCalculator: View {
                     }
                         .onDelete(perform: delete)
                     Button(action: {
+                        selectionHaptics() // Play the selection haptic
                         self.showAddCapacitorView.toggle()
                     }) {
                         HStack {
@@ -40,14 +41,14 @@ struct CapacitorCalculator: View {
                         Text("Parallel:")
                             .bold()
                         Spacer()
-                        Text("\(capacitorCalcs.parallelCalculated.value, specifier: "%.2f")\(capacitorCalcs.parallelCalculated.prefix.description)")
+                        Text("\(capacitorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.parallelCalculated.prefix.description)")
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Series:")
                         .bold()
                         Spacer()
-                        Text("\(capacitorCalcs.seriesCalculated.value, specifier: "%.2f")\(capacitorCalcs.seriesCalculated.prefix.description)")
+                        Text("\(capacitorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.seriesCalculated.prefix.description)")
                             .multilineTextAlignment(.trailing)
                     }
                 }

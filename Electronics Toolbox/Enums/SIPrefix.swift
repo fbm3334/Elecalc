@@ -130,3 +130,21 @@ enum SIFrequencyPrefixes: Int, CustomStringConvertible, CaseIterable {
         }
     }
 }
+
+enum SIPowerPrefixes: Int, CustomStringConvertible, CaseIterable {
+    case µW = -6
+    case mW = -3
+    case W = 0
+    case kW = 3
+    case MW = 6
+    
+    var description: String {
+        switch self {
+        case .µW: return "µW"
+        case .mW: return "mW"
+        case .W: return "W"
+        case .kW: return "kW"
+        case .MW: return "MW"
+        }
+    }
+}

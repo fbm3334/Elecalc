@@ -10,6 +10,7 @@ import SwiftUI
 struct ResistorBandToValue: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
+    @EnvironmentObject var settings: Settings
     
     @ViewBuilder
     var body: some View {
@@ -91,6 +92,8 @@ struct ResistorBandToValue: View {
                 
             // Button to calculate
                 Button(action: {
+                    // Play success haptic
+                    if (settings.hapticsOn == true) { successHaptics() }
                     self.resistorCalcs.calcResistorValuefromColourCode()
                 }) {
                     Text("Calculate value")
@@ -103,19 +106,19 @@ struct ResistorBandToValue: View {
                     Text("Value:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.2f")\(resistorCalcs.colourCodeResistor.prefix.description)")
+                    Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.colourCodeResistor.prefix.description)")
                 }
                 HStack {
                     Text("Lower tolerance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.2f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)")
+                    Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)")
                 }
                 HStack {
                     Text("Upper tolerance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.2f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)")
+                    Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)")
                 }
             }
             

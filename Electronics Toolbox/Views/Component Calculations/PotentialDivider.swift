@@ -10,6 +10,7 @@ import SwiftUI
 struct PotentialDivider: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
+    @EnvironmentObject var settings: Settings
     
     // Environment variable to detect whether dark or light mode is being used
     @Environment(\.colorScheme) var colourScheme
@@ -88,21 +89,34 @@ struct PotentialDivider: View {
             
             // Calculate button section
             Section() {
-                Button(action: {
-                    // Convert the strings to doubles
-                    supplyVoltage = Double(supplyVoltageString) ?? 0.0
-                    resistor1.value = Double(resistor1String) ?? -1.0
-                    resistor2.value = Double(resistor2String) ?? -1.0
-                    
-                    // Validate the values
-                    if (supplyVoltage <= 0.0) { supplyVoltageZeroOrLess = true }
-                    else if (resistor1.value < 0 || resistor2.value < 0) { resistorLessThanZero = true }
-                    else {
-                        outputVoltage = resistorCalcs.calcPotentialDividerVoltage(supplyVoltage: supplyVoltage, r1: resistor1, r2: resistor2)
+                HStack {
+                    Button(action: {
+                        // Convert the strings to doubles
+                        supplyVoltage = Double(supplyVoltageString) ?? 0.0
+                        resistor1.value = Double(resistor1String) ?? -1.0
+                        resistor2.value = Double(resistor2String) ?? -1.0
+                        
+                        // Validate the values
+                        if (supplyVoltage <= 0.0) {
+                            supplyVoltageZeroOrLess = true
+                            if (settings.hapticsOn == true) { errorHaptics() }
+                        } else if (resistor1.value < 0 || resistor2.value < 0) {
+                            resistorLessThanZero = true
+                            if (settings.hapticsOn == true) { errorHaptics() }
+                        } else {
+                            if (settings.hapticsOn == true) { successHaptics() }
+                            outputVoltage = resistorCalcs.calcPotentialDividerVoltage(supplyVoltage: supplyVoltage, r1: resistor1, r2: resistor2)
+                        }
+                        
+                    }) {
+                        Text("Calculate")
                     }
-                    
-                }) {
-                    Text("Calculate")
+                    Spacer().alert(isPresented: $supplyVoltageZeroOrLess) {
+                        Alert(title: Text("Supply voltage is zero or less"), message: Text("Please check your value."), dismissButton: .default(Text("OK")))
+                    }
+                    Spacer().alert(isPresented: $resistorLessThanZero) {
+                        Alert(title: Text("One or both of your resistor values are less than zero."), message: Text("Please check your values."), dismissButton: .default(Text("OK")))
+                    }
                 }
             }
             
@@ -112,7 +126,7 @@ struct PotentialDivider: View {
                     Text("Output voltage:")
                         .bold()
                     Spacer()
-                    Text("\(outputVoltage, specifier: "%.2f")V")
+                    Text("\(outputVoltage, specifier: "%.\(settings.decimalPlaces)f")V")
                         .multilineTextAlignment(.trailing)
                 }
             }

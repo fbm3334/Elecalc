@@ -12,10 +12,11 @@ struct CapacitorRow: View {
     @State private var tempCapacitorValue: String = ""
     
     var capacitorValue: CapacitorValue
+    @EnvironmentObject var settings: Settings
     
     var body: some View {
         HStack {
-            Text("\(capacitorValue.value, specifier: "%.2f")\(capacitorValue.prefix.description)")
+            Text("\(capacitorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorValue.prefix.description)")
         }
     }
 }

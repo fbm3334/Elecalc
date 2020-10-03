@@ -1,2 +1,5 @@
-- Added a new 'What's New' view to the app
-- Added an Ohm's law calculator
+- Fixed a bug where extremely large/small values would crash the app
+- Added a simple power calculator
+- Added haptic feedback within the app
+- Added a settings screen to control haptic feedback as well as the number of decimal places
+- Changed the equations in the Ohm's Law calculator

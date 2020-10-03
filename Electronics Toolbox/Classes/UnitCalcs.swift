@@ -36,4 +36,28 @@ class UnitCalcs: ObservableObject {
         let resistanceNormalised = voltageNormalised / currentNormalised
         return siPrefixCalc.calcResistorPrefix(value: resistanceNormalised, prefix: .Ω)
     }
+    
+    // Function to calculate power from current and voltage
+    func calcPowerCurrentVoltage(voltage: VoltageValue, current: CurrentValue) -> PowerValue {
+        let voltageNormalised = voltage.value * pow(10.0, Double(voltage.prefix.rawValue))
+        let currentNormalised = current.value * pow(10.0, Double(current.prefix.rawValue))
+        let powerNormalised = voltageNormalised * currentNormalised
+        return siPrefixCalc.calcPowerPrefix(value: powerNormalised, prefix: .W)
+    }
+    
+    // Function to calculate power from current and resistance
+    func calcPowerCurrentResistance(current: CurrentValue, resistance: ResistorValue) -> PowerValue {
+        let currentNormalised = current.value * pow(10.0, Double(current.prefix.rawValue))
+        let resistanceNormalised = resistance.value * pow(10.0, Double(resistance.prefix.rawValue))
+        let powerNormalised = currentNormalised * currentNormalised * resistanceNormalised
+        return siPrefixCalc.calcPowerPrefix(value: powerNormalised, prefix: .W)
+    }
+    
+    // Function to calculate power from voltage and resistance
+    func calcPowerVoltageResistance(voltage: VoltageValue, resistance: ResistorValue) -> PowerValue {
+        let voltageNormalised = voltage.value * pow(10.0, Double(voltage.prefix.rawValue))
+        let resistanceNormalised = resistance.value * pow(10.0, Double(resistance.prefix.rawValue))
+        let powerNormalised = voltageNormalised * voltageNormalised * resistanceNormalised
+        return siPrefixCalc.calcPowerPrefix(value: powerNormalised, prefix: .W)
+    }
 }
