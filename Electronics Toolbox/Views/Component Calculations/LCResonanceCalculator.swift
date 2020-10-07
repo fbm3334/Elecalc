@@ -13,12 +13,12 @@ struct LCResonanceCalculator: View {
     @EnvironmentObject var settings: Settings
     
     // View variables
-    @State var inductorValue = InductorValue(value: 0.0, prefix: .H)
+    @State var inductorValue = SIValue(value: 0.0, prefix: .none)
     @State var inductorValueString = "0.0"
-    @State var capacitorValue = CapacitorValue(value: 0.0, prefix: .F)
+    @State var capacitorValue = SIValue(value: 0.0, prefix: .none)
     @State var capacitorValueString = "0.0"
     @State var valuesInvalid = false
-    @State var frequency = FrequencyValue(value: 0.0, prefix: .Hz)
+    @State var frequency = SIValue(value: 0.0, prefix: .none)
         
     var body: some View {
         Form {
@@ -32,8 +32,8 @@ struct LCResonanceCalculator: View {
                             .multilineTextAlignment(.trailing)
                     }
                     Picker(selection: $inductorValue.prefix, label: Text("Inductance prefix")) {
-                        ForEach(SIInductorPrefixes.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(SIPrefixes.allCases, id: \.self) {
+                            Text(String("\($0.description)H"))
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
@@ -47,8 +47,8 @@ struct LCResonanceCalculator: View {
                             .multilineTextAlignment(.trailing)
                     }
                     Picker(selection: $capacitorValue.prefix, label: Text("Capacitance prefix")) {
-                        ForEach(SICapacitorPrefixes.allCases, id: \.self) {
-                            Text(String("\($0.description)"))
+                        ForEach(SIPrefixes.allCases, id: \.self) {
+                            Text(String("\($0.description)F"))
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
@@ -77,7 +77,7 @@ struct LCResonanceCalculator: View {
                     Text("Frequency:")
                         .bold()
                     Spacer()
-                    Text("\(frequency.value, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description)")
+                    Text("\(frequency.value, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description)Hz")
                 }
             }
         }

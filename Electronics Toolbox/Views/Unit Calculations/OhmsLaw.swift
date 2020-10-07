@@ -24,15 +24,15 @@ struct OhmsLaw: View {
     @EnvironmentObject var settings: Settings
     
     @State var unknownQuantity: OhmsLawUnknown = .voltage
-    @State var inputVoltage = VoltageValue(value: 0.0, prefix: .V)
+    @State var inputVoltage = SIValue(value: 0.0, prefix: .none)
     @State var inputVoltageString = "0.0"
-    @State var inputCurrent = CurrentValue(value: 0.0, prefix: .A)
+    @State var inputCurrent = SIValue(value: 0.0, prefix: .none)
     @State var inputCurrentString = "0.0"
-    @State var inputResistance = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var inputResistance = SIValue(value: 0.0, prefix: .none)
     @State var inputResistanceString = "0.0"
-    @State var outputVoltage = VoltageValue(value: 0.0, prefix: .V)
-    @State var outputCurrent = CurrentValue(value: 0.0, prefix: .A)
-    @State var outputResistance = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var outputVoltage = SIValue(value: 0.0, prefix: .none)
+    @State var outputCurrent = SIValue(value: 0.0, prefix: .none)
+    @State var outputResistance = SIValue(value: 0.0, prefix: .none)
     @State var valueZero = false
     
     // Number of decimal places
@@ -61,8 +61,8 @@ struct OhmsLaw: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputVoltage.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SIVoltagePrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)V"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -79,8 +79,8 @@ struct OhmsLaw: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputCurrent.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SICurrentPrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)A"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -97,8 +97,8 @@ struct OhmsLaw: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputResistance.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SIResistorPrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)Ω"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -151,21 +151,21 @@ struct OhmsLaw: View {
                         Text("Voltage:")
                             .bold()
                         Spacer()
-                        Text("\(outputVoltage.value, specifier: "%.\(settings.decimalPlaces)f")\(outputVoltage.prefix.description)")
+                        Text("\(outputVoltage.value, specifier: "%.\(settings.decimalPlaces)f")\(outputVoltage.prefix.description)V")
                     }
                 } else if (unknownQuantity == .current) {
                     HStack {
                         Text("Current:")
                             .bold()
                         Spacer()
-                        Text("\(outputCurrent.value, specifier: "%.\(settings.decimalPlaces)f")\(outputCurrent.prefix.description)")
+                        Text("\(outputCurrent.value, specifier: "%.\(settings.decimalPlaces)f")\(outputCurrent.prefix.description)A")
                     }
                 } else {
                     HStack {
                         Text("Resistance:")
                             .bold()
                         Spacer()
-                        Text("\(outputResistance.value, specifier: "%.\(settings.decimalPlaces)f")\(outputResistance.prefix.description)")
+                        Text("\(outputResistance.value, specifier: "%.\(settings.decimalPlaces)f")\(outputResistance.prefix.description)Ω")
                     }
                 }
             }

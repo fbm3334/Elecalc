@@ -15,9 +15,9 @@ struct PotentialDivider: View {
     // Variables for view
     @State var supplyVoltage: Double = 0.0
     @State var supplyVoltageString: String = "0"
-    @State var resistor1 = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var resistor1 = SIValue(value: 0.0, prefix: .none)
     @State var resistor1String: String = "0"
-    @State var resistor2 = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var resistor2 = SIValue(value: 0.0, prefix: .none)
     @State var resistor2String: String = "0"
     @State var outputVoltage: Double = 0.0
     
@@ -54,8 +54,8 @@ struct PotentialDivider: View {
                         Spacer()
                     }
                     Picker(selection: $resistor1.prefix, label: Text("Prefix")) {
-                        ForEach(SIResistorPrefixes.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(SIPrefixes.allCases, id: \.self) {
+                            Text(String("\($0.description)Ω"))
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
@@ -77,8 +77,8 @@ struct PotentialDivider: View {
                         Spacer()
                     }
                     Picker(selection: $resistor2.prefix, label: Text("Prefix")) {
-                        ForEach(SIResistorPrefixes.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(SIPrefixes.allCases, id: \.self) {
+                            Text(String("\($0.description)Ω"))
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }

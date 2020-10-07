@@ -27,13 +27,13 @@ struct PowerCalcs: View {
     @EnvironmentObject var settings: Settings
     
     @State var knownQuantities: PowerCalcsKnownQuantities = .voltageCurrent
-    @State var inputVoltage = VoltageValue(value: 0.0, prefix: .V)
+    @State var inputVoltage = SIValue(value: 0.0, prefix: .none)
     @State var inputVoltageString = "0.0"
-    @State var inputCurrent = CurrentValue(value: 0.0, prefix: .A)
+    @State var inputCurrent = SIValue(value: 0.0, prefix: .none)
     @State var inputCurrentString = "0.0"
-    @State var inputResistance = ResistorValue(value: 0.0, prefix: .Ω)
+    @State var inputResistance = SIValue(value: 0.0, prefix: .none)
     @State var inputResistanceString = "0.0"
-    @State var outputPower = PowerValue(value: 0.0, prefix: .W)
+    @State var outputPower = SIValue(value: 0.0, prefix: .none)
     @State var valueZero = false
     
     var body: some View {
@@ -60,8 +60,8 @@ struct PowerCalcs: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputVoltage.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SIVoltagePrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)V"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -78,8 +78,8 @@ struct PowerCalcs: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputCurrent.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SICurrentPrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)A"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -96,8 +96,8 @@ struct PowerCalcs: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputResistance.prefix, label: Text("Unknown quantity")) {
-                            ForEach(SIResistorPrefixes.allCases, id: \.self) {
-                                Text(String($0.description))
+                            ForEach(SIPrefixes.allCases, id: \.self) {
+                                Text(String("\($0.description)Ω"))
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
@@ -152,7 +152,7 @@ struct PowerCalcs: View {
                     Text("Power:")
                         .bold()
                     Spacer()
-                    Text("\(outputPower.value, specifier: "%.\(settings.decimalPlaces)f")\(outputPower.prefix.description)")
+                    Text("\(outputPower.value, specifier: "%.\(settings.decimalPlaces)f")\(outputPower.prefix.description)W")
                 }
             }
             

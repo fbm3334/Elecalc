@@ -35,8 +35,8 @@ struct AddCapacitor: View {
                 }
                 // Picker to select the prefix
                 Picker(selection: $capacitorCalcs.prefixTemp, label: Text("Prefix")) {
-                    ForEach(SICapacitorPrefixes.allCases, id: \.self) {
-                        Text(String($0.description))
+                    ForEach(SIPrefixes.allCases, id: \.self) {
+                        Text(String("\($0.description)F"))
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 

@@ -11,19 +11,19 @@ struct CapacitorRow: View {
     
     @State private var tempCapacitorValue: String = ""
     
-    var capacitorValue: CapacitorValue
+    var capacitorValue: SIValue
     @EnvironmentObject var settings: Settings
     
     var body: some View {
         HStack {
-            Text("\(capacitorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorValue.prefix.description)")
+            Text("\(capacitorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorValue.prefix.description)F")
         }
     }
 }
 
 struct CapacitorRow_Previews: PreviewProvider {
     static var previews: some View {
-        CapacitorRow(capacitorValue: CapacitorValue(id: UUID(), value: 34.0, prefix: .µF))
+        CapacitorRow(capacitorValue: SIValue(id: UUID(), value: 34.0, prefix: .µ))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

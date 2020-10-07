@@ -35,8 +35,8 @@ struct AddResistor: View {
                 }
                 // Picker to select the prefix
                 Picker(selection: $resistorCalcs.prefixTemp, label: Text("Prefix")) {
-                    ForEach(SIResistorPrefixes.allCases, id: \.self) {
-                        Text(String($0.description))
+                    ForEach(SIPrefixes.allCases, id: \.self) {
+                        Text(String("\($0.description)Ω"))
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 

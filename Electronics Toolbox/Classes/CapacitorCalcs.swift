@@ -12,21 +12,21 @@ class CapacitorCalcs: ObservableObject {
     var siPrefixCalc = SIPrefixCalc()
     var valueTemp: Double = 0.0
     var valueTempString: String = "0"
-    var prefixTemp: SICapacitorPrefixes = .F
+    var prefixTemp: SIPrefixes = .none
     
     // CapacitorValue object to show parallel result
-    @Published var parallelCalculated = CapacitorValue(id: UUID(), value: 0.0, prefix: .F)
+    @Published var parallelCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
     // CapacitorValue object to show series result
-    @Published var seriesCalculated = CapacitorValue(id: UUID(), value: 0.0, prefix: .F)
+    @Published var seriesCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
     // Array of CapacitorValues
-    @Published var capacitorValues: [CapacitorValue] = []
+    @Published var capacitorValues: [SIValue] = []
     
     // Function for calculating series capacitors resistors
-    func calcSeriesCapacitors(values: [CapacitorValue]) -> CapacitorValue {
+    func calcSeriesCapacitors(values: [SIValue]) -> SIValue {
         if (values.count == 0) {
-            parallelCalculated = CapacitorValue(id: UUID(), value: 0.0, prefix: .F)
+            parallelCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
             return parallelCalculated
         } else {
             var capacitanceTotal: Double = 0
@@ -35,9 +35,9 @@ class CapacitorCalcs: ObservableObject {
                 let capacitanceValue: Double = 1.0 / (value.value * pow(10.0, Double(value.prefix.rawValue)))
                 capacitanceTotal += capacitanceValue
             }
-            // Take the reciprocal and then normalise to get a ResistorValue
+            // Take the reciprocal and then normalise to get a SIValue
             let capacitanceValueReciprocal = 1.0 / capacitanceTotal
-            let capacitanceValueWithPrefix = siPrefixCalc.calcCapacitorPrefix(value: capacitanceValueReciprocal, prefix: .F)
+            let capacitanceValueWithPrefix = siPrefixCalc.calcSIPrefix(value: capacitanceValueReciprocal, prefix: .none)
             seriesCalculated = capacitanceValueWithPrefix
             print(capacitanceValueWithPrefix.value)
             return capacitanceValueWithPrefix
@@ -45,9 +45,9 @@ class CapacitorCalcs: ObservableObject {
     }
     
     // Function for calculating parallel capacitors
-    func calcParallelCapacitors(values: [CapacitorValue]) -> CapacitorValue {
+    func calcParallelCapacitors(values: [SIValue]) -> SIValue {
         if (values.count == 0) {
-            seriesCalculated = CapacitorValue(id: UUID(), value: 0.0, prefix: .F)
+            seriesCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
             return seriesCalculated
         } else {
             var capacitanceTotal: Double = 0
@@ -57,7 +57,7 @@ class CapacitorCalcs: ObservableObject {
                 capacitanceTotal += capacitanceValue
             }
             // Calculate the value
-            let capacitanceValueWithPrefix = siPrefixCalc.calcCapacitorPrefix(value: capacitanceTotal, prefix: .F)
+            let capacitanceValueWithPrefix = siPrefixCalc.calcSIPrefix(value: capacitanceTotal, prefix: .none)
             parallelCalculated = capacitanceValueWithPrefix
             print(capacitanceValueWithPrefix.value)
             return capacitanceValueWithPrefix
@@ -76,7 +76,7 @@ class CapacitorCalcs: ObservableObject {
     
     // Function to add element to array
     func addToArray() {
-        let newCapacitorValue = CapacitorValue(id: UUID(), value: 0.0, prefix: .F)
+        let newCapacitorValue = SIValue(id: UUID(), value: 0.0, prefix: .none)
         print(newCapacitorValue)
         capacitorValues.append(newCapacitorValue)
     }
@@ -84,8 +84,8 @@ class CapacitorCalcs: ObservableObject {
     // Function to add the temporary element into the array, after running it through prefix calculation to normalise it
     func addTempElement() {
         print("Temp value = \(valueTemp)")
-        let normalisedTempElement = siPrefixCalc.calcCapacitorPrefix(value: valueTemp, prefix: prefixTemp)
-        let newCapacitorValue = CapacitorValue(id: UUID(), value: normalisedTempElement.value, prefix: normalisedTempElement.prefix)
+        let normalisedTempElement = siPrefixCalc.calcSIPrefix(value: valueTemp, prefix: prefixTemp)
+        let newCapacitorValue = SIValue(id: UUID(), value: normalisedTempElement.value, prefix: normalisedTempElement.prefix)
         print(newCapacitorValue)
         capacitorValues.append(newCapacitorValue)
     }

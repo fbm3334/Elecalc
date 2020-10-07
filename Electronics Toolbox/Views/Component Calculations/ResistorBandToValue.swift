@@ -106,19 +106,19 @@ struct ResistorBandToValue: View {
                     Text("Value:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.colourCodeResistor.prefix.description)")
+                    Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.colourCodeResistor.prefix.description)Ω")
                 }
                 HStack {
                     Text("Lower tolerance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)")
+                    Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)Ω")
                 }
                 HStack {
                     Text("Upper tolerance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)")
+                    Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)Ω")
                 }
             }
             
