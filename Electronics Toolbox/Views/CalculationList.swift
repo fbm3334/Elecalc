@@ -22,6 +22,7 @@ struct CalculationList: View {
                     NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                     NavigationLink(String("Potential Divider Calculator"), destination: PotentialDivider())
                     NavigationLink(String("LED Current-Limiting Resistor"), destination: LEDResistorCalculator())
+                    NavigationLink(String("LC Resonance Calculator"), destination: LCResonanceCalculator())
                 }
                 
                 Section(header: Text("Thermal Calculations")) {

@@ -12,9 +12,6 @@ struct PotentialDivider: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     @EnvironmentObject var settings: Settings
     
-    // Environment variable to detect whether dark or light mode is being used
-    @Environment(\.colorScheme) var colourScheme
-    
     // Variables for view
     @State var supplyVoltage: Double = 0.0
     @State var supplyVoltageString: String = "0"
