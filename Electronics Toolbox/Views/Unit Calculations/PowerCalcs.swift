@@ -43,8 +43,7 @@ struct PowerCalcs: View {
                     ForEach(PowerCalcsKnownQuantities.allCases, id: \.self) {
                         Text(String($0.description))
                     }
-                }.pickerStyle(WheelPickerStyle())
-                .frame(height: 70)
+                }
             }
             
             Section(header: Text("Input values")) {

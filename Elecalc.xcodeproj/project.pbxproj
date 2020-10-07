@@ -10,6 +10,8 @@
 		B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61AAF452516969600370C35 /* PotentialDivider.swift */; };
 		B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391386252DC04600142764 /* LCResonanceCalc.swift */; };
 		B639139B252DC72300142764 /* LCResonanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639139A252DC72300142764 /* LCResonanceCalculator.swift */; };
+		B63913A3252E136D00142764 /* ResistorParallelSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63913A2252E136D00142764 /* ResistorParallelSeries.swift */; };
+		B63913B1252E13B600142764 /* ResistorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63913B0252E13B600142764 /* ResistorList.swift */; };
 		B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD102513AB960011769A /* DecibeltoNumericGain.swift */; };
 		B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD1E2513AC950011769A /* DecibelGains.swift */; };
 		B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD262513AF4F0011769A /* GainCalcs.swift */; };
@@ -100,6 +102,8 @@
 		B61AAF452516969600370C35 /* PotentialDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialDivider.swift; sourceTree = "<group>"; };
 		B6391386252DC04600142764 /* LCResonanceCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCResonanceCalc.swift; sourceTree = "<group>"; };
 		B639139A252DC72300142764 /* LCResonanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCResonanceCalculator.swift; sourceTree = "<group>"; };
+		B63913A2252E136D00142764 /* ResistorParallelSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorParallelSeries.swift; sourceTree = "<group>"; };
+		B63913B0252E13B600142764 /* ResistorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorList.swift; sourceTree = "<group>"; };
 		B642CD102513AB960011769A /* DecibeltoNumericGain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibeltoNumericGain.swift; sourceTree = "<group>"; };
 		B642CD1E2513AC950011769A /* DecibelGains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelGains.swift; sourceTree = "<group>"; };
 		B642CD262513AF4F0011769A /* GainCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainCalcs.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 		B61AAF3C2516963B00370C35 /* Component Calculations */ = {
 			isa = PBXGroup;
 			children = (
+				B63913A2252E136D00142764 /* ResistorParallelSeries.swift */,
+				B63913B0252E13B600142764 /* ResistorList.swift */,
 				B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */,
 				B659C0B724FD128500AFABA8 /* CapacitorCalculator.swift */,
 				B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */,
@@ -704,6 +710,7 @@
 			files = (
 				B66D010B2520DC780039516C /* UnitCalcs.swift in Sources */,
 				B6E4FF242522397700295CC0 /* PowerCalcs.swift in Sources */,
+				B63913A3252E136D00142764 /* ResistorParallelSeries.swift in Sources */,
 				B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */,
 				B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */,
 				B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */,
@@ -734,6 +741,7 @@
 				B639139B252DC72300142764 /* LCResonanceCalculator.swift in Sources */,
 				B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */,
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
+				B63913B1252E13B600142764 /* ResistorList.swift in Sources */,
 				B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */,
 				B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */,
 				B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */,

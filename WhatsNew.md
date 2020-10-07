@@ -1,1 +1,2 @@
 - Added default values for the haptic feedback and decimal places
+- Done some work behind the scenes to simplify the prefix calculation code
