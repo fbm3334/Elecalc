@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61AAF452516969600370C35 /* PotentialDivider.swift */; };
+		B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391386252DC04600142764 /* LCResonanceCalc.swift */; };
 		B642CD112513AB960011769A /* DecibeltoNumericGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD102513AB960011769A /* DecibeltoNumericGain.swift */; };
 		B642CD1F2513AC950011769A /* DecibelGains.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD1E2513AC950011769A /* DecibelGains.swift */; };
 		B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642CD262513AF4F0011769A /* GainCalcs.swift */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		B61AAF452516969600370C35 /* PotentialDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialDivider.swift; sourceTree = "<group>"; };
+		B6391386252DC04600142764 /* LCResonanceCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCResonanceCalc.swift; sourceTree = "<group>"; };
 		B642CD102513AB960011769A /* DecibeltoNumericGain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibeltoNumericGain.swift; sourceTree = "<group>"; };
 		B642CD1E2513AC950011769A /* DecibelGains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelGains.swift; sourceTree = "<group>"; };
 		B642CD262513AF4F0011769A /* GainCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainCalcs.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				B642CD262513AF4F0011769A /* GainCalcs.swift */,
 				B66D010A2520DC780039516C /* UnitCalcs.swift */,
 				B6FC7A902527868B0014630B /* Settings.swift */,
+				B6391386252DC04600142764 /* LCResonanceCalc.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				B659C0B824FD128500AFABA8 /* CapacitorCalculator.swift in Sources */,
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
+				B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */,
 				B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */,
 				B66D00EC2520BDF60039516C /* WhatsNewView.swift in Sources */,
 				B642CD272513AF4F0011769A /* GainCalcs.swift in Sources */,
