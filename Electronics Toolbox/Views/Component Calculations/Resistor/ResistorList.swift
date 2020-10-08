@@ -29,7 +29,7 @@ struct ResistorList: View {
             _ = self.resistorCalcs.calcSeriesResistors(values: self.resistorCalcs.resistorValues)
         }
     }
-    }
+}
     
     
 

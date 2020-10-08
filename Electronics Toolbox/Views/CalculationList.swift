@@ -18,7 +18,7 @@ struct CalculationList: View {
                 
                 Section(header: Text("Component Calculations")) {
                     NavigationLink(String("Parallel and Series Resistors"), destination: ResistorParallelSeries())
-                    NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorCalculator())
+                    NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorParallelSeries())
                     NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                     NavigationLink(String("Potential Divider Calculator"), destination: PotentialDivider())
                     NavigationLink(String("LED Current-Limiting Resistor"), destination: LEDResistorCalculator())

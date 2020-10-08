@@ -29,11 +29,9 @@
 		B659C0AE24F9596600AFABA8 /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
 		B659C0AF24F9596600AFABA8 /* ResistorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6524F3F49C00D9D9CE /* ResistorRow.swift */; };
 		B659C0B024F9596600AFABA8 /* CalculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */; };
-		B659C0B124F9596600AFABA8 /* ResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */; };
 		B659C0B224F9596600AFABA8 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B324F95C7000AFABA8 /* CapacitorCalcs.swift */; };
 		B659C0B624FD11B400AFABA8 /* CapacitorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B524FD11B400AFABA8 /* CapacitorRow.swift */; };
-		B659C0B824FD128500AFABA8 /* CapacitorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B724FD128500AFABA8 /* CapacitorCalculator.swift */; };
 		B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */; };
 		B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */; };
 		B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */; };
@@ -46,6 +44,8 @@
 		B6922E0C25120D6B00B096FA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6922E0B25120D6B00B096FA /* AboutView.swift */; };
 		B6A7A7ED24F5325100DAAAB1 /* AddResistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */; };
 		B6B52445252F0796002D444D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B52444252F0796002D444D /* AdaptiveKeyboard.swift */; };
+		B6B52455252F1EB0002D444D /* CapacitorParallelSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B52454252F1EB0002D444D /* CapacitorParallelSeries.swift */; };
+		B6B5245D252F1F70002D444D /* CapacitorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5245C252F1F70002D444D /* CapacitorList.swift */; };
 		B6D58294252646020065FE83 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D58293252646020065FE83 /* SettingsView.swift */; };
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
 		B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */; };
@@ -60,7 +60,6 @@
 		B6FBCF3F24F3F23600D9D9CE /* Electronics_ToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */; };
 		B6FBCF4A24F3F23600D9D9CE /* Electronics_ToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */; };
 		B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */; };
-		B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */; };
 		B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
 		B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */; };
 		B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */; };
@@ -126,7 +125,6 @@
 		B659C0A224F958FA00AFABA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B659C0B324F95C7000AFABA8 /* CapacitorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorCalcs.swift; sourceTree = "<group>"; };
 		B659C0B524FD11B400AFABA8 /* CapacitorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorRow.swift; sourceTree = "<group>"; };
-		B659C0B724FD128500AFABA8 /* CapacitorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorCalculator.swift; sourceTree = "<group>"; };
 		B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCapacitor.swift; sourceTree = "<group>"; };
 		B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorColourCode.swift; sourceTree = "<group>"; };
 		B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorBandToValue.swift; sourceTree = "<group>"; };
@@ -139,6 +137,8 @@
 		B6922E0B25120D6B00B096FA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResistor.swift; sourceTree = "<group>"; };
 		B6B52444252F0796002D444D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
+		B6B52454252F1EB0002D444D /* CapacitorParallelSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorParallelSeries.swift; sourceTree = "<group>"; };
+		B6B5245C252F1F70002D444D /* CapacitorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorList.swift; sourceTree = "<group>"; };
 		B6D58293252646020065FE83 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
@@ -159,7 +159,6 @@
 		B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxUITests.swift; sourceTree = "<group>"; };
 		B6FBCF4B24F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationList.swift; sourceTree = "<group>"; };
-		B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalculator.swift; sourceTree = "<group>"; };
 		B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefix.swift; sourceTree = "<group>"; };
 		B6FBCF6024F3F2C300D9D9CE /* ResistorCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF6224F3F32800D9D9CE /* SIPrefixCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrefixCalc.swift; sourceTree = "<group>"; };
@@ -217,12 +216,8 @@
 		B61AAF3C2516963B00370C35 /* Component Calculations */ = {
 			isa = PBXGroup;
 			children = (
-				B63913A2252E136D00142764 /* ResistorParallelSeries.swift */,
-				B63913B0252E13B600142764 /* ResistorList.swift */,
-				B6FBCF5A24F3F27700D9D9CE /* ResistorCalculator.swift */,
-				B659C0B724FD128500AFABA8 /* CapacitorCalculator.swift */,
-				B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */,
-				B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */,
+				B6B52453252F1E9F002D444D /* Capacitor */,
+				B6B52452252F1E8F002D444D /* Resistor */,
 				B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */,
 				B642CD3C2514CF630011769A /* LEDResistorCalculator.swift */,
 				B61AAF452516969600370C35 /* PotentialDivider.swift */,
@@ -305,6 +300,26 @@
 				B6E4FF232522397700295CC0 /* PowerCalcs.swift */,
 			);
 			path = "Unit Calculations";
+			sourceTree = "<group>";
+		};
+		B6B52452252F1E8F002D444D /* Resistor */ = {
+			isa = PBXGroup;
+			children = (
+				B63913A2252E136D00142764 /* ResistorParallelSeries.swift */,
+				B63913B0252E13B600142764 /* ResistorList.swift */,
+				B6A7A7EC24F5325100DAAAB1 /* AddResistor.swift */,
+			);
+			path = Resistor;
+			sourceTree = "<group>";
+		};
+		B6B52453252F1E9F002D444D /* Capacitor */ = {
+			isa = PBXGroup;
+			children = (
+				B6B52454252F1EB0002D444D /* CapacitorParallelSeries.swift */,
+				B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */,
+				B6B5245C252F1F70002D444D /* CapacitorList.swift */,
+			);
+			path = Capacitor;
 			sourceTree = "<group>";
 		};
 		B6FBCF1B24F3F23400D9D9CE = {
@@ -679,7 +694,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B659C0B124F9596600AFABA8 /* ResistorCalculator.swift in Sources */,
 				B659C0B224F9596600AFABA8 /* AddResistor.swift in Sources */,
 				B659C08224F958F700AFABA8 /* ContentView.swift in Sources */,
 				B659C0AE24F9596600AFABA8 /* SIPrefix.swift in Sources */,
@@ -723,13 +737,14 @@
 				B659C0B624FD11B400AFABA8 /* CapacitorRow.swift in Sources */,
 				B6FC7A912527868B0014630B /* Settings.swift in Sources */,
 				B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */,
+				B6B52455252F1EB0002D444D /* CapacitorParallelSeries.swift in Sources */,
 				B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */,
 				B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */,
 				B66D01142520DE850039516C /* OhmsLaw.swift in Sources */,
 				B642CD352514BA250011769A /* NumerictoDecibelGain.swift in Sources */,
 				B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */,
+				B6B5245D252F1F70002D444D /* CapacitorList.swift in Sources */,
 				B642CD3D2514CF630011769A /* LEDResistorCalculator.swift in Sources */,
-				B659C0B824FD128500AFABA8 /* CapacitorCalculator.swift in Sources */,
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
 				B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */,
@@ -746,7 +761,6 @@
 				B6FBCF6124F3F2C300D9D9CE /* ResistorCalcs.swift in Sources */,
 				B63913B1252E13B600142764 /* ResistorList.swift in Sources */,
 				B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */,
-				B6FBCF5B24F3F27700D9D9CE /* ResistorCalculator.swift in Sources */,
 				B6B52445252F0796002D444D /* AdaptiveKeyboard.swift in Sources */,
 				B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */,
 			);

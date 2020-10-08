@@ -1,17 +1,16 @@
 //
-//  ResistorParallelSeries.swift
+//  CapacitorParallelSeries.swift
 //  Elecalc
 //
-//  Created by Finn Beckitt-Marshall on 07/10/2020.
+//  Created by Finn Beckitt-Marshall on 08/10/2020.
 //
 
 import SwiftUI
 
-struct ResistorParallelSeries: View {
-    
+struct CapacitorParallelSeries: View {
     @State var addViewIsPresented: Bool = false
     @State private var keyboardHeight: CGFloat = 0 // Keyboard height variable
-    @EnvironmentObject var resistorCalcs: ResistorCalcs
+    @EnvironmentObject var capacitorCalcs: CapacitorCalcs
     @EnvironmentObject var settings: Settings
     
     
@@ -22,20 +21,20 @@ struct ResistorParallelSeries: View {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     Form {
-                        Section(header: Text("Resistor values")) {
-                            ResistorList()
+                        Section(header: Text("Capacitor values")) {
+                            CapacitorList()
                             Button(action: {
                                 selectionHaptics() // Play the selection haptic
                                 addViewIsPresented.toggle()
                             }) {
                                 HStack {
                                     Image(systemName: "plus.circle.fill")
-                                    Text("Add a Resistor")
+                                    Text("Add a Capacitor")
                                 }
                             }
                         }
                         Section(header: Text("Results")) {
-                            ResultsSection()
+                            ResultsSectionCapacitor()
                         }
                     }
                 }
@@ -44,33 +43,33 @@ struct ResistorParallelSeries: View {
                     if addViewIsPresented {
                         HStack {
                             Spacer()
-                            AddResistor(isPresented: $addViewIsPresented)
+                            AddCapacitor(isPresented: $addViewIsPresented)
                             Spacer()
                         }
                     }
                 }.animation(.spring())
                 
-            }.navigationBarTitle(Text("Parallel and Series Resistors"))
+            }.navigationBarTitle(Text("Parallel and Series Capacitors"))
             .navigationBarItems(trailing: EditButton())
         } else {
         
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     Form {
-                        Section(header: Text("Resistor values")) {
-                            ResistorList()
+                        Section(header: Text("Capacitor values")) {
+                            CapacitorList()
                             Button(action: {
                                 selectionHaptics() // Play the selection haptic
                                 addViewIsPresented.toggle()
                             }) {
                                 HStack {
                                     Image(systemName: "plus.circle.fill")
-                                    Text("Add a Resistor")
+                                    Text("Add a Capacitor")
                                 }
                             }
                         }
                         Section(header: Text("Results")) {
-                            ResultsSection()
+                            ResultsSectionCapacitor()
                         }
                     }
                 }
@@ -79,28 +78,28 @@ struct ResistorParallelSeries: View {
                     if addViewIsPresented {
                         HStack {
                             Spacer()
-                            AddResistor(isPresented: $addViewIsPresented)
+                            AddCapacitor(isPresented: $addViewIsPresented)
                             Spacer()
                         }
                         
                     }
                 }.animation(.spring())
                 
-            }.navigationBarTitle(Text("Parallel and Series Resistors"))
+            }.navigationBarTitle(Text("Parallel and Series Capacitors"))
+            .navigationBarItems(trailing: EditButton())
             .keyboardAdaptive()
         }
     }
 }
 
-struct ResistorParallelSeries_Previews: PreviewProvider {
+struct CapacitorParallelSeries_Previews: PreviewProvider {
     static var previews: some View {
-        ResistorParallelSeries()
+        CapacitorParallelSeries()
     }
 }
 
-
-struct ResultsSection: View {
-    @EnvironmentObject var resistorCalcs: ResistorCalcs
+struct ResultsSectionCapacitor: View {
+    @EnvironmentObject var capacitorCalcs: CapacitorCalcs
     @EnvironmentObject var settings: Settings
     var body: some View {
         // Show the results in a HStack
@@ -108,14 +107,14 @@ struct ResultsSection: View {
             Text("Parallel:")
                 .bold()
             Spacer()
-            Text("\(resistorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.parallelCalculated.prefix.description)Ω")
+            Text("\(capacitorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.parallelCalculated.prefix.description)F")
                 .multilineTextAlignment(.trailing)
         }
         HStack {
             Text("Series:")
             .bold()
             Spacer()
-            Text("\(resistorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.seriesCalculated.prefix.description)Ω")
+            Text("\(capacitorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.seriesCalculated.prefix.description)F")
                 .multilineTextAlignment(.trailing)
         }
     }
