@@ -18,15 +18,20 @@ struct AddResistor: View {
     var body: some View {
         ZStack {
             if (colourScheme == .dark) {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.gray)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.black)
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.gray)
+                }
                     .frame(minWidth: 280, idealWidth: 400, maxWidth: 400, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
-                    .foregroundColor(.black)
+                    
                     
             } else {
                 RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white)
                     .frame(minWidth: 280, idealWidth: 400, maxWidth: 400, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
-                    .foregroundColor(.white)
+                    
                     .shadow(radius: 10)
             }
             
@@ -85,7 +90,7 @@ struct AddResistor: View {
                         self.resistorCalcs.addTempElement()
                         _ = self.resistorCalcs.calcParallelResistors(values: self.resistorCalcs.resistorValues)
                         _ = self.resistorCalcs.calcSeriesResistors(values: self.resistorCalcs.resistorValues)
-                        self.isPresented = false
+                        //self.isPresented = false
                         
                     }) {
                         Image(systemName: "plus.circle.fill")
@@ -99,7 +104,7 @@ struct AddResistor: View {
                         self.isPresented = false
                     }) {
                         Image(systemName: "xmark.circle.fill")
-                        Text("Cancel")
+                        Text("Close")
                     }
                 }
             }
