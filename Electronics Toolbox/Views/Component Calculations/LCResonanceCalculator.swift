@@ -63,22 +63,43 @@ struct LCResonanceCalculator: View {
                     // Validate the values to check that they are greater than zero
                     if (inductorValue.value <= 0.0 || capacitorValue.value <= 0.0) {
                         valuesInvalid = true
+                        errorHaptics()
                     } else {
                         frequency = lcResonanceCalc.calcLCResFreq(inductance: inductorValue, capacitance: capacitorValue)
+                        successHaptics()
                     }
                 }) {
                     Text("Calculate")
+                }.alert(isPresented: $valuesInvalid) {
+                    Alert(title: Text("Your inductor and/or capacitor value are less than or equal to zero."), message: Text("Please check your value/s."), dismissButton: .default(Text("OK")))
                 }
             }
             
             // Results section
             Section(header: Text("Results")) {
                 HStack {
-                    Text("Frequency:")
+                    Text("Frequency (f):")
                         .bold()
                     Spacer()
                     Text("\(frequency.value, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description)Hz")
                 }
+                HStack {
+                    Text("Angular frequency (ω):")
+                        .bold()
+                    Spacer()
+                    Text("\(frequency.value * 2 * Double.pi, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description) rad s⁻¹")
+                }
+            }
+            
+            // Explanation section
+            Section(header: Text("Explanation")) {
+                Text("This calculator calculates the resonant frequency of an LC circuit (an inductor in series with a capacitor).")
+                HStack {
+                    Spacer()
+                    Image("LCResonatorEqns")
+                    Spacer()
+                }
+                    
             }
         }
         .navigationBarTitle(Text("LC Resonance Calculator"))

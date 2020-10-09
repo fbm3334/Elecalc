@@ -72,8 +72,10 @@ struct AddResistor: View {
                         // If the entered value is zero, then return nothing to stop the app from crashing
                         if (Double(self.resistorCalcs.valueTempString)! <= 0) {
                             valueInvalid = true
+                            errorHaptics()
                             return
-                            
+                        } else {
+                            successHaptics()
                         }
                         
                         if let val = Double(self.resistorCalcs.valueTempString) {

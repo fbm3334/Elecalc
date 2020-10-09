@@ -54,7 +54,7 @@ struct AddCapacitor: View {
                 
                 Picker(selection: $capacitorCalcs.prefixTemp, label: Text("Prefix")) {
                     ForEach(SIPrefixes.allCases, id: \.self) {
-                        Text(String("\($0.description)Ω"))
+                        Text(String("\($0.description)F"))
                     }
                 }
                     .pickerStyle(SegmentedPickerStyle())
@@ -72,8 +72,11 @@ struct AddCapacitor: View {
                         // If the entered value is zero, then return nothing to stop the app from crashing
                         if (Double(self.capacitorCalcs.valueTempString)! <= 0) {
                             valueInvalid = true
+                            // Play the error haptic
+                            errorHaptics()
                             return
-                            
+                        } else {
+                            successHaptics()
                         }
                         
                         if let val = Double(self.capacitorCalcs.valueTempString) {
@@ -96,7 +99,7 @@ struct AddCapacitor: View {
                         Image(systemName: "plus.circle.fill")
                         Text("Add")
                     }.alert(isPresented: $valueInvalid) {
-                        Alert(title: Text("The resistance value is less than or equal to zero."), message: Text("Please check your value."), dismissButton: .default(Text("OK")))
+                        Alert(title: Text("The capacitance value is less than or equal to zero."), message: Text("Please check your value."), dismissButton: .default(Text("OK")))
                     }
                     Spacer(minLength: 10)
                     // Button to cancel adding the capacitor

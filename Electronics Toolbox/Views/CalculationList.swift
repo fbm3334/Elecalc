@@ -43,10 +43,10 @@ struct CalculationList: View {
                     NavigationLink(String("What's new"), destination: WhatsNewView())
                 }
             }
+            .navigationBarTitle(Text("Elecalc"))
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("Elecalc")
-            
             WelcomeView()
+                
         }
     }
 }
