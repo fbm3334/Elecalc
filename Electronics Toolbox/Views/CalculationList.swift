@@ -34,6 +34,10 @@ struct CalculationList: View {
                     NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
                 }
                 
+                Section(header: Text("Digital Calculations")) {
+                    NavigationLink(String("Number Base Converter"), destination: NumberBaseCalc())
+                }
+                
                 Section(header: Text("Settings")) {
                     NavigationLink(String("Settings"), destination: SettingsView())
                 }

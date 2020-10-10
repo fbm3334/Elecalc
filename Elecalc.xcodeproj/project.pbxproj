@@ -51,6 +51,8 @@
 		B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */; };
 		B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */; };
 		B6E4FF242522397700295CC0 /* PowerCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4FF232522397700295CC0 /* PowerCalcs.swift */; };
+		B6F8ED4F25304FE1002C593B /* NumberBaseCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8ED4E25304FE1002C593B /* NumberBaseCalc.swift */; };
+		B6F8ED572530509D002C593B /* DigitalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8ED562530509D002C593B /* DigitalCalcs.swift */; };
 		B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */; };
 		B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */; };
 		B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2B24F3F23400D9D9CE /* ContentView.swift */; };
@@ -144,6 +146,8 @@
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
 		B6D7F0F125064C8F007264C5 /* ThermalResistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalResistanceCalculator.swift; sourceTree = "<group>"; };
 		B6E4FF232522397700295CC0 /* PowerCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalcs.swift; sourceTree = "<group>"; };
+		B6F8ED4E25304FE1002C593B /* NumberBaseCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBaseCalc.swift; sourceTree = "<group>"; };
+		B6F8ED562530509D002C593B /* DigitalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCalcs.swift; sourceTree = "<group>"; };
 		B6FBCF2424F3F23400D9D9CE /* Elecalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elecalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -322,6 +326,14 @@
 			path = Capacitor;
 			sourceTree = "<group>";
 		};
+		B6F8ED4D25304FD3002C593B /* Digital Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8ED4E25304FE1002C593B /* NumberBaseCalc.swift */,
+			);
+			path = "Digital Calculations";
+			sourceTree = "<group>";
+		};
 		B6FBCF1B24F3F23400D9D9CE = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +409,7 @@
 		B6FBCF5724F3F24D00D9D9CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6F8ED4D25304FD3002C593B /* Digital Calculations */,
 				B66D01122520DE660039516C /* Unit Calculations */,
 				B61AAF442516967A00370C35 /* Gain Calculations */,
 				B61AAF432516966A00370C35 /* Thermal Calculations */,
@@ -431,6 +444,7 @@
 				B66D010A2520DC780039516C /* UnitCalcs.swift */,
 				B6FC7A902527868B0014630B /* Settings.swift */,
 				B6391386252DC04600142764 /* LCResonanceCalc.swift */,
+				B6F8ED562530509D002C593B /* DigitalCalcs.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -742,10 +756,12 @@
 				B659C0B424F95C7000AFABA8 /* CapacitorCalcs.swift in Sources */,
 				B66D01142520DE850039516C /* OhmsLaw.swift in Sources */,
 				B642CD352514BA250011769A /* NumerictoDecibelGain.swift in Sources */,
+				B6F8ED572530509D002C593B /* DigitalCalcs.swift in Sources */,
 				B6FBCF6324F3F32800D9D9CE /* SIPrefixCalc.swift in Sources */,
 				B6B5245D252F1F70002D444D /* CapacitorList.swift in Sources */,
 				B642CD3D2514CF630011769A /* LEDResistorCalculator.swift in Sources */,
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
+				B6F8ED4F25304FE1002C593B /* NumberBaseCalc.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
 				B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */,
 				B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */,
