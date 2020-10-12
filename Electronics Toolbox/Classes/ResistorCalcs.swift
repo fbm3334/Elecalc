@@ -12,16 +12,16 @@ class ResistorCalcs: ObservableObject {
     var siPrefixCalc = SIPrefixCalc()
     var valueTempString: String = "0"
     var valueTemp: Double = 0.0
-    var prefixTemp: SIResistorPrefixes = .Ω
+    var prefixTemp: SIPrefixes = .none
     
-    // ResistorValue object to show parallel result
-    @Published var parallelCalculated = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+    // SIValue object to show parallel result
+    @Published var parallelCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
-    // ResistorValue object to show series result
-    @Published var seriesCalculated = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+    // SIValue object to show series result
+    @Published var seriesCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
-    // Array of ResistorValue structs to store the resistor data
-    @Published var resistorValues: [ResistorValue] = []
+    // Array of SIValue structs to store the resistor data
+    @Published var resistorValues: [SIValue] = []
     
     // Number of bands in resistor
     @Published var numberOfBands: NumberOfResistorBands = .four
@@ -32,15 +32,15 @@ class ResistorCalcs: ObservableObject {
     @Published var multiplier: ResistorMultiplier = .black
     @Published var tolerance: ResistorTolerance = .silver
     
-    // ResistorValue for calculated resistor from colour code
-    @Published var colourCodeResistor = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
-    @Published var ccResistorLowerTolerance = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
-    @Published var ccResistorUpperTolerance = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+    // SIValue for calculated resistor from colour code
+    @Published var colourCodeResistor = SIValue(id: UUID(), value: 0.0, prefix: .none)
+    @Published var ccResistorLowerTolerance = SIValue(id: UUID(), value: 0.0, prefix: .none)
+    @Published var ccResistorUpperTolerance = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
     // Function for calculating parallel resistors
-    func calcParallelResistors(values: [ResistorValue]) -> ResistorValue {
+    func calcParallelResistors(values: [SIValue]) -> SIValue {
         if (values.count == 0) {
-            parallelCalculated = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+            parallelCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
             return parallelCalculated
         } else {
             var resistanceTotal: Double = 0
@@ -49,9 +49,9 @@ class ResistorCalcs: ObservableObject {
                 let resistanceValue: Double = 1.0 / (value.value * pow(10.0, Double(value.prefix.rawValue)))
                 resistanceTotal += resistanceValue
             }
-            // Take the reciprocal and then normalise to get a ResistorValue
+            // Take the reciprocal and then normalise to get a SIValue
             let resistanceValueReciprocal = 1.0 / resistanceTotal
-            let resistanceValueWithPrefix = siPrefixCalc.calcResistorPrefix(value: resistanceValueReciprocal, prefix: .Ω)
+            let resistanceValueWithPrefix = siPrefixCalc.calcSIPrefix(value: resistanceValueReciprocal, prefix: .none)
             parallelCalculated = resistanceValueWithPrefix
             print(resistanceValueWithPrefix.value)
             return resistanceValueWithPrefix
@@ -59,9 +59,9 @@ class ResistorCalcs: ObservableObject {
     }
     
     // Function for calculating series resistors
-    func calcSeriesResistors(values: [ResistorValue]) -> ResistorValue {
+    func calcSeriesResistors(values: [SIValue]) -> SIValue {
         if (values.count == 0) {
-            seriesCalculated = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+            seriesCalculated = SIValue(id: UUID(), value: 0.0, prefix: .none)
             return seriesCalculated
         } else {
             var resistanceTotal: Double = 0
@@ -71,7 +71,7 @@ class ResistorCalcs: ObservableObject {
                 resistanceTotal += resistanceValue
             }
             // Calculate the value
-            let resistanceValueWithPrefix = siPrefixCalc.calcResistorPrefix(value: resistanceTotal, prefix: .Ω)
+            let resistanceValueWithPrefix = siPrefixCalc.calcSIPrefix(value: resistanceTotal, prefix: .none)
             seriesCalculated = resistanceValueWithPrefix
             print(resistanceValueWithPrefix.value)
             return resistanceValueWithPrefix
@@ -90,7 +90,7 @@ class ResistorCalcs: ObservableObject {
     
     // Function to add element to array
     func addToArray() {
-        let newResistorValue = ResistorValue(id: UUID(), value: 0.0, prefix: .Ω)
+        let newResistorValue = SIValue(id: UUID(), value: 0.0, prefix: .none)
         print(newResistorValue)
         resistorValues.append(newResistorValue)
     }
@@ -98,8 +98,8 @@ class ResistorCalcs: ObservableObject {
     // Function to add the temporary element into the array, after running it through prefix calculation to normalise it
     func addTempElement() {
         print("Temp value = \(valueTemp)")
-        let normalisedTempElement = siPrefixCalc.calcResistorPrefix(value: valueTemp, prefix: prefixTemp)
-        let newResistorValue = ResistorValue(id: UUID(), value: normalisedTempElement.value, prefix: normalisedTempElement.prefix)
+        let normalisedTempElement = siPrefixCalc.calcSIPrefix(value: valueTemp, prefix: prefixTemp)
+        let newResistorValue = SIValue(id: UUID(), value: normalisedTempElement.value, prefix: normalisedTempElement.prefix)
         print(newResistorValue)
         resistorValues.append(newResistorValue)
     }
@@ -120,26 +120,26 @@ class ResistorCalcs: ObservableObject {
         
         // Calculate the prefix to get the resistor value
         if bandValue != 0 {
-            colourCodeResistor = siPrefixCalc.calcResistorPrefix(value: bandValue, prefix: .Ω)
+            colourCodeResistor = siPrefixCalc.calcSIPrefix(value: bandValue, prefix: .none)
             print(colourCodeResistor)
             // Calculate the upper and lower tolerance
-            ccResistorUpperTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 + tolerance.rawValue), prefix: .Ω)
-            ccResistorLowerTolerance = siPrefixCalc.calcResistorPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .Ω)
+            ccResistorUpperTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 + tolerance.rawValue), prefix: .none)
+            ccResistorLowerTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .none)
         }
     }
     
     // Function to calculate an LED current limiting resistor
-    func calcLEDResistor(supplyVoltage: Double, ledVoltage: Double, ledCurrent: Double) -> ResistorValue {
+    func calcLEDResistor(supplyVoltage: Double, ledVoltage: Double, ledCurrent: Double) -> SIValue {
         let resistorValue: Double = (supplyVoltage - ledVoltage) / ledCurrent
         // Calculate the resistor value with the prefix
-        let resistorValueWithPrefix = siPrefixCalc.calcResistorPrefix(value: resistorValue, prefix: .Ω)
+        let resistorValueWithPrefix = siPrefixCalc.calcSIPrefix(value: resistorValue, prefix: .none)
         // Return this value
         print(resistorValueWithPrefix)
         return resistorValueWithPrefix
     }
     
     // Function to calculate the potential divider voltage across R2 (bottom resistor of a network)
-    func calcPotentialDividerVoltage(supplyVoltage: Double, r1: ResistorValue, r2: ResistorValue) -> Double {
+    func calcPotentialDividerVoltage(supplyVoltage: Double, r1: SIValue, r2: SIValue) -> Double {
         // Get rid of the prefixes for R1 and R2
         let r1NoPrefix = r1.value * pow(10.0, Double(r1.prefix.rawValue))
         let r2NoPrefix = r2.value * pow(10.0, Double(r2.prefix.rawValue))

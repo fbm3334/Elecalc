@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3561AD22-2F7B-48BE-9CE2-DCDBF4F267E7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "259B478B-420B-4020-8C60-3D7714301DEF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electronics Toolbox/Classes/DigitalCalcs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "decToBin(decNumber:signed:skipValidation:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9727D8F7-C184-45F5-9DEF-D8AC306B1765"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electronics Toolbox/Views/Digital Calculations/NumberBaseCalc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "convertNumberBase()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electronics Toolbox/Views/Digital Calculations/NumberBaseCalc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "NumberBaseCalc"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - 7ab896cb79c9d8a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Elecalc.NumberBaseCalc.decConverted : Swift.Int"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - c0b43d5b59d3f576"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.decConverted.getter : Swift.Int"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - 5df2799a2073297a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.decConverted.setter : Swift.Int"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - 73a484ed75151b3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.decConverted.modify : Swift.Int"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - 10cfb6f0f2ac1c7a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.decConverted.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - 37e68ae770263432"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.$decConverted.getter : SwiftUI.Binding&lt;Swift.Int&gt;"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "15CDC231-2B38-4FD1-8E45-00FB533CAAD8 - d488b16284243106"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Elecalc.NumberBaseCalc.init() -&gt; Elecalc.NumberBaseCalc"
+                  moduleName = "Elecalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Documents/iOS/ET%20v2/Electronics%20Toolbox/Electronics%20Toolbox/Views/Digital%20Calculations/NumberBaseCalc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "636">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

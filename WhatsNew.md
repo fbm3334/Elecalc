@@ -1,5 +1,5 @@
-- Fixed a bug where extremely large/small values would crash the app
-- Added a simple power calculator
-- Added haptic feedback within the app
-- Added a settings screen to control haptic feedback as well as the number of decimal places
-- Changed the equations in the Ohm's Law calculator
+- Added default values for the haptic feedback and decimal places
+- Done some work behind the scenes to simplify the prefix calculation code
+- Added a new interface for adding resistors and capacitors to make entry quicker
+- Added an LC resonance calculator
+- Added a number base converter (converting between decimal, hexadecimal and binary)

@@ -19,7 +19,7 @@ struct LEDResistorCalculator: View {
     @State var ledVoltageString: String = "0"
     @State var ledCurrent: Double = 0.0
     @State var ledCurrentString: String = "0"
-    @State var resistorValue = ResistorValue(value: 0, prefix: .Ω)
+    @State var resistorValue = SIValue(value: 0, prefix: .none)
     
     // Flags - show alerts if parameters out of bounds
     @State var supplyVoltageZero: Bool = false
@@ -106,7 +106,7 @@ struct LEDResistorCalculator: View {
                     Text("Minimum resistance:")
                         .bold()
                     Spacer()
-                    Text("\(resistorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorValue.prefix.description)")
+                    Text("\(resistorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorValue.prefix.description)Ω")
                 }
                 
             }

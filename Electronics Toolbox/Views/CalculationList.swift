@@ -17,11 +17,12 @@ struct CalculationList: View {
                 }
                 
                 Section(header: Text("Component Calculations")) {
-                    NavigationLink(String("Parallel and Series Resistors"), destination: ResistorCalculator())
-                    NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorCalculator())
+                    NavigationLink(String("Parallel and Series Resistors"), destination: ResistorParallelSeries())
+                    NavigationLink(String("Parallel and Series Capacitors"), destination: CapacitorParallelSeries())
                     NavigationLink(String("Resistor Colour Code to Value"), destination: ResistorBandToValue())
                     NavigationLink(String("Potential Divider Calculator"), destination: PotentialDivider())
                     NavigationLink(String("LED Current-Limiting Resistor"), destination: LEDResistorCalculator())
+                    NavigationLink(String("LC Resonance Calculator"), destination: LCResonanceCalculator())
                 }
                 
                 Section(header: Text("Thermal Calculations")) {
@@ -33,6 +34,10 @@ struct CalculationList: View {
                     NavigationLink(String("Numeric to dB Gain"), destination: NumerictoDecibelGain())
                 }
                 
+                Section(header: Text("Digital Calculations")) {
+                    NavigationLink(String("Number Base Converter"), destination: NumberBaseCalc())
+                }
+                
                 Section(header: Text("Settings")) {
                     NavigationLink(String("Settings"), destination: SettingsView())
                 }
@@ -42,10 +47,10 @@ struct CalculationList: View {
                     NavigationLink(String("What's new"), destination: WhatsNewView())
                 }
             }
+            .navigationBarTitle(Text("Elecalc"))
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("Elecalc")
-            
             WelcomeView()
+                
         }
     }
 }

@@ -14,8 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var resistorCalcs = ResistorCalcs()
     var capacitorCalcs = CapacitorCalcs()
     var thermalCalcs = ThermalCalcs()
+    var lcResonanceCalc = LCResonanceCalc()
     var gainCalcs = GainCalcs()
     var unitCalcs = UnitCalcs()
+    var digitalCalcs = DigitalCalcs()
     var settings = Settings()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -28,8 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(resistorCalcs)
             .environmentObject(capacitorCalcs)
             .environmentObject(thermalCalcs)
+            .environmentObject(lcResonanceCalc)
             .environmentObject(gainCalcs)
             .environmentObject(unitCalcs)
+            .environmentObject(digitalCalcs)
             .environmentObject(settings)
 
         // Use a UIHostingController as window root view controller.
