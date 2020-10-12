@@ -172,6 +172,11 @@ struct NumberBaseCalc: View {
                         .font(.system(size: 16, design: .monospaced))
                 }
             }
+            
+            Section(header: Text("Explanation")) {
+                Text("This calculator converts integers between their decimal, hexadecimal and binary equivalents. Signed (two's complement) as well as unsigned integers are supported.")
+                
+            }
         }
         .navigationBarTitle(Text("Number Base Converter"))
     }

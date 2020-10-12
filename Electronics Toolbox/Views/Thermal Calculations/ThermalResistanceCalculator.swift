@@ -136,6 +136,21 @@ struct ThermalResistanceCalculator: View {
             
             }
             
+            Section(header: Text("Explanation")) {
+                Text("This calculator calculates whether a heatsink is required to cool a device, and if so, what the maximum allowable thermal resistance of that heatsink is.")
+                // Add Wikipedia article link
+                if #available(iOS 14.0, *) {
+                    Link(destination: URL(string: "https://en.wikipedia.org/wiki/Thermal_resistance")!, label: {
+                        Text("Article about thermal resistance on Wikipedia")
+                    })
+                } else {
+                    // Links were only introduced in iOS 14, so the workaround is to use UIKit links.
+                    Button("Article about thermal resistance on Wikipedia") {
+                        UIApplication.shared.open(URL(string: "https://en.wikipedia.org/wiki/Thermal_resistance")!)
+                    }
+                }
+            }
+            
         
         }
         .navigationBarTitle(String("Heatsink Calculator"))
