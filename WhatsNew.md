@@ -1,1 +1,3 @@
-
+- Fixed a bug with conversion of two's complement negative numbers in the number base converter
+- Added colours to the resistor colour code calculator
+- General usability improvements
