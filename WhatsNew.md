@@ -2,3 +2,4 @@
 - Done some work behind the scenes to simplify the prefix calculation code
 - Added a new interface for adding resistors and capacitors to make entry quicker
 - Added an LC resonance calculator
+- Added a number base converter (converting between decimal, hexadecimal and binary)

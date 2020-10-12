@@ -35,19 +35,21 @@ class DigitalCalcs: ObservableObject {
     // Limited to 32 bits
     
     // Function to convert a decimal number to a binary number.
-    func decToBin(decNumber: Int, signed: Bool) -> String {
+    func decToBin(decNumber: Int, signed: Bool, skipValidation: Bool) -> String {
         // Validate the decimal number first, return the string "Err" if invalid
-        if (validateDec(decNumber: decNumber, signed: signed) == false) { return "Err" }
+        if (validateDec(decNumber: decNumber, signed: signed) == false && skipValidation == false) { return "Err" }
         else {
             // Unsigned
             // If the number is unsigned or >= 0, then calculate the positive number
-            if (signed == false || decNumber >= 0) {
+            if (signed == false || (decNumber >> 31) == 0) {
                 let binString = String(decNumber, radix: 2)
+                print(binString.count)
                 let zeroString = String(repeating: "0", count: 32 - binString.count)
                 return zeroString + binString
             } else {
-                let twosComplement = max32BitUnsigned + decNumber
-                let signedBinString = String(twosComplement, radix: 2)
+                //let twosComplement = max32BitUnsigned + decNumber
+                let signedBinString = String(decNumber, radix: 2).replacingOccurrences(of: "-", with: "") // Strip away the negative signs
+                print("\(signedBinString), count: \(signedBinString.count)")
                 let oneString = String(repeating: "1", count: 32 - signedBinString.count)
                 return oneString + signedBinString
             }
@@ -55,9 +57,9 @@ class DigitalCalcs: ObservableObject {
     }
     
     // Function to convert a decimal number to an hexadecimal number.
-    func decToHex(decNumber: Int, signed: Bool) -> String {
+    func decToHex(decNumber: Int, signed: Bool, skipValidation: Bool) -> String {
         // Validate the decimal number first, return the string "Err" if invalid
-        if (validateDec(decNumber: decNumber, signed: signed) == false) { return "Err" }
+        if (validateDec(decNumber: decNumber, signed: signed) == false && skipValidation == false) { return "Err" }
         else {
             // Unsigned
             // If the number is unsigned or >= 0, then calculate the positive number
@@ -66,24 +68,25 @@ class DigitalCalcs: ObservableObject {
             } else {
                 let twosComplement = max32BitUnsigned + decNumber
                 let signedHexString = String(twosComplement, radix: 16)
-                let FString = String(repeating: "F", count: 16 - signedHexString.count)
-                return FString + signedHexString
+                let FString = String(repeating: "F", count: 8 - signedHexString.count)
+                return (FString + signedHexString).uppercased()
             }
         }
     }
     
     // Function to convert a binary number to a decimal number.
     func binToDec(binNumber: String, signed: Bool) -> Int {
-        let decNumber = Int(binNumber, radix: 2) ?? 0
-        // If the number is unsigned or is not negative, convert as usual.
+        // Firstly, treat as an unsigned value
+        let unsignedDec = UInt(binNumber, radix: 2) ?? 0
+        // If the value is unsigned or the MSB is zero, then return the unsigned value
         if (signed == false || binNumber.prefix(1) == "0") {
-            return decNumber
+            return Int(unsignedDec)
         } else {
-            // Take the complement by XORing decNumber with 2^32
-            let decNumberComplement = decNumber ^ max32BitUnsigned
-            return decNumberComplement + 1
+            return Int(unsignedDec) - max32BitUnsigned
         }
+        
     }
+    
     
     // Function to convert a hexadecimal number to a decimal number.
     func hexToDec(hexNumber: String, signed: Bool) -> Int {
@@ -95,10 +98,12 @@ class DigitalCalcs: ObservableObject {
         } else {
             // Check the MSB to see if it the number is negative
             let numberNegative = decNumber >> 31
+            print("Number negative: \(numberNegative)")
             if (numberNegative == 1) {
                 // Take the complement by XORing decNumber with 2^32
-                let decNumberComplement = decNumber ^ max32BitUnsigned
-                return decNumberComplement + 1
+                let decNumberComplement = decNumber - max32BitUnsigned
+                print("Complement = \(decNumberComplement)")
+                return decNumberComplement
             } else {
                 return decNumber
             }
@@ -108,6 +113,7 @@ class DigitalCalcs: ObservableObject {
     // Function to validate the decimal number to check whether it fits within the 32 bit range
     // Returns true if validated correctly, false otherwise.
     func validateDec(decNumber: Int, signed: Bool) -> Bool {
+        print("\(decNumber), \(signed)")
         // If it is a signed number, then it needs to be between -2^31 and (2^31 - 1).
         if (signed == true) {
             if (decNumber < min32BitSigned || decNumber > max32BitSigned) { return false }
@@ -136,6 +142,25 @@ class DigitalCalcs: ObservableObject {
         }
         
         return fillString + field
+    }
+    
+    // Function to autofill the text field to the right (for hexadecimal or binary)
+    func autoFillRight(field: String, base: NumberBase) -> String {
+        // Check length of string - if zero, return nil
+        if (field.count == 0) {
+            return ""
+        }
+        // Work out what the prefix should be from the first character
+        let fillPrefix = Array(field)[field.count - 1];
+        var fillString: String = ""
+        // From the base, work out the max length left
+        if (base == .bin) {
+            fillString = String(repeating: fillPrefix, count: 32 - field.count)
+        } else {
+            fillString = String(repeating: fillPrefix, count: 8 - field.count)
+        }
+        
+        return field + fillString
     }
     
 }

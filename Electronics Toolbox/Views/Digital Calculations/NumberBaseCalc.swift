@@ -16,9 +16,12 @@ struct NumberBaseCalc: View {
     @State var hexNumberIn = ""
     @State var binConverted = String(repeating: "0", count: 32)
     @State var decConverted: Int = 0
-    @State var hexConverted: String = ""
+    @State var hexConverted: String = "0"
     @State var inputBase: NumberBase = .bin
     @State var inputSigned: Bool = false
+    @State var binarySplit = ["0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000"]
+    
+    @State private var autofillHelpAction: Int? = 0
     
     
     var body: some View {
@@ -37,7 +40,7 @@ struct NumberBaseCalc: View {
                 }
                 
                 HStack {
-                    Text("Signed number")
+                    Text("Signed (two's complement) number")
                     Spacer()
                     Toggle("Signed number", isOn: $inputSigned)
                         .labelsHidden()
@@ -56,17 +59,6 @@ struct NumberBaseCalc: View {
                                     digitalCalcs.binAllowedCharacters.contains($0)
                                 }
                             }
-                    }
-                    
-                    // Autofill button
-                    Button(action: {
-                        binNumberIn = digitalCalcs.autoFill(field: binNumberIn, base: .bin)
-                    }) {
-                        VStack(alignment: .leading) {
-                            Text("Autofill")
-                            Text("Fills all 32 bits with the leftmost digit.")
-                                .font(.caption)
-                        }
                     }
                 }
                 
@@ -96,16 +88,46 @@ struct NumberBaseCalc: View {
                                 }
                             }
                     }
-                    
-                    // Autofill button
-                    Button(action: {
-                        hexNumberIn = digitalCalcs.autoFill(field: hexNumberIn, base: .hex)
-                    }) {
-                        VStack(alignment: .leading) {
-                            Text("Autofill")
-                            Text("Fills all hexadecimal digits with the leftmost digit.")
-                                .font(.caption)
-                        }
+                }
+            }
+            
+            // Show the Autofill section if the number is binary or hexadecimal
+            if (inputBase != .dec) {
+                Section(header: Text("Autofill")) {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            // Play the success haptic
+                            successHaptics()
+                            if (inputBase == .bin) {
+                                binNumberIn = digitalCalcs.autoFill(field: binNumberIn, base: .bin)
+                            } else {
+                                hexNumberIn = digitalCalcs.autoFill(field: hexNumberIn, base: .hex)
+                            }
+                        }) {
+                            VStack {
+                                Image(systemName: "chevron.left.2")
+                                Text("Fill to left with MSB")
+                                    .font(.caption)
+                            }
+                        }.buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: {
+                            // Play the success haptic
+                            successHaptics()
+                            if (inputBase == .bin) {
+                                binNumberIn = digitalCalcs.autoFillRight(field: binNumberIn, base: .bin)
+                            } else {
+                                hexNumberIn = digitalCalcs.autoFillRight(field: hexNumberIn, base: .hex)
+                            }
+                        }) {
+                            VStack {
+                                Image(systemName: "chevron.right.2")
+                                Text("Fill to right with LSB")
+                                    .font(.caption)
+                            }
+                        }.buttonStyle(BorderlessButtonStyle())
+                        Spacer()
                     }
                 }
             }
@@ -119,28 +141,59 @@ struct NumberBaseCalc: View {
                 }
             }
             
-            // Results section
-            Section(header: Text("Results")) {
-                Text(binConverted)
-                Text(String(decConverted))
-                Text(hexConverted)
+            // Binary results section
+            Section(header: Text("Binary conversion")) {
+                HStack {
+                    Spacer()
+                    binaryView(binarySplit: binarySplit)
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
+            }
+            
+            // Decimal results section
+            Section(header: Text("Decimal conversion")) {
+                HStack {
+                    Text("Decimal:")
+                        .bold()
+                    Spacer()
+                    Text(String(decConverted))
+                        .font(.system(size: 16, design: .monospaced))
+                }
+            }
+            
+            // Decimal results section
+            Section(header: Text("Hexadecimal conversion")) {
+                HStack {
+                    Text("Hexadecimal:")
+                        .bold()
+                    Spacer()
+                    Text("0x\(hexConverted.uppercased())")
+                        .font(.system(size: 16, design: .monospaced))
+                }
             }
         }
         .navigationBarTitle(Text("Number Base Converter"))
     }
     
+    
+    
     func convertNumberBase() {
+        // Play the success haptic
+        successHaptics()
+        
         // Case statement for number base
         switch inputBase {
         
         case .bin:
             // First, convert the binary to decimal.
-            decConverted = digitalCalcs.binToDec(binNumber: binNumberIn, signed: inputSigned)
+            decConverted = Int(digitalCalcs.binToDec(binNumber: binNumberIn, signed: inputSigned))
+            print(decConverted)
             // Then convert back to binary and store in binConverted
             
         case .dec:
             // Copy the decimal number to decConverted
-        decConverted = Int(decNumberIn) ?? 0
+            decConverted = Int(decNumberIn) ?? 0
             // If unsigned, then take the absolute value
             if (inputSigned == false) { decConverted = abs(decConverted) }
         case .hex:
@@ -149,9 +202,26 @@ struct NumberBaseCalc: View {
         }
         
         // Convert the decimal to binary.
-        binConverted = digitalCalcs.decToBin(decNumber: decConverted, signed: inputSigned)
+        binConverted = digitalCalcs.decToBin(decNumber: decConverted, signed: inputSigned, skipValidation: true)
+        // Split the binary string
+        binarySplit = splitBinary(binaryString: binConverted)
         // Convert the decimal to hexadecimal.
-        hexConverted = digitalCalcs.decToHex(decNumber: decConverted, signed: inputSigned)
+        hexConverted = digitalCalcs.decToHex(decNumber: decConverted, signed: inputSigned, skipValidation: true)
+    }
+    
+    func splitBinary(binaryString: String) -> [String] {
+        var stringArray: [String] = []
+        for stringIndex in 0...6 {
+            print(stringIndex)
+            let start = binaryString.index(binaryString.startIndex, offsetBy: 4 * stringIndex)
+            let end = binaryString.index(binaryString.startIndex, offsetBy: ((4 * stringIndex) + 4))
+            let range = start..<end
+            let string = binaryString[range]
+            stringArray.append(String(string))
+        }
+        
+        stringArray.append(String(binaryString.suffix(4)))
+        return stringArray
     }
     
 }
@@ -160,4 +230,35 @@ struct NumberBaseCalc_Previews: PreviewProvider {
     static var previews: some View {
         NumberBaseCalc()
     }
+}
+
+struct binaryView: View {
+    var binarySplit: [String] = []
+    var body: some View {
+        VStack(alignment: .center) {
+            // First row of text (first 4 elements of array corresponding to binary digits 32-17)
+            Text("\(binarySplit[0]) \(binarySplit[1]) \(binarySplit[2]) \(binarySplit[3])")
+                .font(.system(size: 24, design: .monospaced))
+            // Adding ticker marks in a HStack to indicate bits
+            HStack {
+                Text("31")
+                Spacer()
+                Text("16")
+            }
+                .foregroundColor(Color.gray)
+                .font(.caption)
+            // Second row of text (last 4 elements of array corresponding to binary digits 16-1)
+            Text("\(binarySplit[4]) \(binarySplit[5]) \(binarySplit[6]) \(binarySplit[7])")
+                .font(.system(size: 24, design: .monospaced))
+            HStack {
+                Text("15")
+                Spacer()
+                Text("0")
+            }
+                .foregroundColor(Color.gray)
+                .font(.caption)
+        }.frame(width: 290)
+    }
+    
+    
 }

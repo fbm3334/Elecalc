@@ -1,14 +1,15 @@
 //
-//  Electronics_ToolboxTests.swift
-//  Electronics ToolboxTests
+//  ElecalcTests.swift
+//  ElecalcTests
 //
-//  Created by Finn Beckitt-Marshall on 24/08/2020.
+//  Created by Finn Beckitt-Marshall on 10/10/2020.
 //
 
 import XCTest
-@testable import Electronics_Toolbox
 
-class Electronics_ToolboxTests: XCTestCase {
+@testable import Elecalc
+
+class ElecalcTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +26,7 @@ class Electronics_ToolboxTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

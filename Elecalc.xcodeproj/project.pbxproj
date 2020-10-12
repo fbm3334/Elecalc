@@ -35,6 +35,7 @@
 		B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0B924FD132E00AFABA8 /* AddCapacitor.swift */; };
 		B659C0BC24FD339000AFABA8 /* ResistorColourCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */; };
 		B659C0BE24FD394900AFABA8 /* ResistorBandToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */; };
+		B661D4B325348D4F0086CDF0 /* MDTextAck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B661D4B225348D4F0086CDF0 /* MDTextAck.swift */; };
 		B66D00E42520BAE10039516C /* SIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D00E32520BAE10039516C /* SIStructs.swift */; };
 		B66D00EC2520BDF60039516C /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D00EB2520BDF60039516C /* WhatsNewView.swift */; };
 		B66D00F52520BF810039516C /* MDText in Frameworks */ = {isa = PBXBuildFile; productRef = B66D00F42520BF810039516C /* MDText */; };
@@ -53,13 +54,13 @@
 		B6E4FF242522397700295CC0 /* PowerCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4FF232522397700295CC0 /* PowerCalcs.swift */; };
 		B6F8ED4F25304FE1002C593B /* NumberBaseCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8ED4E25304FE1002C593B /* NumberBaseCalc.swift */; };
 		B6F8ED572530509D002C593B /* DigitalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8ED562530509D002C593B /* DigitalCalcs.swift */; };
+		B6F8ED702531B2E7002C593B /* ElecalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8ED6F2531B2E7002C593B /* ElecalcTests.swift */; };
 		B6FBCF2824F3F23400D9D9CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */; };
 		B6FBCF2A24F3F23400D9D9CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */; };
 		B6FBCF2C24F3F23400D9D9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF2B24F3F23400D9D9CE /* ContentView.swift */; };
 		B6FBCF2E24F3F23600D9D9CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FBCF2D24F3F23600D9D9CE /* Assets.xcassets */; };
 		B6FBCF3124F3F23600D9D9CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FBCF3024F3F23600D9D9CE /* Preview Assets.xcassets */; };
 		B6FBCF3424F3F23600D9D9CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FBCF3224F3F23600D9D9CE /* LaunchScreen.storyboard */; };
-		B6FBCF3F24F3F23600D9D9CE /* Electronics_ToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */; };
 		B6FBCF4A24F3F23600D9D9CE /* Electronics_ToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */; };
 		B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */; };
 		B6FBCF5E24F3F29600D9D9CE /* SIPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBCF5D24F3F29600D9D9CE /* SIPrefix.swift */; };
@@ -84,12 +85,12 @@
 			remoteGlobalIDString = B659C07C24F958F700AFABA8;
 			remoteInfo = "Electronics Toolbox for Mac";
 		};
-		B6FBCF3B24F3F23600D9D9CE /* PBXContainerItemProxy */ = {
+		B6F8ED722531B2E7002C593B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6FBCF1C24F3F23400D9D9CE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B6FBCF2324F3F23400D9D9CE;
-			remoteInfo = "Electronics Toolbox";
+			remoteInfo = Elecalc;
 		};
 		B6FBCF4624F3F23600D9D9CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -131,6 +132,7 @@
 		B659C0BB24FD339000AFABA8 /* ResistorColourCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorColourCode.swift; sourceTree = "<group>"; };
 		B659C0BD24FD394900AFABA8 /* ResistorBandToValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorBandToValue.swift; sourceTree = "<group>"; };
 		B6604A8725163BFB00CE9A95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B661D4B225348D4F0086CDF0 /* MDTextAck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextAck.swift; sourceTree = "<group>"; };
 		B66D00E32520BAE10039516C /* SIStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIStructs.swift; sourceTree = "<group>"; };
 		B66D00EB2520BDF60039516C /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		B66D00FC2520C0870039516C /* WhatsNew.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = WhatsNew.md; sourceTree = "<group>"; };
@@ -148,6 +150,9 @@
 		B6E4FF232522397700295CC0 /* PowerCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalcs.swift; sourceTree = "<group>"; };
 		B6F8ED4E25304FE1002C593B /* NumberBaseCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBaseCalc.swift; sourceTree = "<group>"; };
 		B6F8ED562530509D002C593B /* DigitalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCalcs.swift; sourceTree = "<group>"; };
+		B6F8ED6D2531B2E7002C593B /* ElecalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElecalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F8ED6F2531B2E7002C593B /* ElecalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElecalcTests.swift; sourceTree = "<group>"; };
+		B6F8ED712531B2E7002C593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FBCF2424F3F23400D9D9CE /* Elecalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elecalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF2724F3F23400D9D9CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBCF2924F3F23400D9D9CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,9 +161,6 @@
 		B6FBCF3024F3F23600D9D9CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6FBCF3324F3F23600D9D9CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6FBCF3524F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElecalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxTests.swift; sourceTree = "<group>"; };
-		B6FBCF4024F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FBCF4524F3F23600D9D9CE /* ElecalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElecalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBCF4924F3F23600D9D9CE /* Electronics_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronics_ToolboxUITests.swift; sourceTree = "<group>"; };
 		B6FBCF4B24F3F23600D9D9CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,18 +194,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6F8ED6A2531B2E7002C593B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2124F3F23400D9D9CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B66D00F52520BF810039516C /* MDText in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6FBCF3724F3F23600D9D9CE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +290,15 @@
 			path = "Electronics Toolbox for MacUITests";
 			sourceTree = "<group>";
 		};
+		B661D4B125348D030086CDF0 /* About Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B6922E0B25120D6B00B096FA /* AboutView.swift */,
+				B661D4B225348D4F0086CDF0 /* MDTextAck.swift */,
+			);
+			path = "About Screen";
+			sourceTree = "<group>";
+		};
 		B66D00E22520BACC0039516C /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,17 +345,26 @@
 			path = "Digital Calculations";
 			sourceTree = "<group>";
 		};
+		B6F8ED6E2531B2E7002C593B /* ElecalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8ED6F2531B2E7002C593B /* ElecalcTests.swift */,
+				B6F8ED712531B2E7002C593B /* Info.plist */,
+			);
+			path = ElecalcTests;
+			sourceTree = "<group>";
+		};
 		B6FBCF1B24F3F23400D9D9CE = {
 			isa = PBXGroup;
 			children = (
 				B66D00FC2520C0870039516C /* WhatsNew.md */,
 				B6604A8725163BFB00CE9A95 /* README.md */,
 				B6FBCF2624F3F23400D9D9CE /* Electronics Toolbox */,
-				B6FBCF3D24F3F23600D9D9CE /* Electronics ToolboxTests */,
 				B6FBCF4824F3F23600D9D9CE /* Electronics ToolboxUITests */,
 				B659C07E24F958F700AFABA8 /* Electronics Toolbox for Mac */,
 				B659C09424F958FA00AFABA8 /* Electronics Toolbox for MacTests */,
 				B659C09F24F958FA00AFABA8 /* Electronics Toolbox for MacUITests */,
+				B6F8ED6E2531B2E7002C593B /* ElecalcTests */,
 				B6FBCF2524F3F23400D9D9CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -353,11 +373,11 @@
 			isa = PBXGroup;
 			children = (
 				B6FBCF2424F3F23400D9D9CE /* Elecalc.app */,
-				B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */,
 				B6FBCF4524F3F23600D9D9CE /* ElecalcUITests.xctest */,
 				B659C07D24F958F700AFABA8 /* Elecalc for Mac.app */,
 				B659C09124F958FA00AFABA8 /* Elecalc for MacTests.xctest */,
 				B659C09C24F958FA00AFABA8 /* Elecalc for MacUITests.xctest */,
+				B6F8ED6D2531B2E7002C593B /* ElecalcTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,15 +408,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B6FBCF3D24F3F23600D9D9CE /* Electronics ToolboxTests */ = {
-			isa = PBXGroup;
-			children = (
-				B6FBCF3E24F3F23600D9D9CE /* Electronics_ToolboxTests.swift */,
-				B6FBCF4024F3F23600D9D9CE /* Info.plist */,
-			);
-			path = "Electronics ToolboxTests";
-			sourceTree = "<group>";
-		};
 		B6FBCF4824F3F23600D9D9CE /* Electronics ToolboxUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +420,7 @@
 		B6FBCF5724F3F24D00D9D9CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B661D4B125348D030086CDF0 /* About Screen */,
 				B6F8ED4D25304FD3002C593B /* Digital Calculations */,
 				B66D01122520DE660039516C /* Unit Calculations */,
 				B61AAF442516967A00370C35 /* Gain Calculations */,
@@ -416,7 +428,6 @@
 				B61AAF3C2516963B00370C35 /* Component Calculations */,
 				B6FBCF5824F3F25A00D9D9CE /* CalculationList.swift */,
 				B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */,
-				B6922E0B25120D6B00B096FA /* AboutView.swift */,
 				B66D00EB2520BDF60039516C /* WhatsNewView.swift */,
 				B6D58293252646020065FE83 /* SettingsView.swift */,
 			);
@@ -514,6 +525,24 @@
 			productReference = B659C09C24F958FA00AFABA8 /* Elecalc for MacUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B6F8ED6C2531B2E7002C593B /* ElecalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6F8ED742531B2E7002C593B /* Build configuration list for PBXNativeTarget "ElecalcTests" */;
+			buildPhases = (
+				B6F8ED692531B2E7002C593B /* Sources */,
+				B6F8ED6A2531B2E7002C593B /* Frameworks */,
+				B6F8ED6B2531B2E7002C593B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6F8ED732531B2E7002C593B /* PBXTargetDependency */,
+			);
+			name = ElecalcTests;
+			productName = ElecalcTests;
+			productReference = B6F8ED6D2531B2E7002C593B /* ElecalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B6FBCF2324F3F23400D9D9CE /* Elecalc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6FBCF4E24F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "Elecalc" */;
@@ -534,24 +563,6 @@
 			productName = "Electronics Toolbox";
 			productReference = B6FBCF2424F3F23400D9D9CE /* Elecalc.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B6FBCF3924F3F23600D9D9CE /* ElecalcTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcTests" */;
-			buildPhases = (
-				B6FBCF3624F3F23600D9D9CE /* Sources */,
-				B6FBCF3724F3F23600D9D9CE /* Frameworks */,
-				B6FBCF3824F3F23600D9D9CE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B6FBCF3C24F3F23600D9D9CE /* PBXTargetDependency */,
-			);
-			name = ElecalcTests;
-			productName = "Electronics ToolboxTests";
-			productReference = B6FBCF3A24F3F23600D9D9CE /* ElecalcTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B6FBCF4424F3F23600D9D9CE /* ElecalcUITests */ = {
 			isa = PBXNativeTarget;
@@ -577,7 +588,7 @@
 		B6FBCF1C24F3F23400D9D9CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					B659C07C24F958F700AFABA8 = {
@@ -591,12 +602,12 @@
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = B659C07C24F958F700AFABA8;
 					};
-					B6FBCF2324F3F23400D9D9CE = {
-						CreatedOnToolsVersion = 12.0;
-					};
-					B6FBCF3924F3F23600D9D9CE = {
+					B6F8ED6C2531B2E7002C593B = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = B6FBCF2324F3F23400D9D9CE;
+					};
+					B6FBCF2324F3F23400D9D9CE = {
+						CreatedOnToolsVersion = 12.0;
 					};
 					B6FBCF4424F3F23600D9D9CE = {
 						CreatedOnToolsVersion = 12.0;
@@ -621,7 +632,7 @@
 			projectRoot = "";
 			targets = (
 				B6FBCF2324F3F23400D9D9CE /* Elecalc */,
-				B6FBCF3924F3F23600D9D9CE /* ElecalcTests */,
+				B6F8ED6C2531B2E7002C593B /* ElecalcTests */,
 				B6FBCF4424F3F23600D9D9CE /* ElecalcUITests */,
 				B659C07C24F958F700AFABA8 /* Elecalc for Mac */,
 				B659C09024F958FA00AFABA8 /* Elecalc for MacTests */,
@@ -655,6 +666,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6F8ED6B2531B2E7002C593B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2224F3F23400D9D9CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,13 +681,6 @@
 				B6FBCF3124F3F23600D9D9CE /* Preview Assets.xcassets in Resources */,
 				B6FBCF2E24F3F23600D9D9CE /* Assets.xcassets in Resources */,
 				B66D01032520C1790039516C /* WhatsNew.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6FBCF3824F3F23600D9D9CE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +746,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6F8ED692531B2E7002C593B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6F8ED702531B2E7002C593B /* ElecalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6FBCF2024F3F23400D9D9CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,6 +782,7 @@
 				B6FBCF6624F3F49C00D9D9CE /* ResistorRow.swift in Sources */,
 				B6F8ED4F25304FE1002C593B /* NumberBaseCalc.swift in Sources */,
 				B659C0BA24FD132E00AFABA8 /* AddCapacitor.swift in Sources */,
+				B661D4B325348D4F0086CDF0 /* MDTextAck.swift in Sources */,
 				B6391387252DC04600142764 /* LCResonanceCalc.swift in Sources */,
 				B6D7F0F225064C8F007264C5 /* ThermalResistanceCalculator.swift in Sources */,
 				B66D00EC2520BDF60039516C /* WhatsNewView.swift in Sources */,
@@ -779,14 +799,6 @@
 				B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */,
 				B6B52445252F0796002D444D /* AdaptiveKeyboard.swift in Sources */,
 				B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6FBCF3624F3F23600D9D9CE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6FBCF3F24F3F23600D9D9CE /* Electronics_ToolboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,10 +823,10 @@
 			target = B659C07C24F958F700AFABA8 /* Elecalc for Mac */;
 			targetProxy = B659C09D24F958FA00AFABA8 /* PBXContainerItemProxy */;
 		};
-		B6FBCF3C24F3F23600D9D9CE /* PBXTargetDependency */ = {
+		B6F8ED732531B2E7002C593B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6FBCF2324F3F23400D9D9CE /* Elecalc */;
-			targetProxy = B6FBCF3B24F3F23600D9D9CE /* PBXContainerItemProxy */;
+			targetProxy = B6F8ED722531B2E7002C593B /* PBXContainerItemProxy */;
 		};
 		B6FBCF4724F3F23600D9D9CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -981,6 +993,46 @@
 			};
 			name = Release;
 		};
+		B6F8ED752531B2E7002C593B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = ElecalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.ElecalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
+			};
+			name = Debug;
+		};
+		B6F8ED762531B2E7002C593B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ALN5QX67P8;
+				INFOPLIST_FILE = ElecalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.ElecalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
+			};
+			name = Release;
+		};
 		B6FBCF4C24F3F23600D9D9CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1143,50 +1195,6 @@
 			};
 			name = Release;
 		};
-		B6FBCF5224F3F23600D9D9CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ALN5QX67P8;
-				INFOPLIST_FILE = "Electronics ToolboxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-ToolboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
-			};
-			name = Debug;
-		};
-		B6FBCF5324F3F23600D9D9CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ALN5QX67P8;
-				INFOPLIST_FILE = "Electronics ToolboxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.finnbeckitt-marshall.Electronics-ToolboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elecalc.app/Elecalc";
-			};
-			name = Release;
-		};
 		B6FBCF5524F3F23600D9D9CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1259,6 +1267,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B6F8ED742531B2E7002C593B /* Build configuration list for PBXNativeTarget "ElecalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6F8ED752531B2E7002C593B /* Debug */,
+				B6F8ED762531B2E7002C593B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6FBCF1F24F3F23400D9D9CE /* Build configuration list for PBXProject "Elecalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1273,15 +1290,6 @@
 			buildConfigurations = (
 				B6FBCF4F24F3F23600D9D9CE /* Debug */,
 				B6FBCF5024F3F23600D9D9CE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B6FBCF5124F3F23600D9D9CE /* Build configuration list for PBXNativeTarget "ElecalcTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B6FBCF5224F3F23600D9D9CE /* Debug */,
-				B6FBCF5324F3F23600D9D9CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
