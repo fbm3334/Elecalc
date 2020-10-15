@@ -59,6 +59,10 @@ struct DecibeltoNumericGain: View {
                     Text("\(numericGain, specifier: "%.\(settings.decimalPlaces)f")")
                 }
             }
+            
+            Section(header: Text("Explanation")) {
+                Text("This calculator converts a dB gain to a numeric gain.")
+            }
         }
         .navigationBarTitle("dB to Numeric Gain")
     }

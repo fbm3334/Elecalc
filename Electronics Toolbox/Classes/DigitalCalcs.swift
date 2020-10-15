@@ -48,7 +48,9 @@ class DigitalCalcs: ObservableObject {
                 return zeroString + binString
             } else {
                 //let twosComplement = max32BitUnsigned + decNumber
-                let signedBinString = String(decNumber, radix: 2).replacingOccurrences(of: "-", with: "") // Strip away the negative signs
+                // XOR the decimal number with 2^32 - 1, and then add one to the result
+                let decNumberNegative = abs(decNumber + 1) ^ (max32BitUnsigned - 1)
+                let signedBinString = String(decNumberNegative, radix: 2).replacingOccurrences(of: "-", with: "") // Strip away the negative signs
                 print("\(signedBinString), count: \(signedBinString.count)")
                 let oneString = String(repeating: "1", count: 32 - signedBinString.count)
                 return oneString + signedBinString

@@ -12,6 +12,11 @@ struct ResistorBandToValue: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     @EnvironmentObject var settings: Settings
     
+    // Arrays to store colours for resistor colour code
+    let colourCodeColours: [UIColor] = [.black, .brown, .red, .orange, .yellow, .green, .blue, .purple, .gray, .white]
+    let multiplierColours: [UIColor] = [UIColor(named: "SilverResistor")!, UIColor(named: "GoldResistor")!, .black, .brown, .red, .orange, .yellow, .green, .blue, .purple, .gray, .white]
+    let toleranceColours: [UIColor] = [.white, UIColor(named: "SilverResistor")!, UIColor(named: "GoldResistor")!, .brown, .red, .green, .blue, .purple, .gray]
+    
     @ViewBuilder
     var body: some View {
         // List of values
@@ -36,15 +41,37 @@ struct ResistorBandToValue: View {
             // Four bands - first two digits, multiplier and tolerance
             // Five bands - first three digits, multiplier and tolerance
                 Picker(selection: $resistorCalcs.bandDigit1, label: Text("First band")) {
-                    ForEach(ResistorColourCode.allCases, id: \.self) {
-                        Text(String($0.description))
+                    ForEach(ResistorColourCode.allCases, id: \.self) { colour in
+                        // Place the values in a HStack
+                        HStack {
+                            // Place the circle in a ZStack
+                            ZStack {
+                                Circle()
+                                    .fill(Color(colourCodeColours[colour.rawValue]))
+                                Circle()
+                                    .stroke(Color.gray, lineWidth: 1)
+                            }.frame(width: 15, height: 15)
+                                
+                            Text(String(colour.description))
+                        }
                     }
                     //.navigationBarTitle("First band")
                 }
                 
                 Picker(selection: $resistorCalcs.bandDigit2, label: Text("Second band")) {
-                    ForEach(ResistorColourCode.allCases, id: \.self) {
-                        Text(String($0.description))
+                    ForEach(ResistorColourCode.allCases, id: \.self) { colour in
+                        // Place the values in a HStack
+                        HStack {
+                            // Place the circle in a ZStack
+                            ZStack {
+                                Circle()
+                                    .fill(Color(colourCodeColours[colour.rawValue]))
+                                Circle()
+                                    .stroke(Color.gray, lineWidth: 1)
+                            }.frame(width: 15, height: 15)
+                                
+                            Text(String(colour.description))
+                        }
                     }
                     //.navigationBarTitle("Second band")
                 }
@@ -52,43 +79,100 @@ struct ResistorBandToValue: View {
                 // Show third digit picker if resistor does not equal four bands
                 if (resistorCalcs.numberOfBands != .four) {
                     Picker(selection: $resistorCalcs.bandDigit3, label: Text("Third band")) {
-                        ForEach(ResistorColourCode.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(ResistorColourCode.allCases, id: \.self) { colour in
+                            // Place the values in a HStack
+                            HStack {
+                                // Place the circle in a ZStack
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(colourCodeColours[colour.rawValue]))
+                                    Circle()
+                                        .stroke(Color.gray, lineWidth: 1)
+                                }.frame(width: 15, height: 15)
+                                    
+                                Text(String(colour.description))
+                            }
                         }
                         //.navigationBarTitle("Third band")
                     }
                     
                     Picker(selection: $resistorCalcs.multiplier, label: Text("Fourth band (multiplier)")) {
-                        ForEach(ResistorMultiplier.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(ResistorMultiplier.allCases, id: \.self) { colour in
+                            // Place the values in a HStack
+                            HStack {
+                                // Place the circle in a ZStack
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(multiplierColours[colour.rawValue + 2]))
+                                    Circle()
+                                        .stroke(Color.gray, lineWidth: 1)
+                                }.frame(width: 15, height: 15)
+                                    
+                                Text(String(colour.description))
+                            }
                         }
                         //.navigationBarTitle("Fourth band (multiplier)")
                     }
                     
                     Picker(selection: $resistorCalcs.tolerance, label: Text("Fifth band (tolerance)")) {
-                        ForEach(ResistorTolerance.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(ResistorTolerance.allCases, id: \.self) { colour in
+                            // Place the values in a HStack
+                            HStack {
+                    
+                                // Place the circle in a ZStack
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(toleranceColours[colour.rawValue]))
+                                    Circle()
+                                        .stroke(Color.gray, lineWidth: 1)
+                                }.frame(width: 15, height: 15)
+                                
+                                    
+                                Text(String(colour.description))
+                            }
                         }
                         //.navigationBarTitle("Fifth band (tolerance)")
                     }
                     
                 } else {
                     Picker(selection: $resistorCalcs.multiplier, label: Text("Third band (multiplier)")) {
-                        ForEach(ResistorMultiplier.allCases, id: \.self) {
-                            Text(String($0.description))
+                        ForEach(ResistorMultiplier.allCases, id: \.self) { colour in
+                            // Place the values in a HStack
+                            HStack {
+                                // Place the circle in a ZStack
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(multiplierColours[colour.rawValue + 2]))
+                                    Circle()
+                                        .stroke(Color.gray, lineWidth: 1)
+                                }.frame(width: 15, height: 15)
+                                    
+                                Text(String(colour.description))
+                            }
                         }
                         //.navigationBarTitle("Third band (multiplier)")
                     }
                     
                     Picker(selection: $resistorCalcs.tolerance, label: Text("Fourth band (tolerance)")) {
-                        ForEach(ResistorTolerance.allCases, id: \.self) {
-                            Text(String($0.description))
-                        }
-                        //.navigationBarTitle("Fourth band (tolerance)")
-                    }
+                        ForEach(ResistorTolerance.allCases, id: \.self) { colour in
+                            // Place the values in a HStack
+                            HStack {
                     
+                                // Place the circle in a ZStack
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(toleranceColours[colour.rawValue]))
+                                    Circle()
+                                        .stroke(Color.gray, lineWidth: 1)
+                                }.frame(width: 15, height: 15)
+                                
+                                    
+                                Text(String(colour.description))
+                            }
+                        }
+                    
+                    }
                 }
-            
                 
             // Button to calculate
                 Button(action: {
@@ -120,6 +204,12 @@ struct ResistorBandToValue: View {
                     Spacer()
                     Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)Ω")
                 }
+            }
+            
+            // Explanation section
+            Section(header: Text("Explanation")) {
+                Text("This calculator converts a resistor colour code to a value, as well as providing maximum and minimum values within the tolerances.")
+                Text("Note:").bold() + Text(" This calculator does not yet support the 6th band (temperature coefficient band) on a 6-band resistor.")
             }
             
             

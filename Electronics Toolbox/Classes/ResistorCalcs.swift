@@ -37,6 +37,9 @@ class ResistorCalcs: ObservableObject {
     @Published var ccResistorLowerTolerance = SIValue(id: UUID(), value: 0.0, prefix: .none)
     @Published var ccResistorUpperTolerance = SIValue(id: UUID(), value: 0.0, prefix: .none)
     
+    // Tolerance lookup array for calculations
+    private var toleranceLookupArray: [Double] = [0.2, 0.1, 0.05, 0.01, 0.02, 0.005, 0.0025, 0.001, 0.0005]
+    
     // Function for calculating parallel resistors
     func calcParallelResistors(values: [SIValue]) -> SIValue {
         if (values.count == 0) {
@@ -123,8 +126,8 @@ class ResistorCalcs: ObservableObject {
             colourCodeResistor = siPrefixCalc.calcSIPrefix(value: bandValue, prefix: .none)
             print(colourCodeResistor)
             // Calculate the upper and lower tolerance
-            ccResistorUpperTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 + tolerance.rawValue), prefix: .none)
-            ccResistorLowerTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 - tolerance.rawValue), prefix: .none)
+            ccResistorUpperTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 + toleranceLookupArray[tolerance.rawValue]), prefix: .none)
+            ccResistorLowerTolerance = siPrefixCalc.calcSIPrefix(value: bandValue * (1.0 - toleranceLookupArray[tolerance.rawValue]), prefix: .none)
         }
     }
     

@@ -1,5 +1,3 @@
-- Added default values for the haptic feedback and decimal places
-- Done some work behind the scenes to simplify the prefix calculation code
-- Added a new interface for adding resistors and capacitors to make entry quicker
-- Added an LC resonance calculator
-- Added a number base converter (converting between decimal, hexadecimal and binary)
+- Fixed a bug with conversion of two's complement negative numbers in the number base converter
+- Added colours to the resistor colour code calculator
+- General usability improvements

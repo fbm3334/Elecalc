@@ -69,16 +69,16 @@ enum ResistorMultiplier: Int, CustomStringConvertible, CaseIterable {
     }
 }
 
-enum ResistorTolerance: Double, CustomStringConvertible, CaseIterable {
-    case none = 0.2
-    case silver = 0.1
-    case gold = 0.05
-    case brown = 0.01
-    case red = 0.02
-    case green = 0.005
-    case blue = 0.0025
-    case violet = 0.001
-    case grey = 0.0005
+enum ResistorTolerance: Int, CustomStringConvertible, CaseIterable {
+    case none = 0
+    case silver = 1
+    case gold = 2
+    case brown = 3
+    case red = 4
+    case green = 5
+    case blue = 6
+    case violet = 7
+    case grey = 8
     
     var description: String {
         switch self {
