@@ -20,6 +20,8 @@ struct NumberBaseCalc: View {
     @State var inputBase: NumberBase = .bin
     @State var inputSigned: Bool = false
     @State var binarySplit = ["0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000"]
+    @State var decimalCheckFailed = false
+    
     
     @State private var autofillHelpAction: Int? = 0
     
@@ -69,7 +71,7 @@ struct NumberBaseCalc: View {
                         TextField("Enter a decimal number", text: $decNumberIn)
                             .font(.system(size: 16, design: .monospaced))
                             .onReceive(Just(decNumberIn)) { (newValue: String) in
-                                self.decNumberIn = newValue.prefix(10).filter {
+                                self.decNumberIn = newValue.prefix(11).filter {
                                     digitalCalcs.decAllowedCharacters.contains($0)
                                 }
                             }
@@ -132,12 +134,14 @@ struct NumberBaseCalc: View {
                 }
             }
             
-            // Convert button
+            // Convert button (with error if the decimal check fails)
             Section() {
                 Button(action: {
                     convertNumberBase()
                 }) {
                     Text("Convert")
+                }.alert(isPresented: $decimalCheckFailed) {
+                    Alert(title: Text("Decimal value out of range"), message: Text("The value entered was out of range. Please check your value."), dismissButton: .default(Text("OK")))
                 }
             }
             
@@ -184,6 +188,21 @@ struct NumberBaseCalc: View {
     
     
     func convertNumberBase() {
+        // Need to validate the binary number to check it falls within bounds
+
+        if (inputBase == .dec) {
+            let decCheckValue = Int(decNumberIn) ?? 0
+            // Condition 1 - decimal, unsigned, if less than -2^31 and greater than (2^31 - 1)
+            if (inputSigned == true && (decCheckValue < digitalCalcs.min32BitSigned || decCheckValue > digitalCalcs.max32BitSigned)) {
+                decimalCheckFailed = true
+                errorHaptics()
+                return
+            } else if (inputSigned == false && (decCheckValue < 0 || decCheckValue >= digitalCalcs.max32BitUnsigned)) {
+                decimalCheckFailed = true
+                errorHaptics()
+                return
+            }
+        }
         // Play the success haptic
         successHaptics()
         
