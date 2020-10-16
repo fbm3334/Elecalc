@@ -170,7 +170,7 @@ struct OhmsLaw: View {
                         Text("\(outputCurrent.value, specifier: "%.\(settings.decimalPlaces)f")\(outputCurrent.prefix.description)A")
                         // Clipboard button
                         Button(action: {
-                            pasteboard.string = "\(outputCurrent.value)\(outputCurrent.prefix.description)V"
+                            pasteboard.string = "\(outputCurrent.value)\(outputCurrent.prefix.description)A"
                         }) {
                             Image(systemName: "doc.on.doc")
                         }.buttonStyle(BorderlessButtonStyle())
@@ -183,7 +183,7 @@ struct OhmsLaw: View {
                         Text("\(outputResistance.value, specifier: "%.\(settings.decimalPlaces)f")\(outputResistance.prefix.description)Ω")
                         // Clipboard button
                         Button(action: {
-                            pasteboard.string = "\(outputResistance.value)\(outputResistance.prefix.description)V"
+                            pasteboard.string = "\(outputResistance.value)\(outputResistance.prefix.description)Ω"
                         }) {
                             Image(systemName: "doc.on.doc")
                         }.buttonStyle(BorderlessButtonStyle())

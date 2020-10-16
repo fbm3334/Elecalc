@@ -36,6 +36,9 @@ struct PowerCalcs: View {
     @State var outputPower = SIValue(value: 0.0, prefix: .none)
     @State var valueZero = false
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     var body: some View {
         Form {
             Section(header: Text("Known quantities")) {
@@ -152,6 +155,11 @@ struct PowerCalcs: View {
                         .bold()
                     Spacer()
                     Text("\(outputPower.value, specifier: "%.\(settings.decimalPlaces)f")\(outputPower.prefix.description)W")
+                    Button(action: {
+                        pasteboard.string = "\(outputPower.value)\(outputPower.prefix.description)W"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             
