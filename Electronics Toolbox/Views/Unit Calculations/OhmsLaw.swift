@@ -35,6 +35,9 @@ struct OhmsLaw: View {
     @State var outputResistance = SIValue(value: 0.0, prefix: .none)
     @State var valueZero = false
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     // Number of decimal places
     @State var decimalPlaces = UserDefaults.standard.integer(forKey: "DecimalPlaces")
     
@@ -152,6 +155,12 @@ struct OhmsLaw: View {
                             .bold()
                         Spacer()
                         Text("\(outputVoltage.value, specifier: "%.\(settings.decimalPlaces)f")\(outputVoltage.prefix.description)V")
+                        // Clipboard button
+                        Button(action: {
+                            pasteboard.string = "\(outputVoltage.value)\(outputVoltage.prefix.description)V"
+                        }) {
+                            Image(systemName: "doc.on.doc")
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 } else if (unknownQuantity == .current) {
                     HStack {
@@ -159,6 +168,12 @@ struct OhmsLaw: View {
                             .bold()
                         Spacer()
                         Text("\(outputCurrent.value, specifier: "%.\(settings.decimalPlaces)f")\(outputCurrent.prefix.description)A")
+                        // Clipboard button
+                        Button(action: {
+                            pasteboard.string = "\(outputCurrent.value)\(outputCurrent.prefix.description)V"
+                        }) {
+                            Image(systemName: "doc.on.doc")
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 } else {
                     HStack {
@@ -166,6 +181,12 @@ struct OhmsLaw: View {
                             .bold()
                         Spacer()
                         Text("\(outputResistance.value, specifier: "%.\(settings.decimalPlaces)f")\(outputResistance.prefix.description)Ω")
+                        // Clipboard button
+                        Button(action: {
+                            pasteboard.string = "\(outputResistance.value)\(outputResistance.prefix.description)V"
+                        }) {
+                            Image(systemName: "doc.on.doc")
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 }
             }
