@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var resistorCalcs = ResistorCalcs()
@@ -35,6 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
             .environmentObject(unitCalcs)
             .environmentObject(digitalCalcs)
             .environmentObject(settings)
+            .onAppear(perform: UIApplication.shared.addTapGestureRecogniser)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -43,13 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
             self.window = window
             window.makeKeyAndVisible()
         }
-        
-        // Adding code for allowing tap gesture to quit keyboard
-        let tapGesture = GestureRecogniser(target: window, action: #selector(UIView.endEditing))
-        tapGesture.requiresExclusiveTouchType = false
-        tapGesture.cancelsTouchesInView = false
-        tapGesture.delegate = self
-        window?.addGestureRecognizer(tapGesture)
+    
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -84,10 +79,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
     }
 
 
-}
-
-extension SceneDelegate {
-    func gestureRecogniser(_ gestureRecogniser: UIGestureRecognizer, shouldRecogniseSimultaneouslyWith otherGestureRecogniser: UIGestureRecognizer) -> Bool {
-        return true
-    }
 }

@@ -8,24 +8,21 @@
 import Foundation
 import UIKit
 
-// Based on https://stackoverflow.com/questions/56491386/how-to-hide-keyboard-when-using-swiftui - Mikhail's solution
+// Based on https://stackoverflow.com/questions/56491386/how-to-hide-keyboard-when-using-swiftui - pawello2222's solution
 
-class GestureRecogniser: UIGestureRecognizer {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
-        if let touchedView = touches.first?.view, touchedView is UIControl {
-            state = .cancelled
-        } else if let touchedView = touches.first?.view as? UITextView, touchedView.isEditable {
-            state = .cancelled
-        } else {
-            state = .began
-        }
+extension UIApplication {
+    func addTapGestureRecogniser() {
+        guard let window = windows.first else { return }
+        let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
+        tapGesture.requiresExclusiveTouchType = false
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        window.addGestureRecognizer(tapGesture)
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
-        state = .ended
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
-        state = .cancelled
+}
+
+extension UIApplication: UIGestureRecognizerDelegate {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
