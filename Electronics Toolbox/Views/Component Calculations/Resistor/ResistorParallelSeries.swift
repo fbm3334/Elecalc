@@ -37,6 +37,11 @@ struct ResistorParallelSeries: View {
                         Section(header: Text("Results")) {
                             ResultsSectionResistor()
                         }
+                        
+                        // Section for explanation
+                        Section(header: Text("Explanation")) {
+                            ResistorExplanationView()
+                        }
                     }
                 }
                 
@@ -71,6 +76,11 @@ struct ResistorParallelSeries: View {
                         }
                         Section(header: Text("Results")) {
                             ResultsSectionResistor()
+                        }
+                        
+                        // Section for explanation
+                        Section(header: Text("Explanation")) {
+                            ResistorExplanationView()
                         }
                     }
                 }
@@ -131,6 +141,26 @@ struct ResultsSectionResistor: View {
             }) {
                 Image(systemName: "doc.on.doc")
             }.buttonStyle(BorderlessButtonStyle())
+        }
+    }
+}
+
+// Seperate struct for resistor explanations so do not have to repeat
+struct ResistorExplanationView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("This calculator calculates resistors in series and parallel, using the following equations:")
+            // Using HStack and spacers to centre
+            HStack {
+                Spacer()
+                // Image must be resizeable - the equations do not fit on 4" iOS devices.
+                Image("ResistorEqns")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    // Frame for 326x92 optimum size (resolution of 1x image)
+                    .frame(minWidth: 0, idealWidth: 326, maxWidth: 326, minHeight: 0, idealHeight: 92, maxHeight: 92, alignment: .center)
+                Spacer()
+            }
         }
     }
 }
