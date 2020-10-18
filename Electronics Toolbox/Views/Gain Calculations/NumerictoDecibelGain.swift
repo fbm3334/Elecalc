@@ -34,7 +34,7 @@ struct NumerictoDecibelGain: View {
                     Text("Numeric Gain")
                     Spacer()
                     TextField("Gain", text: $numericGainString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
             }

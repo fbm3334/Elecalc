@@ -29,14 +29,14 @@ struct ThermalResistanceCalculator: View {
                     Text("Ambient (ºC)")
                     Spacer()
                     TextField("Temperature", text: $thermalCalcs.ambientTemperatureString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Max temperature (ºC)")
                     Spacer()
                     TextField("Temperature", text: $thermalCalcs.maxAllowableTemperatureString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
             }
@@ -47,7 +47,7 @@ struct ThermalResistanceCalculator: View {
                     Text("Device power dissipated (W)")
                     Spacer()
                     TextField("Power", text: $thermalCalcs.powerDissipatedString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
             }
@@ -58,14 +58,14 @@ struct ThermalResistanceCalculator: View {
                     Text("Junction to case (ºC/W)")
                     Spacer()
                     TextField("Thermal resistance", text: $thermalCalcs.thermalResistanceJuncToCaseString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Junction to ambient (ºC/W)")
                     Spacer()
                     TextField("Thermal resistance", text: $thermalCalcs.thermalResistanceJuncToAmbString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
             }

@@ -30,6 +30,7 @@ struct LCResonanceCalculator: View {
                         Spacer()
                         TextField("Inductance", text: $inductorValueString)
                             .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
                     }
                     Picker(selection: $inductorValue.prefix, label: Text("Inductance prefix")) {
                         ForEach(SIPrefixes.allCases, id: \.self) {
@@ -45,6 +46,7 @@ struct LCResonanceCalculator: View {
                         Spacer()
                         TextField("Capacitance", text: $capacitorValueString)
                             .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
                     }
                     Picker(selection: $capacitorValue.prefix, label: Text("Capacitance prefix")) {
                         ForEach(SIPrefixes.allCases, id: \.self) {

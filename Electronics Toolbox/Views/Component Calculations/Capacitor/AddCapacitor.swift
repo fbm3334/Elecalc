@@ -45,7 +45,7 @@ struct AddCapacitor: View {
                     Text("Value")
                     Spacer()
                     TextField("Value", text: $capacitorCalcs.valueTempString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.trailing)
                     // Picker to select the prefix

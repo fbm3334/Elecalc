@@ -55,6 +55,7 @@ struct NumberBaseCalc: View {
                     VStack(alignment: .leading) {
                         Text("Binary number:")
                         TextField("Enter a binary number", text: $binNumberIn)
+                            .keyboardType(.numberPad)
                             .font(.system(size: 16, design: .monospaced))
                             .onReceive(Just(binNumberIn)) { (newValue: String) in
                                 self.binNumberIn = newValue.prefix(32).filter {
@@ -69,6 +70,7 @@ struct NumberBaseCalc: View {
                     VStack(alignment: .leading) {
                         Text("Decimal number:")
                         TextField("Enter a decimal number", text: $decNumberIn)
+                            .keyboardType(.numberPad)
                             .font(.system(size: 16, design: .monospaced))
                             .onReceive(Just(decNumberIn)) { (newValue: String) in
                                 self.decNumberIn = newValue.prefix(11).filter {
@@ -83,6 +85,7 @@ struct NumberBaseCalc: View {
                     VStack(alignment: .leading) {
                         Text("Hexadecimal number:")
                         TextField("Enter a hexadecimal number", text: $hexNumberIn)
+                            .keyboardType(.numbersAndPunctuation)
                             .font(.system(size: 16, design: .monospaced))
                             .onReceive(Just(hexNumberIn)) { (newValue: String) in
                                 self.hexNumberIn = newValue.prefix(8).uppercased().filter {

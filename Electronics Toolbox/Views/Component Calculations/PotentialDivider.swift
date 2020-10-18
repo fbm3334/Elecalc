@@ -33,7 +33,7 @@ struct PotentialDivider: View {
                     Text("Supply voltage (V):")
                     Spacer()
                     TextField("Voltage", text: $supplyVoltageString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
             }
@@ -44,7 +44,7 @@ struct PotentialDivider: View {
                     Text("Resistance value:")
                     Spacer()
                     TextField("Resistance", text: $resistor1String)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
                 VStack {
@@ -67,7 +67,7 @@ struct PotentialDivider: View {
                     Text("Resistance value:")
                     Spacer()
                     TextField("Resistance", text: $resistor2String)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
                 VStack {

@@ -58,7 +58,7 @@ struct PowerCalcs: View {
                             Text("Voltage:")
                             Spacer()
                             TextField(String("Voltage"), text: $inputVoltageString)
-                                .keyboardType(.numbersAndPunctuation)
+                                .keyboardType(.decimalPad)
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputVoltage.prefix, label: Text("Unknown quantity")) {
@@ -76,7 +76,7 @@ struct PowerCalcs: View {
                             Text("Current:")
                             Spacer()
                             TextField(String("Current"), text: $inputCurrentString)
-                                .keyboardType(.numbersAndPunctuation)
+                                .keyboardType(.decimalPad)
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputCurrent.prefix, label: Text("Unknown quantity")) {
@@ -94,7 +94,7 @@ struct PowerCalcs: View {
                             Text("Resistance:")
                             Spacer()
                             TextField(String("Resistance"), text: $inputResistanceString)
-                                .keyboardType(.numbersAndPunctuation)
+                                .keyboardType(.decimalPad)
                                 .multilineTextAlignment(.trailing)
                         }
                         Picker(selection: $inputResistance.prefix, label: Text("Unknown quantity")) {

@@ -36,7 +36,7 @@ struct LEDResistorCalculator: View {
                     Spacer()
                     TextField(String("Voltage"), text: $supplyVoltageString)
                         .multilineTextAlignment(.trailing)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                 }
                 
                 // LED forward voltage
@@ -45,7 +45,7 @@ struct LEDResistorCalculator: View {
                     Spacer()
                     TextField(String("Voltage"), text: $ledVoltageString)
                         .multilineTextAlignment(.trailing)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                 }
                 
                 // LED forward current
@@ -54,7 +54,7 @@ struct LEDResistorCalculator: View {
                     Spacer()
                     TextField(String("Current"), text: $ledCurrentString)
                         .multilineTextAlignment(.trailing)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                 }
             }
             

@@ -45,7 +45,7 @@ struct AddResistor: View {
                     Text("Value")
                     Spacer()
                     TextField("Value", text: $resistorCalcs.valueTempString)
-                        .keyboardType(.numbersAndPunctuation)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.trailing)
                     // Picker to select the prefix
