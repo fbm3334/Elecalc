@@ -47,6 +47,7 @@
 		B6B52445252F0796002D444D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B52444252F0796002D444D /* AdaptiveKeyboard.swift */; };
 		B6B52455252F1EB0002D444D /* CapacitorParallelSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B52454252F1EB0002D444D /* CapacitorParallelSeries.swift */; };
 		B6B5245D252F1F70002D444D /* CapacitorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5245C252F1F70002D444D /* CapacitorList.swift */; };
+		B6CF47BD253C675000AFC100 /* GestureRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF47BC253C675000AFC100 /* GestureRecogniser.swift */; };
 		B6D58294252646020065FE83 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D58293252646020065FE83 /* SettingsView.swift */; };
 		B6D7F0EE24FFD4A1007264C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */; };
 		B6D7F0F025064894007264C5 /* ThermalCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */; };
@@ -143,6 +144,7 @@
 		B6B52444252F0796002D444D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
 		B6B52454252F1EB0002D444D /* CapacitorParallelSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorParallelSeries.swift; sourceTree = "<group>"; };
 		B6B5245C252F1F70002D444D /* CapacitorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapacitorList.swift; sourceTree = "<group>"; };
+		B6CF47BC253C675000AFC100 /* GestureRecogniser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecogniser.swift; sourceTree = "<group>"; };
 		B6D58293252646020065FE83 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6D7F0ED24FFD4A1007264C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B6D7F0EF25064894007264C5 /* ThermalCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCalcs.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				B6FC7A902527868B0014630B /* Settings.swift */,
 				B6391386252DC04600142764 /* LCResonanceCalc.swift */,
 				B6F8ED562530509D002C593B /* DigitalCalcs.swift */,
+				B6CF47BC253C675000AFC100 /* GestureRecogniser.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				B63913B1252E13B600142764 /* ResistorList.swift in Sources */,
 				B61AAF462516969600370C35 /* PotentialDivider.swift in Sources */,
 				B6B52445252F0796002D444D /* AdaptiveKeyboard.swift in Sources */,
+				B6CF47BD253C675000AFC100 /* GestureRecogniser.swift in Sources */,
 				B6FBCF5924F3F25A00D9D9CE /* CalculationList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
