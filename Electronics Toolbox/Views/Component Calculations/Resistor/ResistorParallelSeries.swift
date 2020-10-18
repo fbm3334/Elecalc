@@ -103,6 +103,9 @@ struct ResistorParallelSeries_Previews: PreviewProvider {
 struct ResultsSectionResistor: View {
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     @EnvironmentObject var settings: Settings
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     var body: some View {
         // Show the results in a HStack
         HStack {
@@ -111,6 +114,11 @@ struct ResultsSectionResistor: View {
             Spacer()
             Text("\(resistorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.parallelCalculated.prefix.description)Ω")
                 .multilineTextAlignment(.trailing)
+            Button(action: {
+                pasteboard.string = "\(resistorCalcs.parallelCalculated.value)\(resistorCalcs.parallelCalculated.prefix.description)Ω"
+            }) {
+                Image(systemName: "doc.on.doc")
+            }.buttonStyle(BorderlessButtonStyle())
         }
         HStack {
             Text("Series:")
@@ -118,6 +126,11 @@ struct ResultsSectionResistor: View {
             Spacer()
             Text("\(resistorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.seriesCalculated.prefix.description)Ω")
                 .multilineTextAlignment(.trailing)
+            Button(action: {
+                pasteboard.string = "\(resistorCalcs.seriesCalculated.value)\(resistorCalcs.seriesCalculated.prefix.description)Ω"
+            }) {
+                Image(systemName: "doc.on.doc")
+            }.buttonStyle(BorderlessButtonStyle())
         }
     }
 }

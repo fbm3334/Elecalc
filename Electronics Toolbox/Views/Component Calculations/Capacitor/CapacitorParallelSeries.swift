@@ -14,6 +14,7 @@ struct CapacitorParallelSeries: View {
     @EnvironmentObject var settings: Settings
     
     
+    
     var body: some View {
         
         // Two different versions of the view - one for iOS 14 and one for iOS 13 - iOS 14 has its own capability for handling keyboard alignment, which conflicts with the AdaptiveKeyboard method.
@@ -101,6 +102,9 @@ struct CapacitorParallelSeries_Previews: PreviewProvider {
 struct ResultsSectionCapacitor: View {
     @EnvironmentObject var capacitorCalcs: CapacitorCalcs
     @EnvironmentObject var settings: Settings
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     var body: some View {
         // Show the results in a HStack
         HStack {
@@ -109,6 +113,12 @@ struct ResultsSectionCapacitor: View {
             Spacer()
             Text("\(capacitorCalcs.parallelCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.parallelCalculated.prefix.description)F")
                 .multilineTextAlignment(.trailing)
+            // Clipboard button
+            Button(action: {
+                pasteboard.string = "\(capacitorCalcs.parallelCalculated.value)\(capacitorCalcs.parallelCalculated.prefix.description)F"
+            }) {
+                Image(systemName: "doc.on.doc")
+            }.buttonStyle(BorderlessButtonStyle())
         }
         HStack {
             Text("Series:")
@@ -116,6 +126,12 @@ struct ResultsSectionCapacitor: View {
             Spacer()
             Text("\(capacitorCalcs.seriesCalculated.value, specifier: "%.\(settings.decimalPlaces)f")\(capacitorCalcs.seriesCalculated.prefix.description)F")
                 .multilineTextAlignment(.trailing)
+            // Clipboard button
+            Button(action: {
+                pasteboard.string = "\(capacitorCalcs.seriesCalculated.value)\(capacitorCalcs.seriesCalculated.prefix.description)F"
+            }) {
+                Image(systemName: "doc.on.doc")
+            }.buttonStyle(BorderlessButtonStyle())
         }
     }
 }
