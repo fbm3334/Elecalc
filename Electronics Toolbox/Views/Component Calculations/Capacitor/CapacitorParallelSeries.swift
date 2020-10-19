@@ -34,8 +34,13 @@ struct CapacitorParallelSeries: View {
                                 }
                             }
                         }
+                        
                         Section(header: Text("Results")) {
                             ResultsSectionCapacitor()
+                        }
+                        
+                        Section(header: Text("Explanation")) {
+                            CapacitorExplanationView()
                         }
                     }
                 }
@@ -69,8 +74,13 @@ struct CapacitorParallelSeries: View {
                                 }
                             }
                         }
+                        
                         Section(header: Text("Results")) {
                             ResultsSectionCapacitor()
+                        }
+                        
+                        Section(header: Text("Explanation")) {
+                            CapacitorExplanationView()
                         }
                     }
                 }
@@ -132,6 +142,26 @@ struct ResultsSectionCapacitor: View {
             }) {
                 Image(systemName: "doc.on.doc")
             }.buttonStyle(BorderlessButtonStyle())
+        }
+    }
+}
+
+// Seperate struct for capacitor explanations so do not have to repeat
+struct CapacitorExplanationView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("This calculator calculates capacitors in series and parallel, using the following equations:")
+            // Using HStack and spacers to centre
+            HStack {
+                Spacer()
+                // Image must be resizeable - the equations do not fit on 4" iOS devices.
+                Image("CapacitorEqns")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    // Frame for 326x92 optimum size (resolution of 1x image)
+                    .frame(minWidth: 0, idealWidth: 297, maxWidth: 297, minHeight: 0, idealHeight: 92, maxHeight: 92, alignment: .center)
+                Spacer()
+            }
         }
     }
 }
