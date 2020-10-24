@@ -94,8 +94,8 @@ thispagestyle{empty}
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-C_{series}=\frac{1}{(\frac{1}{C_{1}}+\frac{1}{C_{2}}+...+\frac{1}{C_{n}})}\\
-C_{parallel}=C_{1}+C_{2}+...+C_{n}
+R_{series}=R_{1}+R_{2}+...+R_{n}\\
+R_{parallel}=\frac{1}{(\frac{1}{R_{1}}+\frac{1}{R_{2}}+...+\frac{1}{R_{n}})}
 \end{gather*}
 
 \end_inset
