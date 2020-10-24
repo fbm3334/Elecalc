@@ -21,10 +21,10 @@ struct NumberBaseCalc: View {
     @State var inputSigned: Bool = false
     @State var binarySplit = ["0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000"]
     @State var decimalCheckFailed = false
-    
-    
     @State private var autofillHelpAction: Int? = 0
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
     
     var body: some View {
         Form {
@@ -156,6 +156,15 @@ struct NumberBaseCalc: View {
                         .multilineTextAlignment(.center)
                     Spacer()
                 }
+                Button(action: {
+                    pasteboard.string = "\(binConverted)"
+                }) {
+                    HStack {
+                        Text("Copy result")
+                        Spacer()
+                        Image(systemName: "doc.on.doc")
+                    }
+                }
             }
             
             // Decimal results section
@@ -166,10 +175,15 @@ struct NumberBaseCalc: View {
                     Spacer()
                     Text(String(decConverted))
                         .font(.system(size: 16, design: .monospaced))
+                    Button(action: {
+                        pasteboard.string = "\(decConverted)"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             
-            // Decimal results section
+            // Hexadecimal results section
             Section(header: Text("Hexadecimal conversion")) {
                 HStack {
                     Text("Hexadecimal:")
@@ -177,6 +191,11 @@ struct NumberBaseCalc: View {
                     Spacer()
                     Text("0x\(hexConverted.uppercased())")
                         .font(.system(size: 16, design: .monospaced))
+                    Button(action: {
+                        pasteboard.string = "\(hexConverted)"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             

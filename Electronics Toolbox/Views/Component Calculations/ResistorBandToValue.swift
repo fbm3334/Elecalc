@@ -11,6 +11,8 @@ struct ResistorBandToValue: View {
     
     @EnvironmentObject var resistorCalcs: ResistorCalcs
     @EnvironmentObject var settings: Settings
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
     
     // Arrays to store colours for resistor colour code
     let colourCodeColours: [UIColor] = [.black, .brown, .red, .orange, .yellow, .green, .blue, .purple, .gray, .white]
@@ -191,18 +193,36 @@ struct ResistorBandToValue: View {
                         .bold()
                     Spacer()
                     Text("\(resistorCalcs.colourCodeResistor.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.colourCodeResistor.prefix.description)Ω")
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(resistorCalcs.colourCodeResistor.value)\(resistorCalcs.colourCodeResistor.prefix.description)Ω"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
                 HStack {
                     Text("Lower tolerance:")
                         .bold()
                     Spacer()
                     Text("\(resistorCalcs.ccResistorLowerTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorLowerTolerance.prefix.description)Ω")
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(resistorCalcs.ccResistorLowerTolerance.value)\(resistorCalcs.ccResistorLowerTolerance.prefix.description)Ω"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
                 HStack {
                     Text("Upper tolerance:")
                         .bold()
                     Spacer()
                     Text("\(resistorCalcs.ccResistorUpperTolerance.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorCalcs.ccResistorUpperTolerance.prefix.description)Ω")
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(resistorCalcs.ccResistorUpperTolerance.value)\(resistorCalcs.ccResistorUpperTolerance.prefix.description)Ω"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             

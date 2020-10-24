@@ -26,6 +26,9 @@ struct LEDResistorCalculator: View {
     @State var ledVoltageGreaterThanSupply: Bool = false
     @State var ledCurrentZero: Bool = false
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     var body: some View {
         Form {
             
@@ -107,6 +110,12 @@ struct LEDResistorCalculator: View {
                         .bold()
                     Spacer()
                     Text("\(resistorValue.value, specifier: "%.\(settings.decimalPlaces)f")\(resistorValue.prefix.description)Ω")
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(resistorValue.value)\(resistorValue.prefix.description)Ω"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
                 
             }

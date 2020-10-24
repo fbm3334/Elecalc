@@ -17,6 +17,8 @@ struct NumerictoDecibelGain: View {
     @State var dBGain: Double = 0.0
     @State var numericGain: Double = 0.0
     @State var numericGainString: String = "0"
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
     
     var body: some View {
         Form {
@@ -59,6 +61,12 @@ struct NumerictoDecibelGain: View {
                         .bold()
                     Spacer()
                     Text("\(dBGain, specifier: "%.\(settings.decimalPlaces)f")dB")
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(dBGain)dB"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             

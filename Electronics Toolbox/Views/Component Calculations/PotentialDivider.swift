@@ -25,6 +25,9 @@ struct PotentialDivider: View {
     @State var supplyVoltageZeroOrLess: Bool = false
     @State var resistorLessThanZero: Bool = false
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     var body: some View {
         Form {
             // First section - Supply voltage
@@ -125,6 +128,12 @@ struct PotentialDivider: View {
                     Spacer()
                     Text("\(outputVoltage, specifier: "%.\(settings.decimalPlaces)f")V")
                         .multilineTextAlignment(.trailing)
+                    // Clipboard button
+                    Button(action: {
+                        pasteboard.string = "\(outputVoltage)V"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             

@@ -19,6 +19,9 @@ struct ThermalResistanceCalculator: View {
     @EnvironmentObject var thermalCalcs: ThermalCalcs
     @EnvironmentObject var settings: Settings
     
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
+    
     @ViewBuilder
     var body: some View {
         Form {
@@ -131,6 +134,12 @@ struct ThermalResistanceCalculator: View {
                         Text("Max heatsink thermal resistance:")
                         Spacer()
                         Text("\(thermalCalcs.heatsinkThermalResistance, specifier: "%.\(settings.decimalPlaces)f")ºC/W")
+                        // Clipboard button
+                        Button(action: {
+                            pasteboard.string = "\(thermalCalcs.heatsinkThermalResistance)ºC/W"
+                        }) {
+                            Image(systemName: "doc.on.doc")
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 }
             

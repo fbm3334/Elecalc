@@ -19,6 +19,9 @@ struct LCResonanceCalculator: View {
     @State var capacitorValueString = "0.0"
     @State var valuesInvalid = false
     @State var frequency = SIValue(value: 0.0, prefix: .none)
+    
+    // Pasteboard for clipboard
+    let pasteboard = UIPasteboard.general
         
     var body: some View {
         Form {
@@ -84,12 +87,22 @@ struct LCResonanceCalculator: View {
                         .bold()
                     Spacer()
                     Text("\(frequency.value, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description)Hz")
+                    Button(action: {
+                        pasteboard.string = "\(frequency.value)\(frequency.prefix.description)Hz"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
                 HStack {
                     Text("Angular frequency (ω):")
                         .bold()
                     Spacer()
                     Text("\(frequency.value * 2 * Double.pi, specifier: "%.\(settings.decimalPlaces)f")\(frequency.prefix.description) rad s⁻¹")
+                    Button(action: {
+                        pasteboard.string = "\(frequency.value * 2 * Double.pi)\(frequency.prefix.description) rad s⁻¹"
+                    }) {
+                        Image(systemName: "doc.on.doc")
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             
