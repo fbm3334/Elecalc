@@ -62,6 +62,18 @@ struct NumberBaseCalc: View {
                                     digitalCalcs.binAllowedCharacters.contains($0)
                                 }
                             }
+                        // Display a warning about the MSB when signed number is set
+                        if (inputSigned == true) {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Image(systemName: "info.circle.fill")
+                                    Text("Information")
+                                        .bold()
+                                }
+                                Text("The converter will treat the most significant bit you enter as the sign bit (0 for positive and 1 for negative).")
+                                
+                            }.font(.caption)
+                        }
                     }
                 }
                 
@@ -70,7 +82,7 @@ struct NumberBaseCalc: View {
                     VStack(alignment: .leading) {
                         Text("Decimal number:")
                         TextField("Enter a decimal number", text: $decNumberIn)
-                            .keyboardType(.numberPad)
+                            .keyboardType(.numbersAndPunctuation)
                             .font(.system(size: 16, design: .monospaced))
                             .onReceive(Just(decNumberIn)) { (newValue: String) in
                                 self.decNumberIn = newValue.prefix(11).filter {
@@ -84,14 +96,18 @@ struct NumberBaseCalc: View {
                 if (inputBase == .hex) {
                     VStack(alignment: .leading) {
                         Text("Hexadecimal number:")
-                        TextField("Enter a hexadecimal number", text: $hexNumberIn)
-                            .keyboardType(.numbersAndPunctuation)
-                            .font(.system(size: 16, design: .monospaced))
-                            .onReceive(Just(hexNumberIn)) { (newValue: String) in
-                                self.hexNumberIn = newValue.prefix(8).uppercased().filter {
-                                    digitalCalcs.hexAllowedCharacters.contains($0)
+                        HStack {
+                            Text("0x")
+                                .font(.system(size: 16, design: .monospaced))
+                            TextField("Enter a hexadecimal number", text: $hexNumberIn)
+                                .keyboardType(.numbersAndPunctuation)
+                                .font(.system(size: 16, design: .monospaced))
+                                .onReceive(Just(hexNumberIn)) { (newValue: String) in
+                                    self.hexNumberIn = newValue.prefix(8).uppercased().filter {
+                                        digitalCalcs.hexAllowedCharacters.contains($0)
+                                    }
                                 }
-                            }
+                        }
                     }
                 }
             }
